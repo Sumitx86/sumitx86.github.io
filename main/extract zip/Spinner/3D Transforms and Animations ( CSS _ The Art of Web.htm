@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en_GB"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>3D Transforms and Animations &lt; CSS | The Art of Web</title>
+  <meta name="keywords" content="animation, rotate, cube, html, image, code, transform, text, transforms, rotation, rotating, flip, animate">
+  <meta name="author" content="Chirp Internet">
+  <link rel="stylesheet" type="text/css" href="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/style.css">
+  <link rel="stylesheet" type="text/css" href="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/A.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS: New and updated articles" href="http://www.the-art-of-web.com/rss.xml">
+<style type="text/css">@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg); }
+  to   { -webkit-transform: rotateY(-360deg); }
+}@keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}.stage{margin:1em auto;-webkit-perspective:1200px;-moz-perspective:1200px;-ms-perspective:1200px;perspective:1200px}.spinner{-webkit-animation-name:spinner;-webkit-animation-timing-function:linear;-webkit-animation-iteration-count:infinite;-webkit-animation-duration:6s;-webkit-transform-style:preserve-3d;animation-name:spinner;animation-timing-function:linear;animation-iteration-count:infinite;animation-duration:6s;transform-style:preserve-3d}.spinner:hover{-webkit-animation-play-state:paused;animation-play-state:paused}.spinner img,.spinner5 img{position:absolute;border:1px solid #ccc;background:rgba(255,255,255,.8);box-shadow:inset 0 0 20px rgba(0,0,0,.2)}</style><style type="text/css">@-webkit-keyframes spinner5 {
+    from,15% { -webkit-transform: rotateY(0);       }
+    20%,35%  { -webkit-transform: rotateY(-72deg);  }
+    40%,55%  { -webkit-transform: rotateY(-144deg); }
+    60%,75%  { -webkit-transform: rotateY(-216deg); }
+    80%,95%  { -webkit-transform: rotateY(-288deg); }
+    to       { -webkit-transform: rotateY(-360deg); }
+  }@keyframes spinner5 {
+    from,15% {
+      -moz-transform: rotateY(0);
+      -ms-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+    20%,35%  {
+      -moz-transform: rotateY(-72deg);
+      -ms-transform: rotateY(-72deg);
+      transform: rotateY(-72deg);
+    }
+    40%,55%  {
+      -moz-transform: rotateY(-144deg);
+      -ms-transform: rotateY(-144deg);
+      transform: rotateY(-144deg);
+    }
+    60%,75%  {
+      -moz-transform: rotateY(-216deg);
+      -ms-transform: rotateY(-216deg);
+      transform: rotateY(-216deg);
+    }
+    80%,95%  {
+      -moz-transform: rotateY(-288deg);
+      -ms-transform: rotateY(-288deg);
+      transform: rotateY(-288deg);
+    }
+    to {
+      -moz-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+  }.spinner5{-webkit-animation-name:spinner5;-webkit-animation-timing-function:ease-out;-webkit-animation-iteration-count:infinite;-webkit-animation-duration:20s;animation-name:spinner5;animation-timing-function:ease-out;animation-iteration-count:infinite;animation-duration:20s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d}</style><style type="text/css">@-webkit-keyframes spincube {
+    from,to  { }
+    16%      { -webkit-transform: rotateY(-90deg);  }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg); }
+    66%      { -webkit-transform: rotateY(90deg) rotateX(90deg);  }
+    83%      { -webkit-transform: rotateX(90deg); }
+  }@-moz-keyframes spincube {
+    from,to  { -moz-transform: rotateY(0deg) }
+    16%      { -moz-transform: rotateY(-90deg);  }
+    33%      { -moz-transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -moz-transform: rotateY(-180deg) rotateZ(90deg); }
+    66%      { -moz-transform: rotateY(90deg) rotateX(90deg);  }
+    83%      { -moz-transform: rotateX(90deg); }
+  }@-ms-keyframes spincube {
+    from,to  { -ms-transform: rotateY(0deg) }
+    16%      { -ms-transform: rotateY(-90deg);  }
+    33%      { -ms-transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -ms-transform: rotateY(-180deg) rotateZ(90deg); }
+    66%      { -ms-transform: rotateY(90deg) rotateX(90deg);  }
+    83%      { -ms-transform: rotateX(90deg); }
+  }.cubespinner{-webkit-animation-name:spincube;-webkit-animation-timing-function:ease-in-out;-webkit-animation-iteration-count:infinite;-webkit-animation-duration:12s;-webkit-transform-style:preserve-3d;-webkit-transform-origin:60px 60px 0;-moz-animation-name:spincube;-moz-animation-timing-function:ease-in-out;-moz-animation-iteration-count:infinite;-moz-animation-duration:12s;-moz-transform-style:preserve-3d;-moz-transform-origin:60px 60px 0;-ms-animation-name:spincube;-ms-animation-timing-function:ease-in-out;-ms-animation-iteration-count:infinite;-ms-animation-duration:12s;-ms-transform-style:preserve-3d;-ms-transform-origin:60px 60px 0}.cubespinner div{position:absolute;width:120px;height:120px;border:1px solid #ccc;background:rgba(255,255,255,.8);box-shadow:inset 0 0 20px rgba(0,0,0,.2);text-align:center;line-height:120px;font-size:100px}.cubespinner .face1{-webkit-transform:translateZ(60px);-moz-transform:translateZ(60px);-ms-transform:translateZ(60px)}.cubespinner .face2{-webkit-transform:rotateY(90deg) translateZ(60px);-moz-transform:rotateY(90deg) translateZ(60px);-ms-transform:rotateY(90deg) translateZ(60px)}.cubespinner .face3{-webkit-transform:rotateY(90deg) rotateX(90deg) translateZ(60px);-moz-transform:rotateY(90deg) rotateX(90deg) translateZ(60px);-ms-transform:rotateY(90deg) rotateX(90deg) translateZ(60px)}.cubespinner .face4{-webkit-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px);-moz-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px);-ms-transform:rotateY(180deg) rotateZ(90deg) translateZ(60px)}.cubespinner .face5{-webkit-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px);-moz-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px);-ms-transform:rotateY(-90deg) rotateZ(90deg) translateZ(60px)}.cubespinner .face6{-webkit-transform:rotateX(-90deg) translateZ(60px);-moz-transform:rotateX(-90deg) translateZ(60px);-ms-transform:rotateX(-90deg) translateZ(60px)}</style></head>
+
+<body>
+
+<!--htdig_noindex-->
+<a class="chirplink" accesskey="S" href="#content">skip to content</a>
+<!--/htdig_noindex-->
+
+<div id="header">
+<!--htdig_noindex-->
+<div id="menu" itemscope="" itemtype="http://schema.org/WebSite">
+<meta itemprop="url" content="http://www.the-art-of-web.com/">
+<form id="searchbox" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction" method="POST" action="/searchresult.html" accept-charset="UTF-8" onsubmit="return (words.value != '');">
+<meta itemprop="target" content="http://www.the-art-of-web.com/searchresult.html?words={words}">
+<input id="sitesearch" itemprop="query-input" results="10" autosave="searches" name="words" placeholder="Search" type="search">
+<ul id="suggest"><li></li></ul>
+</form>
+<ul>
+  <li><a accesskey="1" href="http://www.the-art-of-web.com/">Home</a></li>
+  <li><a accesskey="2" href="http://www.the-art-of-web.com/html/">HTML</a></li>
+  <li><a accesskey="3" href="http://www.the-art-of-web.com/css/">CSS</a></li>
+  <li><a accesskey="4" href="http://www.the-art-of-web.com/javascript/">JavaScript</a></li>
+  <li><a accesskey="5" href="http://www.the-art-of-web.com/php/">PHP</a></li>
+  <li><a accesskey="6" href="http://www.the-art-of-web.com/sql/">SQL</a></li>
+  <li><a accesskey="7" href="http://www.the-art-of-web.com/system/">System</a></li>
+  <li><a accesskey="8" href="http://www.the-art-of-web.com/links/">Links</a></li>
+</ul>
+</div>
+<!--/htdig_noindex-->
+</div>
+
+<div id="rhs">
+<script src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/analytics.js" async=""></script><script src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/ca-pub-9789897350102210.js"></script><script async="" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/adsbygoogle.js"></script>
+<!-- The Art of Web - RWD Top -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-9789897350102210" data-ad-slot="8956648230" data-ad-format="auto"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="160"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div id="content">
+<!--htdig_noindex-->
+<div id="ad_content" class="noprint">
+<script async="" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/adsbygoogle.js"></script>
+<!-- The Art of Web - RWD Content -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9789897350102210" data-ad-slot="1433381437" data-ad-format="auto"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div class="" id="submenu"><ol><li class="mobileonly" id="menuTrigger"><a href="#">☰ Menu</a></li><li><a href="#section_0">Setting up Keyframes</a></li><li><a href="#section_1">Setting the stage for our animation</a></li><li><a href="#section_2">Spinning an element on the page</a></li><li><a href="#section_3">Creating a photo carousel</a></li><li><a href="#section_4">Photos on a rotating polygon</a></li><li><a href="#section_5">Tweaking the keyframes timing</a></li><li><a href="#section_6">Rotating cube</a></li><li><a href="#section_7">References</a></li><li><a href="#related">Related Articles - Transforms and Transitions</a></li><li><a href="#user_comments">User Comments</a></li></ol></div>
+<!--/htdig_noindex-->
+
+<h1><span class="nomobile">CSS: </span>3D Transforms and Animations</h1>
+
+<p class="social_counters"><a class="tweets" title="Share on Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=3D+Transforms+and+Animations:&amp;url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F&amp;via=theartofweb"><span>&nbsp;<span>Tweet</span></span></a><a class="likes" title="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F"><span>94<span> Shares</span></span></a><a class="gplus" title="Recommend on Google+" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F"><span>29<span> Shares</span></span></a><a class="reddit" title="Post to Reddit" target="_blank" href="http://www.reddit.com/submit?title=3D+Transforms+and+Animations&amp;url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F"><span>0<span> Tweets</span></span></a><a class="feedback show_feedback" title="Post Comment"><span>16<span> Comments</span></span></a></p>
+
+
+
+
+<p>3D Transforms were first implemented by the Safari/WebKit team ages 
+ago.  Support in other browsers is still variable, but getting better.</p>
+
+<p><a href="http://www.the-art-of-web.com/css/css-animation/">CSS3 animation and 2D transforms</a> 
+have been implemented in Safari, Firefox, Opera and even Internet 
+Explorer 10, but in this article we're taking it a step further using 
+keyframes to set up perpetual animation effects in 3D space.</p>
+
+<p>These effects will work in WebKit (Safari/iPhone/iPad and Chrome) and 
+Mozilla (Firefox) browsers.  Some simpler effects will work in Internet 
+Explorer 10, but they don's support the <tt>preserve-3d</tt> setting 
+needed for proper 3D layouts.</p>
+
+
+<h2 id="section_0">1. Setting up Keyframes</h2>
+
+<p>What are keyframes?</p>
+
+<blockquote cite="Surfin' Safari">A @-webkit-keyframes block contains 
+rule sets called keyframes. A keyframe defines the style that will be 
+applied for that moment within the animation. The animation engine will 
+smoothly interpolate style between the keyframes.</blockquote>
+
+<p>While this may sound complicated, and can be, we're starting with 
+one of the most simple examples.  The keyframes block defined here will 
+simply rotate an element or group of elements counter-clockwise around 
+the Y-axis (which points towards the top of the page):</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  <i>/* WebKit and Opera browsers */</i>
+  @-webkit-keyframes <span>spinner</span> {
+    from { -webkit-transform: rotateY(0deg);    }
+    to   { -webkit-transform: rotateY(-360deg); }
+  }
+
+  <i>/* all other browsers */</i>
+  @keyframes <span>spinner</span> {
+    from {
+      -moz-transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+    }
+    to {
+      -moz-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+  }
+
+&lt;/style&gt;</code>
+
+<p>In this example the <tt>keyframe</tt> has been assigned the name 
+'spinner' for later reference.  Additional steps, between 'from' and 
+'to', can be inserted, each one using a percentage value instead of the 
+from/to keywords, and they can contain different types of styles and 
+transformations.</p>
+
+
+<h2 id="section_1">2. Setting the stage for our animation</h2>
+
+<p>The 'stage' is the element in which our animation takes place.  The 
+animation will move and rotate in relation to the stage element, which 
+itself remains fixed to the page.</p>
+
+<p>The optional <tt>perspective</tt> attribute defines how extreme the 
+3D effect will be as elements move up and down the Z-axis (come out of 
+the page).  The larger this distance the less obvious the effect.  
+Without this attribute there is no perspective effect at all.</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  #stage {
+    margin: 1em auto;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+  }
+
+&lt;/style&gt;</code>
+
+<p>The next element is the one to which the animation is applied.  We do 
+this by referring to the keyframes by name.  We also define a <a href="http://www.the-art-of-web.com/css/timing-function/">transition timing function</a> and set the 
+number of iterations (or <tt>infinite</tt> in this case for perpetual 
+motion).  Each iteration will last 6 seconds.</p>
+
+<p>You can assign different timing functions for each individual 
+keyframe in the block if you want to create more physically realistic 
+animations.</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  #spinner {
+    -webkit-animation-name: <span>spinner</span>;
+    -webkit-animation-timing-function: <i>linear</i>;
+    -webkit-animation-iteration-count: <i>infinite</i>;
+    -webkit-animation-duration: <i>6s</i>;
+
+    animation-name: <span>spinner</span>;
+    animation-timing-function: <i>linear</i>;
+    animation-iteration-count: <i>infinite</i>;
+    animation-duration: <i>6s</i>;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  #spinner:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+
+&lt;/style&gt;</code>
+
+<p>The <tt>hover</tt> effect will pause the animation when the mouse is 
+over the element.  This property can also be toggled between 'running' 
+and 'paused' using JavaScript to control the state of the animation.</p>
+
+<p>The <tt>preserve-3d</tt> setting is important if you want to be able 
+to transform other elements with relation to this one, which we do.  
+Without this all child elements are rendered flat in the same plane.</p>
+
+<p><b>Prior to Chrome 12.0 neither the <tt>perspective</tt> nor 
+<tt>preserve-3d</tt> attribute was recognised so the 3D animations where 
+all 'flattened'.  This has been addressed for later versions, but 
+<tt>preserve-3d</tt> is still missing as of Internet Explorer 
+11.</b></p>
+
+<p>One interesting effect can be achieved by setting the <tt>timing function</tt>
+to 'ease-in-out' and adding a new property 
+<tt>-webkit-animation-direction: alternate;</tt>.  This will result in 
+an animation that spins first one way and then the other.</p>
+
+
+<h2 id="section_2">3. Spinning an element on the page</h2>
+
+<p>At this point we already have all the ingredients required to place an 
+element on the page and set it spinning, as you can see here:</p>
+
+<div class="stage" style="background: rgba(0,0,0,0.5);">
+<p class="spinner" style="padding: 4px; background: rgba(0,0,0,0.5); text-align: center; color: #fff;">Stop, I'm getting dizzy!</p>
+</div>
+
+<code>&lt;div id="stage" style="background: rgba(0,0,0,0.5);"&gt;
+&lt;p id="spinner" style="background: rgba(0,0,0,0.5); text-align: center; color: #fff;"&gt;Stop, I'm getting dizzy!&lt;/p&gt;
+&lt;/div&gt;</code>
+
+<p>Both the 'stage' and the paragraph have been assigned a 
+semi-transparent background so you can see the 3D effect as the 
+paragraph rotates.  By default the rotation axis is the centre of the 
+'stage' element, but that can be moved by setting the 
+<tt>transform-origin</tt> attribute away from the centre.</p>
+
+
+<h2 id="section_3">4. Creating a photo carousel</h2>
+
+<p>As a demonstration, we're now going to build a 'carousel' of images 
+rotating around the vertical axis - similar to a slide projector.  In 
+addition to the above styles, we now assign <tt>position: absolute</tt> 
+to each image child of the spinner element, and some formatting:</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  #spinner img {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+  }
+
+&lt;/style&gt;</code>
+
+<p>If you also set <tt>-webkit-backface-visibility: hidden;</tt> on the 
+img elements then any facing away from the screen will be hidden rather 
+than displayed in reverse, leaving you with just half the animation.</p>
+
+<p>You can download all the required styles here: <a href="http://www.the-art-of-web.com/3d-transforms.css">3d-transforms.css</a></p>
+
+<p>Finally, here's the HTML markup for five randomly selected photos:</p> 
+
+<code>&lt;div id="stage" style="padding-left: 180px; height: 160px;"&gt;
+&lt;div id="spinner" style="-webkit-transform-origin: 180px 0 0;"&gt;
+&lt;img style="-webkit-transform: rotateY(<i>0deg</i>) translateX(180px); padding: 0 0 0 160px;" src="images/beach1.jpg" width="200" height="160" alt=""&gt;
+&lt;img style="-webkit-transform: rotateY(<i>-72deg</i>) translateX(180px); padding: 0 0 0 147px;" src="images/beach2.jpg" width="213" height="160" alt=""&gt;
+&lt;img style="-webkit-transform: rotateY(<i>-144deg</i>) translateX(180px); padding: 0 0 0 120px;" src="images/beach3.jpg" width="240" height="160" alt=""&gt;
+&lt;img style="-webkit-transform: rotateY(<i>-216deg</i>) translateX(180px); padding: 0 0 0 147px;" src="images/beach4.jpg" width="213" height="160" alt=""&gt;
+&lt;img style="-webkit-transform: rotateY(<i>-288deg</i>) translateX(180px); padding: 0 0 0 122px;" src="images/beach5.jpg" width="238" height="160" alt=""&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code>
+
+<p>To make things easier to start with, all the images have the same 
+height, so we just needed to adjust the padding on the inside edge to 
+have them join up at the central axis.  If the heights vary you also 
+need vertical padding.  You can do away with the padding altogether if 
+you want, but it becomes more useful as more images are added.</p>
+
+<p>And here's the final product!</p>
+
+<div class="stage" style="padding-left: 180px; height: 160px;">
+<div class="spinner" style="-webkit-transform-origin: 180px 0 0; -moz-transform-origin: 180px 0 0; -ms-transform-origin: 180px 0 0;">
+<img style="-webkit-transform: rotateY(-0deg) translateX(180px); -moz-transform: rotateY(-0deg) translateX(180px); -ms-transform: rotateY(-0deg) translateX(180px); padding: 0px 0 0px 160px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach1.jpg" alt="" height="160" width="200">
+<img style="-webkit-transform: rotateY(-72deg) translateX(180px); -moz-transform: rotateY(-72deg) translateX(180px); -ms-transform: rotateY(-72deg) translateX(180px); padding: 0px 0 0px 147px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach2.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(-144deg) translateX(180px); -moz-transform: rotateY(-144deg) translateX(180px); -ms-transform: rotateY(-144deg) translateX(180px); padding: 0px 0 0px 120px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach3.jpg" alt="" height="160" width="240">
+<img style="-webkit-transform: rotateY(-216deg) translateX(180px); -moz-transform: rotateY(-216deg) translateX(180px); -ms-transform: rotateY(-216deg) translateX(180px); padding: 0px 0 0px 147px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach4.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(-288deg) translateX(180px); -moz-transform: rotateY(-288deg) translateX(180px); -ms-transform: rotateY(-288deg) translateX(180px); padding: 0px 0 0px 122px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach5.jpg" alt="" height="160" width="238">
+</div>
+</div>
+
+
+<p>The result in Safari 5 looks something like the snapshot below, with 
+the photo on the right coming towards you and the others moving away.</p>
+
+<p><b>Internet Explorer 10 and 11 still do not support the 
+<tt>preserve-3d</tt> property so the result is flattened rather than 
+three-dimensional.</b></p>
+
+<p>The whole construction is rotating a full circle every 6 seconds. There 
+is some transparency in the white inner section letting you see parts 
+of photos in the background:</p>
+
+<p style="text-align: center;"><img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/photo-carousel.jpg" alt="photo carousel screenshot" border="0" height="222" width="662"></p>
+
+<p>It may look complicated, but luckily for you we've written a short 
+PHP script to set up a spinning carousel for any number of images:</p>
+
+<code class="final">&lt;?PHP
+  <i>// Original PHP code by Chirp Internet: www.chirp.com.au
+  // Please acknowledge use of this code by including this header.</i>
+
+  $size = array();
+  $rotation = $maxw = $maxh = 0;
+
+  <i>// identify images to display</i>
+  $dirlist = <a href="http://php.net/glob" target="_blank">glob</a>("<i>images/beach*.jpg</i>");
+  $num = count($dirlist);
+
+  <i>// calculate the largest image dimensions</i>
+  for($i=0; $i &lt; $num; $i++) {
+    $img = $dirlist[$i];
+    $size[$i] = <a href="http://php.net/getimagesize" target="_blank">getimagesize</a>($img);
+    if($size[$i][0] &gt; $maxw) $maxw = $size[$i][0];
+    if($size[$i][1] &gt; $maxh) $maxh = $size[$i][1];
+  }
+
+  <i>// display the carousel html</i>
+  echo "&lt;div id=\"stage\" style=\"padding-left: ",($maxw*3/4),"px; 
+height: {$maxh}px;\"&gt;\n";
+  echo "&lt;div id=\"spinner\" style=\"-webkit-transform-origin: 
+",($maxw*3/4),"px 0 0;\"&gt;\n";
+  for($i=0; $i &lt; $num; $i++) {
+    $img = $dirlist[$i];
+    $padleft = ($maxw - $size[$i][0]);
+    $padh = ($maxh - $size[$i][1]) / 2;
+    echo "&lt;img style=\"-webkit-transform: 
+rotateY(-",round($rotation,1),"deg) translateX(",($maxw*3/4),"px); 
+padding: {$padh}px 0 {$padh}px ",($padleft + $maxw/2),"px;\" 
+src=\"$img\" {$size[$i][3]} alt=\"\"&gt;\n";
+    $rotation += 360 / $num;
+  }
+  echo "&lt;/div&gt;\n";
+  echo "&lt;/div&gt;\n\n";
+?&gt;</code>
+
+<p>This code sets the padding at the centre of the carousel to half the 
+width of the widest image.  It should work for any number of images.</p>
+
+
+<h2 id="section_4">5. Photos on a rotating polygon</h2>
+
+<p>With the exact same style settings, and only a few changes to the 
+code, we have have the same photos displaying on the outside of a 
+rotating polygonal column:</p>
+
+<div class="stage" style="width: 240px; height: 160px;">
+<div class="spinner">
+<img style="-webkit-transform: rotateY(0deg) translateZ(165px); -moz-transform: rotateY(0deg) translateZ(165px); -ms-transform: rotateY(0deg) translateZ(165px); padding: 0px 20px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach1.jpg" alt="" height="160" width="200">
+<img style="-webkit-transform: rotateY(72deg) translateZ(165px); -moz-transform: rotateY(72deg) translateZ(165px); -ms-transform: rotateY(72deg) translateZ(165px); padding: 0px 13.5px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach2.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(144deg) translateZ(165px); -moz-transform: rotateY(144deg) translateZ(165px); -ms-transform: rotateY(144deg) translateZ(165px); padding: 0px 0px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach3.jpg" alt="" height="160" width="240">
+<img style="-webkit-transform: rotateY(216deg) translateZ(165px); -moz-transform: rotateY(216deg) translateZ(165px); -ms-transform: rotateY(216deg) translateZ(165px); padding: 0px 13.5px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach4.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(288deg) translateZ(165px); -moz-transform: rotateY(288deg) translateZ(165px); -ms-transform: rotateY(288deg) translateZ(165px); padding: 0px 1px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach5.jpg" alt="" height="160" width="238">
+</div>
+</div>
+
+<p>All that has changed is the last section of code, which has been 
+replaced with the following:</p>
+
+<code class="final">&lt;?PHP
+  <i>// display the rotating polygon</i>
+  $radius = floor($maxw / (2 * tan(deg2rad(180/$num))));
+  echo "&lt;div id=\"stage\" style=\"width: {$maxw}px; height: 
+{$maxh}px;\"&gt;\n";
+  echo "&lt;div id=\"spinner\"&gt;\n";
+  for($i=0; $i &lt; $num; $i++) {
+    $img = $dirlist[$i];
+    $padw = ($maxw - $size[$i][0]) / 2;
+    $padh = ($maxh - $size[$i][1]) / 2;
+    echo "&lt;img style=\"-webkit-transform: rotateY(",round($rotation, 
+1),"deg) translateZ({$radius}px); padding: {$padh}px {$padw}px;\" 
+src=\"$img\" {$size[$i][3]} alt=\"\"&gt;";
+    $rotation += 360 / $num;
+  }
+  echo "&lt;/div&gt;\n";
+  echo "&lt;/div&gt;\n";
+?&gt;</code>
+
+<p>For non-supported browsers, here is a snapshot:</p>
+
+<p style="text-align: center;"><img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/3d-rotating-polygon.jpg" alt="rotating 3d polygon" height="189" width="390"></p>
+
+<p>Again, this code will scale up (or down) for any number of photos, 
+though the width of the rotating structure increases rapidly for larger 
+numbers.  <b>You can find a much nicer solution <a href="http://www.the-art-of-web.com/css/infinite-photo-carousel/">here</a></b>.</p>
+
+<p>For a larger set of images, I would suggest loading only a small 
+number to start with, and then use JavaScript to replace images as they 
+rotate out with new ones from the queue.</p>
+
+
+<h2 id="section_5">6. Tweaking the keyframes timing</h2>
+
+<p>As mentioned above, using different transition timing functions can 
+make the animation more appealing.  The problem is that it's difficult 
+to set up unless you know exactly how many elements you're dealing with.</p>
+
+For this example, we're going to re-use the above example, which we know 
+has five sides, and set up a <tt>keyframe</tt> to display them to best 
+effect.  We've called the new keyframes <tt>spinner5</tt> because it's 
+optimised for display five sides in sequence:<p></p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  @-webkit-keyframes <span>spinner5</span> {
+    from,15% { -webkit-transform: rotateY(0deg);    }
+    20%,35%  { -webkit-transform: rotateY(-72deg);  }
+    40%,55%  { -webkit-transform: rotateY(-144deg); }
+    60%,75%  { -webkit-transform: rotateY(-216deg); }
+    80%,95%  { -webkit-transform: rotateY(-288deg); }
+    to       { -webkit-transform: rotateY(-360deg); }
+  }
+
+  @keyframes <span>spinner5</span> {
+    from,15% {
+      -moz-transform: rotateY(0);
+      -ms-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+    20%,35%  {
+      -moz-transform: rotateY(-72deg);
+      -ms-transform: rotateY(-72deg);
+      transform: rotateY(-72deg);
+    }
+    40%,55%  {
+      -moz-transform: rotateY(-144deg);
+      -ms-transform: rotateY(-144deg);
+      transform: rotateY(-144deg);
+    }
+    60%,75%  {
+      -moz-transform: rotateY(-216deg);
+      -ms-transform: rotateY(-216deg);
+      transform: rotateY(-216deg);
+    }
+    80%,95%  {
+      -moz-transform: rotateY(-288deg);
+      -ms-transform: rotateY(-288deg);
+      transform: rotateY(-288deg);
+    }
+    to {
+      -moz-transform: rotateY(-360deg);
+      -ms-transform: rotateY(-360deg);
+      transform: rotateY(-360deg);
+    }
+  }
+
+&lt;/style&gt;</code>
+
+<p>We then need to modify the style settings for the 'spinner' to 
+reference the new keyframes and to make some changes to the timing and 
+duration:</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  #spinner {
+    -webkit-animation-name: <span>spinner5</span>;
+    -webkit-animation-timing-function: <i>ease-out</i>;
+    -webkit-animation-iteration-count: <i>infinite</i>;
+    -webkit-animation-duration: <i>20s</i>;
+
+    animation-name: <span>spinner5</span>;
+    animation-timing-function: <i>ease-out</i>;
+    animation-iteration-count: <i>infinite</i>;
+    animation-duration: <i>20s</i>;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+&lt;/style&gt;</code>
+
+
+
+<p>The result, which you see here, is much more user-friendly.  During 
+each 20-second iteration, each photo is displayed still for 3 seconds, 
+followed by a rotation to the next face which takes only 1 second.</p>
+
+<div class="stage" style="width: 240px; height: 160px;">
+<div class="spinner5">
+<img style="-webkit-transform: rotateY(0deg) translateZ(165px); -moz-transform: rotateY(0deg) translateZ(165px); -ms-transform: rotateY(0deg) translateZ(165px); padding: 0px 20px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach1.jpg" alt="" height="160" width="200">
+<img style="-webkit-transform: rotateY(72deg) translateZ(165px); -moz-transform: rotateY(72deg) translateZ(165px); -ms-transform: rotateY(72deg) translateZ(165px); padding: 0px 13.5px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach2.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(144deg) translateZ(165px); -moz-transform: rotateY(144deg) translateZ(165px); -ms-transform: rotateY(144deg) translateZ(165px); padding: 0px 0px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach3.jpg" alt="" height="160" width="240">
+<img style="-webkit-transform: rotateY(216deg) translateZ(165px); -moz-transform: rotateY(216deg) translateZ(165px); -ms-transform: rotateY(216deg) translateZ(165px); padding: 0px 13.5px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach4.jpg" alt="" height="160" width="213">
+<img style="-webkit-transform: rotateY(288deg) translateZ(165px); -moz-transform: rotateY(288deg) translateZ(165px); -ms-transform: rotateY(288deg) translateZ(165px); padding: 0px 1px;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/beach5.jpg" alt="" height="160" width="238">
+</div>
+</div>
+
+<p>The difficulty in setting this up for any number of photos is that 
+keyframes only allows percentage and not fractional settings, so some of 
+the values would need to be approximated.  Also we need to add a new 
+keyframe for each photo added.</p>
+
+
+<h2 id="section_6">7. Rotating cube</h2>
+
+<p>One last example, a bit more complex that the previous which just 
+involved rotations around one axis.  Here we set up a cube with six 
+faces that rotate in order.</p>
+
+<p>We start by using CSS to style and place the six faces of the cube.  
+Each side will be marked up as a <tt>div</tt> child of the 'spinner' 
+element:</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  #spinner div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 120px;
+    font-size: 100px;
+  }
+
+  #spinner .face1 { -webkit-transform: translateZ(60px);                                }
+  #spinner .face2 { -webkit-transform: rotateY(90deg) translateZ(60px);                 }
+  #spinner .face3 { -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);  }
+  #spinner .face4 { -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px); }
+  #spinner .face5 { -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px); }
+  #spinner .face6 { -webkit-transform: rotateX(-90deg) translateZ(60px);                }
+
+&lt;/style&gt;</code>
+
+<p>If you don't want to see the backs of images in the background you 
+can also set <tt>-webkit-backface-visibility: hidden;</tt> on the face 
+elements.</p>
+
+<p>Then we set up a keyframe animation sequence to rotate the cube to 
+that each face is presented to the front in order:</p>
+
+<code class="final">&lt;style type="text/css"&gt;
+
+  @-webkit-keyframes <span>spincube</span> {
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(90deg) rotateX(90deg);             }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }
+
+  #spinner {
+    -webkit-animation-name: <span>spincube</span>;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 60px 60px 0;
+  }
+
+&lt;/style&gt;</code>
+
+<p>The HTML markup is fairly simple:</p>
+
+<code class="final">&lt;div class="stage" style="width: 120px; height: 120px;"&gt;
+&lt;div class="cubespinner"&gt;
+&lt;div class="face1"&gt;1&lt;/div&gt;
+&lt;div class="face2"&gt;2&lt;/div&gt;
+&lt;div class="face3"&gt;3&lt;/div&gt;
+&lt;div class="face4"&gt;4&lt;/div&gt;
+&lt;div class="face5"&gt;5&lt;/div&gt;
+&lt;div class="face6"&gt;&lt;img src="/images/homer.jpg"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code>
+
+
+<p><b>To have the animation working in Firefox you just need to 
+substitute <tt>-moz-</tt> for <tt>-webkit-</tt> in the above styles.  
+Using <tt>-ms-</tt> will have some effect in Internet Explorer 10, but 
+you will see only a flattened version of the cube.</b></p>
+
+<p>Each rotation will take place over 2 seconds.  Here's the result:</p>
+
+
+
+<div class="stage" style="width: 120px; height: 120px;">
+<div class="cubespinner">
+<div class="face1">1</div>
+<div class="face2">2</div>
+<div class="face3">3</div>
+<div class="face4">4</div>
+<div class="face5">5</div>
+<div class="face6">6</div>
+</div>
+</div>
+
+<p>Here you can find a <a href="http://www.the-art-of-web.com/css/rotating-cube/">standalone 
+example</a> of the cube, and copy the complete HTML and CSS code which 
+should work in Safari, Chrome, Firefox and Opera:</p>
+
+<textarea style="width: 100%;" cols="80" rows="5" onclick="this.focus(); this.select();">&lt;style type="text/css"&gt;
+
+  @-webkit-keyframes spincube {
+    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16%      { -webkit-transform: rotateY(-90deg);                           }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+    50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+    66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+    83%      { -webkit-transform: rotateX(90deg);                            }
+  }
+
+  @keyframes spincube {
+    from,to {
+      -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      -moz-transform: rotateY(-90deg);
+      -ms-transform: rotateY(-90deg);
+      transform: rotateY(-90deg);
+    }
+    33% {
+      -moz-transform: rotateY(-90deg) rotateZ(90deg);
+      -ms-transform: rotateY(-90deg) rotateZ(90deg);
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      -moz-transform: rotateY(-180deg) rotateZ(90deg);
+      -ms-transform: rotateY(-180deg) rotateZ(90deg);
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      -moz-transform: rotateY(-270deg) rotateX(90deg);
+      -ms-transform: rotateY(-270deg) rotateX(90deg);
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+    }
+  }
+
+  .cubespinner {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 60px 60px 0;
+    -moz-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
+  }
+
+  .cubespinner div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  .cubespinner .face1 {
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+  }
+  .cubespinner .face2 {
+    -webkit-transform: rotateY(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);
+  }
+  .cubespinner .face3 {
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
+  }
+  .cubespinner .face4 {
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner .face5 {
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
+  }
+  .cubespinner .face6 {
+    -webkit-transform: rotateX(-90deg) translateZ(60px);
+    -moz-transform: rotateX(-90deg) translateZ(60px);
+    -ms-transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+
+&lt;/style&gt;
+
+&lt;div class="stage" style="width: 120px; height: 120px;"&gt;
+&lt;div class="cubespinner"&gt;
+&lt;div class="face1"&gt;1&lt;/div&gt;
+&lt;div class="face2"&gt;2&lt;/div&gt;
+&lt;div class="face3"&gt;3&lt;/div&gt;
+&lt;div class="face4"&gt;4&lt;/div&gt;
+&lt;div class="face5"&gt;5&lt;/div&gt;
+&lt;div class="face6"&gt;6&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</textarea>
+
+<p>Finally, some screen grabs for non-supported browsers:</p>
+
+<p style="text-align: center; font-size: 48px;"><img style="vertical-align: middle;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/rotating-cube1.jpg" alt="" height="130" width="130">
+ &nbsp;&gt;&nbsp; <img style="vertical-align: middle;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/rotating-cube2.jpg" alt="" height="166" width="132">
+ &nbsp;&gt;&nbsp; <img style="vertical-align: middle;" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/rotating-cube3.jpg" alt="" height="132" width="165"></p>
+
+<p>On each face you have have any HTML content you want, including 
+(selectable) text, images, (clickable) links, or video content.  You 
+could even use a similar effect to refresh content for the entire 
+page.</p>
+
+<p>If you do find any good uses for these examples, please let us know 
+using the Feedback form below.</p><p></p>
+
+
+<h2 id="section_7">8. References</h2>
+
+<ul>
+  <li><a href="http://webkit.org/blog/386/3d-transforms/" target="_blank">Surfin' Safari - 3D Transforms</a></li>
+  <li><a href="http://webkit.org/blog/324/css-animation-2/" target="_blank">Surfin' Safari - CSS Animation</a></li>
+  <li><a href="http://css-infos.net/property/-webkit-animation" target="_blank">CSS Property: -webkit-animation</a></li>
+</ul>
+
+<h2 id="related">9. Related Articles - Transforms and Transitions</h2>
+
+<ul>
+  <li> <a href="http://www.the-art-of-web.com/css/css-animation/">Animation Using CSS Transforms</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li><b>3D Transforms and Animations</b> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/css/timing-function/">Transition Timing Functions</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/css/bouncing-ball-animation/">Bouncing Ball Animation</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/css/infinite-photo-carousel/">Infinite Animated Photo Wheel</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/css/3d-chart/">An actual 3D bar chart</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/css/photo-rotator/">Photo Rotator with 3D Effects</a> <small style="font-size: 9px; color: #ccc;">[CSS]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/javascript/css-animation/">Controlling CSS Animations</a> <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/javascript/css-fireworks/">CSS Animated Fireworks</a> <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small></li>
+  <li> <a href="http://www.the-art-of-web.com/javascript/animate-curved-path/">Animating objects over a curved path</a> <small style="font-size: 9px; color: #ccc;">[JAVASCRIPT]</small></li>
+</ul>
+
+
+<p class="noprint"><a href="http://www.the-art-of-web.com/css/">&lt; CSS</a></p>
+
+<div class="clear"></div>
+
+<ul id="share" ontouchstart="this.className = 'hover';">
+  <li class="fbook"><a title="Share on Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F"><!-- --></a></li>
+  <li class="tweet"><a title="Tweet This" target="_blank" href="https://twitter.com/intent/tweet?text=CSS%3A+3D+Transforms+and+Animations&amp;url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F&amp;via=theartofweb"></a></li>
+  <li class="gplus"><a title="Plus on Google+" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.the-art-of-web.com%2Fcss%2F3d-transforms%2F"></a></li>
+</ul>
+<!-- start feedback form -->
+<div id="feedback">
+<h4>Send a message to The Art of Web:</h4>
+
+<form id="feedback_form" method="POST" action="/feedback.html" accept-charset="UTF-8">
+<input name="securetoken" value="f2af5971670d551047a35b5e1faf5ee6" type="hidden">
+<p><label>Your Name<strong>*</strong><br>
+<input id="field_name" required="" size="48" name="name" type="text"></label></p>
+<p><label>Email Address<strong>*</strong><br>
+<input id="field_email" required="" size="48" name="email" type="email"></label><br>
+<small>used only for us to reply, and to display your <a tabindex="-1" href="https://en.gravatar.com/" target="_blank">gravatar</a>.</small></p>
+<p><label>Website<br>
+<input pattern="^https?://.+" size="48" name="website" placeholder="http://" type="url"></label></p>
+<p><label>Message<strong>*</strong><br>
+<textarea id="field_message" name="message" required="" cols="48" rows="8"></textarea></label></p>
+<p><img id="captcha" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/captcha.png" alt="CAPTCHA" border="1">
+<small><a href="#" onclick="
+  document.getElementById('captcha').src = document.getElementById('captcha').src.replace(/($|\?.+$)/, '?' + Math.random());
+  document.getElementById('captcha_code').value = '';
+  return false;
+">refresh</a></small></p>
+<p><label><a tabindex="-1" href="http://www.the-art-of-web.com/php/captcha/">CAPTCHA</a><strong>*</strong>: <input id="captcha_code" required="" pattern="\d{5}" name="captcha" size="6" maxlength="5" type="text"></label>
+ <small>&lt;- copy the digits from the image into this box</small></p>
+<p><input name="submit" value="Send Feedback" type="submit"></p>
+</form>
+
+<p class="instruction">press &lt;Esc&gt; or click outside this box to close</p>
+
+</div> <!-- #feedback -->
+<h2 id="user_comments">10. User Comments</h2>
+
+<a class="post_comment show_feedback">Post your comment or question</a>
+
+<div id="comments">
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/953d407039672fef5e66f334f8ab81ea.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="953d407039672fef5e66f334f8ab81ea" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://mg-otterson.de/" target="_blank" rel="nofollow"><big itemprop="author">Oliver</big></a> <span class="comment_time" itemprop="dateCreated">30 December, 2014</span></p>
+<div itemprop="text"><p>Hi thx for your great Tutorial,<br>
+based on your CSS I build a interactive version with javascript<br>
+<a href="http://www.mg-otterson.de/fileadmin/show/transition/cube.html" target="_blank">www.mg-otterson.de/fileadmin/show/transition/cube.html</a><br>
+It works by just adding classes with animations.</p>
+
+<p>If there any suggestion of detecting CSS3_features by javascript, instead of my way, let me know it</p></div>
+<div class="response">
+<p>That looks really good.  Thanks for the link <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/5af544ff0ced9f74ec6bf620493844ad.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="5af544ff0ced9f74ec6bf620493844ad" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">David</big> <span class="comment_time" itemprop="dateCreated">30 November, 2014</span></p>
+<div itemprop="text"><p>Hi want to have "7. Rotating cube" for width: 253px; height: 60px; and RotateY only. Can you help me to adopt please</p></div>
+<div class="response">
+<p>Something like <a href="http://www.the-art-of-web.com/css/infinite-photo-carousel/#vertical">this</a> is probably easier to adapt.  Show me your code if you get stuck <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/212fa3fa7399481828c2c9c79c6f7904.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="212fa3fa7399481828c2c9c79c6f7904" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">Nud Nuby</big> <span class="comment_time" itemprop="dateCreated">18 November, 2014</span></p>
+<div itemprop="text"><p>Hi, Sorry to hassle you with this: I have just 
+loaded the scripts above - testing carousel and polygon. However, in 
+both cases I get only 1 pic (of 5) showing and, in the case of the 
+polygon, it turns on its own axis, ie there is no polygon. Any advice? 
+Tx</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/2e057b24b46cf59b447c3c116f8a7233.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="2e057b24b46cf59b447c3c116f8a7233" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">Val</big> <span class="comment_time" itemprop="dateCreated">8 December, 2013</span></p>
+<div itemprop="text"><p>Thank you so much for doing it without all 
+vendor prefixes so that we need to spend our time to check whether it 
+will work in IE etc or not.</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/e812d1c599f8fbac4abcffc90d80b4ce.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="e812d1c599f8fbac4abcffc90d80b4ce" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">Lost</big> <span class="comment_time" itemprop="dateCreated">18 June, 2013</span></p>
+<div itemprop="text"><p>Ive been looking at several 3d transforms but 
+what I really want to do is put a seperate backface image when the image
+ rotates - like a face and back of a playing card. Is this possible, or 
+do the images have to display the backwards image when rotating in the 
+back?</p></div>
+<div class="response">
+<p>You would need to place another image 1-2 pixels behind the front facing image and then rotate them together. <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/18a0e81c4424dc9521eee8dc9ac49a97.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="18a0e81c4424dc9521eee8dc9ac49a97" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">Chris Lam</big> <span class="comment_time" itemprop="dateCreated">27 May, 2013</span></p>
+<div itemprop="text"><p>Is it possible to make the backface opacity down instead of taking it's visiblity off?</p></div>
+<div class="response">
+<p>I'm pretty sure it's either 'on' or 'off', but with creative layering
+ you could add a semi-transparent background to the rotating elements.</p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/5a8fb3e0d251f39804ee9cae7d1f9775.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="5a8fb3e0d251f39804ee9cae7d1f9775" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://reggaetubewatcher.com/" target="_blank" rel="nofollow"><big itemprop="author">Vincent</big></a> <span class="comment_time" itemprop="dateCreated">26 July, 2012</span></p>
+<div itemprop="text"><p>My 3Dcube was created with this tutorial!</p>
+
+<p>See it @ <a href="http://www.reggaetubewatcher.com/p/animation-css3-cube-3d-24faces.html" target="_blank">www.reggaetubewatcher.com/p/animation-css3-cube-3d-24faces.html</a></p>
+
+<p>Thanks!</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/3bd0c803fd49ee5996fd03a2fe1df0a5.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="3bd0c803fd49ee5996fd03a2fe1df0a5" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://starbase-alpha.com/morphcubes.html" target="_blank" rel="nofollow"><big itemprop="author">Willie Meier</big></a> <span class="comment_time" itemprop="dateCreated">9 July, 2012</span></p>
+<div itemprop="text"><p>Well I've added <a href="http://starbase-alpha.com/morphcubes.html" target="_blank">another example</a> to the web site in the 3Dplaylist section.</p>
+
+<p>The morph-cube is somewhat unique in that it has two cubes an outer 
+an internal which when clicked will play, a video, using the JWPlayer.</p>
+
+<p>When completed or the window closed, the cubes will morph into a carousel to select to video to play.</p>
+
+<p>OR just click on the morph button which will take you to the carousel
+ which when completed will morph into the cubes;  crazy, right?</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/79487a14dbb828db51d9726bfb6d88a1.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="79487a14dbb828db51d9726bfb6d88a1" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://www.mirana.net/" target="_blank" rel="nofollow"><big itemprop="author">Willie Meier</big></a> <span class="comment_time" itemprop="dateCreated">12 June, 2012</span></p>
+<div itemprop="text"><p>Using html5, CSS3 animation, I've added this past weekend a "Star Wars" crawl in keeping with the overall 'Star Trek' theme.</p>
+
+<p>Works very well with gecko and Webkit rendering engines.</p>
+
+<p>Your tutorials have been a great help, thanks</p></div>
+<div class="response">
+<p><a href="http://www.mirana.net/" target="_blank">Very nice</a> <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/79487a14dbb828db51d9726bfb6d88a1.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="79487a14dbb828db51d9726bfb6d88a1" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://www.mirana.net/" target="_blank" rel="nofollow"><big itemprop="author">Willie Meier</big></a> <span class="comment_time" itemprop="dateCreated">2 February, 2012</span></p>
+<div itemprop="text"><p>I managed to get a 3D transparent cube working for IE9, FF, Opera and Safari.</p>
+
+<p>Also a rotating cube which for the moment works only in FF and Chrome
+ and Safrai, hoping that in the future that Opera will be supported.</p>
+
+<p>They can be found in the experimental section</p>
+
+<p>In both cases, I use the cube's faces to display video by using the JWPlayer in the html5mode</p></div>
+<div class="response">
+<p>The <a href="http://www.mirana.net/newcube1.html" target="_blank">3D rotating cube with video</a> is pretty cool! <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/9f1206b8e7a52b372208bc7570cef8a2.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="9f1206b8e7a52b372208bc7570cef8a2" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://www.b2bweb.fr/" target="_blank" rel="nofollow"><big itemprop="author">molokoloco</big></a> <span class="comment_time" itemprop="dateCreated">22 October, 2011</span></p>
+<div itemprop="text"><p>Thank you so much for this great tutorial</p>
+
+<p>To test it, i have put the code in a jsFiddle, so simple to see what parameters do what<img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_wink.gif" alt="" border="0" height="15" width="15"> <a href="http://jsfiddle.net/molokoloco/7rV7a/" target="_blank">jsfiddle.net/molokoloco/7rV7a/</a></p>
+
+<p>it's a shame that it don't work on other browser...</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/3afba9373b853d4e30fda4049a103c56.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="3afba9373b853d4e30fda4049a103c56" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">svn1606</big> <span class="comment_time" itemprop="dateCreated">6 October, 2011</span></p>
+<div itemprop="text"><p>Hi, is there a way to pass a dynamic values to the rotateX, rotateY and rotateZ functions?</p></div>
+<div class="response">
+<p>A good question.  You can set the <tt>style["WebkitTransform"]</tt> 
+property using JavaScript, but you have to set ALL the desired values 
+every time rather than passing incremental values.  You can see examples
+ in <a href="http://www.the-art-of-web.com/javascript/css-animation/">Controlling CSS Animations</a>. <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/73d24a4ffd45dddb55aa5cd25370a96a.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="73d24a4ffd45dddb55aa5cd25370a96a" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://filmic.eu/" target="_blank" rel="nofollow"><big itemprop="author">Filip</big></a> <span class="comment_time" itemprop="dateCreated">16 June, 2011</span></p>
+<div itemprop="text"><p>The CSS 3D transforms work fine in the latest Chrome 12.</p></div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/d4943e2a5525dfa656cae75d08719f55.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="d4943e2a5525dfa656cae75d08719f55" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><a href="http://www.my-html-codes.com/" target="_blank" rel="nofollow"><big itemprop="author">Html Codes Dude</big></a> <span class="comment_time" itemprop="dateCreated">22 May, 2011</span></p>
+<div itemprop="text"><p>Yeah I'm looking at it in Chrome and it's not 
+displaying properly at all. On safari it looks great though. Doesn't 
+Chrome support 3d transitions yet?</p></div>
+<div class="response">
+<p>Strangely, no.  They both use WebKit, but Chrome has no 3D support for transforms.</p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/b151a6a70576a3f52e9136bf3d3266a6.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="b151a6a70576a3f52e9136bf3d3266a6" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">Matt</big> <span class="comment_time" itemprop="dateCreated">17 April, 2011</span></p>
+<div itemprop="text"><p>Will this work in firefox if you change all the -webkit 's to -moz?</p></div>
+<div class="response">
+<p>You can try it, but I don't think it works yet in Firefox.  Even Chrome still has problems. <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+<div style="background-image: url(&quot;http://www.gravatar.com/avatar/1940da05b0c0230f0a10658661dc564b.jpg?s=48&amp;d=mm&quot;);" class="comment" hash="1940da05b0c0230f0a10658661dc564b" itemscope="" itemtype="http://schema.org/Comment">
+<p class="comment_author"><big itemprop="author">lee</big> <span class="comment_time" itemprop="dateCreated">3 April, 2011</span></p>
+<div itemprop="text"><p>hi great css work. is it very complex to make 
+the Rotating cube bigger? also you say you can put images to replace the
+ numbers in the faces. im new to this stuff but i still no a little bit.
+ do the images have to be added though .html... i put an image in 
+"face_1" but when i did "face_2" face_1 was no longer there! ... im 
+trying to make a lockscreen for my iphone and think that this will look 
+great about 300px by 300px <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_smile.gif" alt="" border="0" height="15" width="15"> any help or links to some info would be great thanks</p></div>
+<div class="response">
+<p>Maybe this will help - a stand-alone example:</p>
+
+<ul><li><a href="http://www.the-art-of-web.com/css/rotating-cube/">www.the-art-of-web.com/css/rotating-cube/</a></li></ul>
+
+<p>In the CSS code, the value "120px" is the length of each side of the 
+cube.  You will also see "60px", which is just half of the first value. 
+ So if you change the cube to be 300 pixels you also need to replace 
+'60' with '150'. <img src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/icon_cool.gif" alt="" border="0" height="15" width="15"></p>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">var 
+loadAllCommentsAjax=function(value,target)
+{if(encodeURIComponent){var req=new AjaxRequest();var 
+params="page="+encodeURIComponent("/css/3d-transforms/");req.setMethod("POST");req.loadXMLDoc("/scripts/loadallcomments.php",params);}}
+var
+ comments_onload=function(){var 
+arr=document.getElementById("comments").getElementsByTagName("div");for(var
+ 
+i=0;i<arr.length;i++){if((arr[i].className=="comment")&&(hash=arr[i].getAttribute("hash"))){arr[i].style.backgroundImage="url(http://www.gravatar.com/avatar/"+hash+".jpg?s=48&d=mm)";}}};if(document.addEventListener){document.addEventListener("DOMContentLoaded",comments_onload,false);}else{window.attachEvent("onload",comments_onload);}</script>
+
+<div class="clear"></div>
+</div>
+
+<div id="copyright"><a href="http://www.the-art-of-web.com/copyright.html">© Copyright 2016</a> <a href="http://www.chirp.com.au/" target="_blank">Chirp Internet</a> 
+- Page Last Modified: 13 February 2015 
+- <a href="http://www.the-art-of-web.com/cookies.html">Privacy &amp; Cookies</a></div>
+
+<a class="totop" href="#content" onclick="document.getElementById('content').scrollIntoView(true); return false;">top</a>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+ 
+Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-3458555-1','auto');ga('send','pageview');</script>
+<script type="text/javascript" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/combined.js"></script>
+<script type="text/javascript" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/buildmenu.js"></script>
+<script type="text/javascript" src="3D%20Transforms%20and%20Animations%20%28%20CSS%20_%20The%20Art%20of%20Web_files/mobilemenu.js"></script>
+<script type="text/javascript">var mySuggest=new Suggestor("sitesearch","suggest","/scripts/autosuggest.php",{regex:/^.{3,12}$/});</script>
+
+<!-- web development by chirp internet -->
+
+
+</body></html>

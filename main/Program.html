@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="code-css/prettify.css" rel="stylesheet">
+  
+  <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+  <script src="code-css/prettify.js"></script>
+  
+  </head>
+<script src="code-css/prettify.js"></script>
+<link href="code-css/prettify.css" rel="stylesheet">
+
+  <body onload="prettyPrint()">
+
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+		<div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12" id="content">
+
+		  
+		  <div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h1>Program<small>complete detail</small></h1><hr style="margin-top:-8px">
+		<br>
+		</div>
+		<div id="dataInHome" style="padding:10px;margin-top:-35px">		
+		<pre class="prettyprint">
+
+void main()
+{
+int i,j,k,l,list[1000];
+FILE *fp;
+char any[8];
+
+cout << "Enter a file name\n";
+cin >> any;
+
+fp = fopen(any,"wb");
+    for(j=0;j<50;j++)
+    {
+       for(i=0;i<200;i++)
+       {
+	   k = rand() % RAND_MAX;
+	   fwrite(&k,sizeof(int),1,fp);
+       }
+    }
+/*fclose(fp);
+
+fp = fopen(any,"rb");   */
+    i = 0;
+    while (fread(&l,sizeof(int),1,fp) != 0)
+    {
+	  list[i] = l;
+	  i = i + 1;
+    }
+fclose(fp);
+
+for (i=0;i<50;i++)
+    cout << list[i] << '\n';
+
+/*for(i=0;i<900;i++)
+    {
+	k = list[i];
+	fwrite(&k,sizeof(int),1,fp);
+    }
+
+fp = fopen("ggg.txt","wb");
+    for(int a=1;a<900;a++)
+    {
+       int v = list[a];
+       int b = a;
+       while(list[b-1] > v)
+       {
+	   list[b] = list[b-1];
+	   b = b - 1;
+       }
+       list[b] = v;
+    }
+    for(i=0;i<900;i++)
+    {
+	k = list[i];
+	fwrite(&k,sizeof(int),1,fp);
+    }
+fclose(fp);    */
+}
+</pre>
+
+		<pre class="prettyprint">
+<h2>Fish</h2>
+void main()
+{
+float d;
+int gd,gm,x,y,r,i;
+
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"C:\\Turboc3\\BGI");
+//for(i=1;i<=200;i=i+2)
+setcolor(WHITE);
+ellipse(200,200,0,360,50,30);
+line(250,200,280,170);
+line(280,170,280,230);
+line(280,230,250,200);
+line(200,230,200,260);
+line(200,260,220,230);
+
+
+line(200,170,200,140);
+line(200,140,220,170);
+circle(160,200,3);
+circle(160,200,1);
+setbkcolor(BLUE);
+setfillstyle(1,YELLOW);
+floodfill(200,200,WHITE);
+setfillstyle(1,RED);
+floodfill(200,145,WHITE);
+
+getch();
+closegraph();
+}
+</pre>
+<pre class="prettyprint">
+<h2>Flag</h2>
+
+ #include<stdio.h>
+ #include<dos.h> 
+ #include<conio.h>
+ #include<graphics.h>
+ #include<stdlib.h>  
+ void rain(int x1, int y1, int x2, int y2) 
+{ 
+int s, dx, dy, m, c = 0, t = 1; 
+float xi, yi, x, y;   
+dx = x2 - x1; 
+dy = y2 - y1;   
+if (abs(dx) > abs(dy)) 	
+s = abs(dx); else 	
+s = abs(dy);   
+xi = dx / (float) s; 
+yi = dy / (float) s;   
+x = x1; y = y1;   
+putpixel(x1 + 0.5, y1 + 0.5, 9);   
+for (m = 0; m < s; m++) 
+{ 	
+c++; 	
+x += xi; 	
+y += yi; 	
+if (getpixel(x, y) == 4) 	 
+break; 	if (c % 10 == 0) 	 
+t++; 	
+putpixel(x + 0.5, y + 0.5, 0); 	
+if (t % 2 == 0) 	 
+putpixel(x + 0.5, y + 0.5, 9);   }   }   
+void main() 
+{ 
+int gd = DETECT, 
+gm = DETECT, 
+c = -200, 
+i = 0, 
+x = 40,
+ l = 15, 
+h = 15, ht = 0; 
+initgraph(&gd, &gm, "C:\\turboc3\\bgi"); 
+cleardevice();   
+// DRAW THE GROUND 
+setcolor(BROWN); 
+line(0, 201, 600, 201);   
+cont:   while (!kbhit()) 
+{ // UNLESS a KEY is pressed   	// DRAW THE MAN 	
+setcolor(4); 	
+ellipse(x, 100, 0, 180, 50, 30); 	
+line(x - 50, 100, x + 50, 100); 	
+line(x, 100, x, 150); 	
+circle(x - 20, 115, 15); 	
+line(x - 20, 130, x - 20, 175); 	
+line(x - 20, 175, x - 20 - l, 200); 	
+line(x - 20, 175, x - 20 + l, 200); 	
+line(x - 20, 140, x, 150); 	
+line(x - 20, 140, x - 20 - h, 160);   	
+// DRAW THE RAIN 	
+for (i = 0; i < 620; i += 20) 
+{ 	 
+rain(i, c, i, 200); 	} 	
+c++; 	
+if (c == 0) 	 
+c = -100;   	
+setcolor(0); 	
+delay(50);   	
+// REMOVE THE MAN 	
+ellipse(x, 100, 0, 180, 50, 30); 	
+line(x - 50, 100, x + 50, 100); 	
+line(x, 100, x, 150); 	
+circle(x - 20, 115, 15); 	
+line(x - 20, 130, x - 20, 175); 	
+line(x - 20, 175, x - 20 - l, 200); 	
+line(x - 20, 175, x - 20 + l, 200); 	
+line(x - 20, 140, x, 150); 	
+line(x - 20, 140, x - 20 - h, 160);   	
+line(x + 50, 100, x + 50, 200);   	
+// MOVE THE COORDINATES OF THE MAN 	
+x++;   	
+// CODE for MOVING the LEG 	
+l--; 	
+if (l == -15) 	 
+l = 15;   	
+// CODE for MOVING the HAND 	
+if (ht == 1) 	 
+h++; 	
+else 	 
+h--;   	
+if (h == 15) 	 
+ht = 0; 	
+else if (h == -15) 	 
+ht = 1;   }   
+// PAUSE THE MOVEMENT IF 'SPACEBAR' IS PRESSED, EXIT OTHERWISE 
+if (getch() == ' ') 
+{ 	
+while (!kbhit()); 	
+getch(); 	
+ goto cont; } }
+</pre>
+
+<pre class="prettyprint">
+<h2>calender</h2>
+#include <stdio.h>
+
+#include <graphics.h>
+
+void main()
+
+{
+
+	int gd=0,gm=0,t1,t2,i,j,l=0,dd=1,mm,yy,y,k,a,b,c,d;
+
+	char yy1[4];
+
+	char *mdays[]={"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
+
+	char *day[]={"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
+
+	char *wkday[]={"Sun","Monday","Tuesday","Wednesday","Friday","Saturday"};
+
+	char *mon[]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+
+	char week[10];
+
+	initgraph(&gd,&gm," ");
+
+	cleardevice();
+
+	printf("Enter month & year (mm,yyyy)\n");
+
+	scanf("%d%d",&mm,&yy);
+
+	k=((yy-1)/100)%4;
+
+	if (k==1) y=5;
+
+	else if (k==2) y=3;
+
+	else if (k==3) y=1;
+
+	else if (k==0) y=0;
+
+	a=(yy-1)%100;
+
+	b=((a/4*2)+(a-(a/4)))%7;
+
+	c=(int)(30.42*(mm-1))+dd;
+
+	if (mm==2) c++;
+
+	if (mm>2 && mm<8) c--;
+
+	d=(y+b+c)%7;
+
+	cleardevice();
+
+	printf("\t1/%d/%d is %s",mm,yy,wkday[d]);
+
+	strcpy(week,wkday[d]);
+
+	itoa(yy,yy1,10);
+
+	strcpy(yy,yy1);
+
+	settextstyle(3,0,6);
+
+	outtextxy(150,50,mon[mm-1]);
+
+	outtextxy(400,50,yy1);
+
+	settextstyle(1,0,4);
+
+	for(i=0,j=0;j<=240;j+=40,i++)
+
+	{
+
+		outtextxy(150,160+j,day[i]);
+
+		if (strncmp(day[i],week,3)==0)
+
+			t2=160+j;
+
+	}
+
+	rectangle(15,15,625,465);
+
+	for(i=0;i<=240;i+=40)
+
+	   for(j=0;j<=250;j+=50)
+
+		   rectangle(240+j,160+i,290+j,200+i);
+
+	if (mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12)
+
+		t1=31;
+
+	else
+
+		if (mm==4 || mm==6 || mm==9 || mm==11)
+
+			t1=30;
+
+		else
+
+			if (mm==2)
+
+			{
+
+				if ((yy%100)%4==0)
+
+					t1=29;
+
+				else
+
+					t1=28;
+
+			}
+
+	settextstyle(TRIPLEX_FONT,HORIZ_DIR,4);
+
+	l=0;
+
+	for(i=0;i<=250;i+=50)
+
+	{
+
+		for(j=0;j<=240;j+=40)
+
+		{
+
+			if (l>=t1)
+
+				break;
+
+			if (l==0)
+
+			{
+
+				outtextxy(250+i,t2+j,"1");
+
+				l++;
+
+			}
+
+			else
+
+			{
+
+				outtextxy(250+i,t2+j,mdays[l++]);
+
+				if ((t2+j)==400)
+
+				{
+
+					j=241;
+
+					t2=160;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	getch();
+
+	closegraph();
+
+return;
+
+}
+}</pre>
+
+	<pre class="prettyprint">
+
+#include <graphics.h>
+#include <dos.h>
+#include <conio.h>
+ 
+int main()
+{
+   int gd = DETECT, gm, i;
+   char a[5];
+ 
+   initgraph( &gd, &gm, "C:\\TC\\BGI");
+ 
+   settextjustify( CENTER_TEXT, CENTER_TEXT );
+   settextstyle(DEFAULT_FONT,HORIZ_DIR,3);
+   setcolor(RED);
+ 
+   for (i = 30; i >=0; i--)
+   {
+      sprintf(a,"%d",i);
+      outtextxy(getmaxx()/2, getmaxy()/2, a);
+      delay(1000);
+ 
+      if ( i == 0 )
+         break;
+      cleardevice();
+   }
+ 
+   getch();
+   closegraph();
+   return 0;
+}
+
+
+</pre>
+<pre class="prettyprint">
+<h2>Intergrated ckt</h2>
+
+#include<graphics.h>
+#include<stdio.h>
+#include<time.h>
+void liner(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int
+x5,int y5,int i);
+void shadow(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int
+x5,int y5,int x6,int y6,int x7,int y7);
+void rightlead( int x1,int y1,int x2,int y2,int x3,int y3,int x4,int
+y4,int x5,int y5,int x6,int y6,int x7,int y7,int x8,int y8,int x9,int
+y9,int x10,int y10,int x11, int y11);
+void leftlead();
+void identifier();
+void bibin();
+
+void main()
+{
+int gd=DETECT, gm,i=3;
+initgraph(&gd,&gm,"c:\tc\bgi");
+setbkcolor(6);
+cleardevice();
+setcolor(i);
+line(263,192,108,151);
+line(108,151,345,40);
+line(263,192,507,68);
+line(507,68,345,40);
+setfillstyle(1,9);
+
+floodfill(347,49,i);//for upper part
+setcolor(i);
+line(263,192,269,231);
+line(269,231,89,179);
+line(89,179,108,151);
+setfillstyle(1,9);
+floodfill(193,194,i);//for part left light blue
+setcolor(i);
+line(269,231,524,93);
+line(524,93,506,69);
+floodfill(454,113,i);//for part side light blue
+setcolor(i);
+line(269,231,264,260);
+line(264,260,101,215);
+line(101,215,89,179);
+setfillstyle(1,1);//part left for blue
+floodfill(193,234,i);
+setcolor(i);
+line(264,260,514,125);
+line(525,94,514,125);
+setfillstyle(1,1);
+floodfill(489,126,i);
+setcolor(i);//part side blue
+
+//end of upperpart
+
+line(102,315,292,383);
+line(294,419,292,383);
+line(294,419,101,348);
+line(102,315,101,348);
+setfillstyle(1,1);//lower left
+floodfill(154,360,i);
+line(542,222,292,383);
+line(542,257,542,222);
+line(542,257,294,419);
+setfillstyle(1,1);
+floodfill(480,282,i);//lower side
+line(102,315,222,249);
+line(407,183,542,222);
+setfillstyle(1,1);
+floodfill(206,274,i);
+line(147,331,146,350);
+line(259,390,146,350);
+line(258,371,259,390);
+line(147,331,411,184);
+line(411,184,503,210);
+line(503,210,258,371);
+setfillstyle(1,13);
+floodfill(273,297,i);
+//end of  base of low part
+// start of holes
+line(130,311,138,313);
+line(138,313,147,307);
+line(147,307,139,305);
+line(139,305,130,311);
+setfillstyle(1,8);
+floodfill(139,309,i);
+//left 1
+liner(176,285,183,287,193,282,186,280,185,284,i);
+liner(221,260,229,262,239,257,232,255,230,258,i);
+liner(299,362,308,365,315,358,309,357,309,361,i);
+liner(347,332,354,335,363,330,357,327,357,330,i);
+liner(389,305,396,306,405,301,399,299,399,303,i);
+liner(428,280,436,282,444,277,438,276,437,279,i);
+liner(467,255,475,257,482,252,476,250,475,255,i);
+liner(505,233,511,234,521,229,514,227,513,231,i);
+delay(1500);
+rightlead(283,225,297,226,301,215,314,220,298,280,317,280,305,282,313,282,
+305,346,312,343,309,240);
+shadow(282,226,294,231,294,281,300,285,301,346,305,346,296,280);
+delay(500);
+rightlead(333,197,344,200,348,189,360,196,346,253,362,252,350,256,358,255,
+351,316,358,314,353,221);
+shadow(333,197,342,206,343,254,348,258,348,316,351,316,349,315);//for
+second lead
+delay(500);
+rightlead(373,175,385,178,391,166,402,172,388,228,404,225,393,232,400,231,
+394,290,400,287,397,197);
+shadow(373,175,383,182,385,229,390,233,391,291,394,290,392,280);
+delay(500);
+rightlead(417,152,428,155,432,143,442,148,430,205,446,202,435,208,441,207,
+436,265,441,263,436,178);
+shadow(417,152,426,161,426,205,431,211,431,267,436,265,425,155);
+delay(500);
+rightlead(456,130,466,133,471,122,479,125,469,181,483,180,473,184,479,184,
+474,239,480,238,475,158);
+shadow(456,130,464,137,465,183,471,187,472,241,474,239,473,220);
+delay(500);
+rightlead(493,110,501,114,506,102,517,107,504,160,519,159,508,163,515,162,
+509,216,515,216,513,137);
+
+shadow(493,110,499,117,499,162,505,165,505,218,509,216,506,213);
+delay(500);
+leftlead();
+identifier();
+
+getch();
+bibin();
+}
+void liner(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int
+x5,int y5,int i)
+{
+
+line(x1,y1,x2,y2);
+line(x2,y2,x3,y3);
+line(x3,y3,x4,y4);
+line(x4,y4,x1,y1);
+setfillstyle(1,8);
+floodfill(x5,y5,i);//x1,y1 left most then go anticlockwise x5,y5 for 
+fill
+}
+
+void rightlead( int x1,int y1,int x2,int y2,int x3,int y3,int x4,int
+y4,int x5,int y5,int x6,int y6,int x7,int y7,int x8,int y8,int x9,int
+y9,int x10,int y10,int x11,int y11)
+{
+setcolor(15);
+line(x1,y1,x3,y3);//for starting line
+line(x1,y1,x2,y2);
+line(x3,y3,x4,y4);
+line(x2,y2,x5,y5);
+line(x4,y4,x6,y6);
+line(x5,y5,x7,y7);
+line(x6,y6,x8,y8);
+line(x7,y7,x9,y9);
+line(x10,y10,x8,y8);
+line(x10,y10,x9,y9);
+setfillstyle(1,7);
+floodfill(x11,y11,15);
+}
+void shadow(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int
+x5,int y5,int x6,int y6,int x7,int y7)
+{
+setcolor(15);
+line(x1,y1,x2,y2);
+line(x2,y2,x3,y3);
+line(x3,y3,x4,y4);
+line(x5,y5,x4,y4);
+line(x5,y5,x6,y6);
+setfillstyle(1,8);
+floodfill(x7,y7,15);
+}
+
+void leftlead()
+{
+setcolor(15);
+line(132,224,133,232);
+line(133,232,139,236);
+line(139,236,140,297);
+line(140,297,146,296);
+line(146,296,146,237);
+line(146,237,152,232);
+line(152,232,152,229);
+line(152,229,132,224);
+setfillstyle(1,7);
+floodfill(142,244,15);
+line(129,224,128,234);
+line(128,234,135,240);
+line(135,240,137,298);
+line(137,298,140,297);
+line(132,224,129,224);
+setfillstyle(1,8);
+floodfill(131,236,15);
+
+
+
+//end of first lead
+
+line(181,237,181,273);
+line(181,273,188,272);
+line(188,272,188,241);
+line(181,237,188,241);
+
+setfillstyle(1,7);
+floodfill(185,255,15);
+
+
+line(177,237,181,239);
+line(177,237,179,275);
+line(179,275,181,273);
+setfillstyle(1,8);
+floodfill(179,256,15);
+line(221,249,220,253);
+line(220,253,226,252);
+line(226,252,225,250);
+line(225,250,221,249);
+floodfill(223,251,15);
+}
+
+
+void identifier()
+{
+
+setcolor(6);
+arc(196,177,350,160,26);
+line(171,168,222,181);
+setfillstyle(1,1);
+floodfill(200,170,6);
+}
+
+
+void bibin()
+{
+int midx=320,midy=230;
+
+      cleardevice();
+      setbkcolor(RED);
+     settextjustify(CENTER_TEXT,CENTER_TEXT);
+     setcolor(GREEN);
+     settextstyle(5, VERT_DIR, 4);
+     
+     return ;
+}
+/<pre>
+
+<pre class="prettyprint">
+<h2>Kite</h2>
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<dos.h>
+#include<graphics.h>
+#include<ctype.h>
+#include<math.h>
+ 
+void main()
+{
+        int gd=DETECT,gm;
+        int color;
+        int x=10,y=1,inc_x=10,inc_y=10;
+        int poly[10];
+ 
+        initgraph(&gd,&gm," ");
+ 
+        while(!kbhit())
+        {
+                x += inc_x;
+                if(x > 200)
+                        inc_x = -5;
+                if(x < 0 )
+                        inc_x = 10;
+                y += inc_y;
+                if(y > 100)
+                        inc_y = -10;
+                if(y < 0 )
+                        inc_y = 10;
+                cleardevice();
+                setcolor(WHITE);
+                setbkcolor(BLUE);
+ 
+                poly[0]=100+x;
+                poly[1]=50+y;
+                poly[2]=140+x;
+                poly[3]=100+y;
+                poly[4]=100+x;
+                poly[5]=155+y;
+                poly[6]=60+x;
+                poly[7]=100+y;
+                poly[8]=100+x;
+                poly[9]=50+y;
+                drawpoly(5,poly);
+                setfillstyle(SOLID_FILL,RED);
+                fillpoly(5,poly);
+ 
+                setlinestyle(SOLID_LINE,1,3);
+                line(100+x,155+y,100+x,180+y);
+                line(100+x,155+y,110+x,180+y);
+                line(100+x,155+y,90+x,180+y);
+ 
+                setlinestyle(SOLID_LINE,1,0);
+                line(0,480,100+x,90+y);
+                line(100+x,90+y,130+x,100+y);
+                line(100+x,90+y,70+x,100+y);
+                line(100+x,90+y,100+x,70+y);
+ 
+                delay(260);
+        }
+        setlinestyle(SOLID_LINE,0,0);
+        fflush(stdin);
+}
+</pre>
+<pre class="prettyprint">
+<h2>Mind Reader</h2>
+#include<stdio.h>
+#include<conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+void fun(int x,int y,int n,int a)
+{
+                textcolor(13);
+                gotoxy(x,y);
+      cprintf("%d->%c",n,a);
+}
+void box(int c,int r,int s,int y)
+{
+int i ;
+textcolor(3);
+gotoxy(s,y);
+cprintf("%c",218);
+
+for(i=s+1;i<c+1;i++)
+ {
+   gotoxy(i,y);
+   cprintf("%c",196);
+    }
+ for(i=s+1;i<c+1;i++)
+    {
+     gotoxy(i,r);
+                cprintf("%c",196);
+   }
+ gotoxy(c,y);
+cprintf("%c",191);
+
+for(i=y+1;i<r;i++)
+{
+  gotoxy(s,i);
+  cprintf("%c",179);
+
+}
+for(i=y+1;i<r;i++)
+{
+    gotoxy(c,i);
+  cprintf("%c",179);
+}
+gotoxy(s,i);
+cprintf("%c",192);
+                gotoxy(c,i);
+                cprintf("%c",217);
+
+}
+
+void help()
+{
+box(78,24,2,1);
+box(70,9,52,5);
+box(77,23,30,15);
+
+gotoxy(50,15);
+printf("Play Like This");
+gotoxy(31,16);
+printf("1.Choose a two digit number and add the digits");
+gotoxy(31,17);
+printf("2.Subtract the sum from original number");
+gotoxy(31,18);
+printf("3.See the symbol opposit to the number you got");
+gotoxy(31,19);
+printf("4.Press any key The MIND READER will ");
+gotoxy(31,20);
+printf("           display the symbol you got");
+gotoxy(31,21);
+printf("5.For Best Results Please don't Turn your ");
+gotoxy(31,22);
+printf("    Eyes from the screen");
+textcolor(9);
+gotoxy(31,23);
+
+
+}
+void ran()
+{
+ time_t t;
+int r,i;
+int a[]={1,2,3,4,5,6,14,15,16,17,18,19,20,21,22,23,24,25,27,29,
+                 30,33,34,35,36,37,38,40,41,42,43,60,62,61,63,64,123,124,
+                 125,126,127,128,154,155,156,171,172,174,175,229,234,235,
+                 236,237,238,239, 240,242,243,244,245,246,247,251,254};
+
+srand((unsigned) time(&t));
+     r=rand() % 65;
+     help();
+textcolor(10);
+
+ for(i=1;i<23;i++)
+ {
+                textcolor(13);
+                gotoxy(3,i+1);
+                cprintf("%d->%c ",i,a[rand()%65]);
+                gotoxy(10,i+1);
+                cprintf("%d->%c ",i+22,a[rand()%65]);
+                gotoxy(17,i+1);
+                cprintf("%d->%c ",i+44,a[rand()%65]);
+                gotoxy(24,i+1);
+                cprintf("%d->%c ",i+66,a[rand()%65]);
+ }
+      fun(3,10,9,r);
+      fun(3,19,18,r);
+      fun(10,6,27,r);
+      fun(10,15,36,r);
+      fun(17,2,45,r);
+      fun(17,11,54,r);
+      fun(17,20,63,r);
+      fun(24,7,72,r);
+      fun(24,16,81,r);
+
+  for(i=1;i<12;i++)
+ {
+                gotoxy(31,i+1);
+                cprintf("%d->%c ",i+88,a[rand()%65]);
+ }
+ gotoxy(55,7);
+textcolor(15+BLINK);
+cprintf("Press Any Key");
+getch();
+ gotoxy(55,7);
+textcolor(BLACK);
+cprintf("Press Any Key");
+ gotoxy(61,7);
+textcolor(15+BLINK);
+cprintf("%c",r);
+ }
+
+void main()
+{
+int i;
+clrscr();
+ran();
+getch();
+} </pre>
+<pre class="prettyprint">
+#include<dos.h>
+#include<math.h>
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<graphics.h>
+
+#define N 500
+
+int function[35];
+int strobe[5] = { 0,0,0,0,0 };
+int store[16] = { 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 };
+int inputs[16];
+int output=0,count=0,decieq,choice;
+
+int driver=DETECT,mode;
+
+/***********FUNCTIONS FOR  BEGINING GUI***************/
+
+struct stars
+{
+
+	int x,y,x1,y1,z,c;
+
+}STARS[N];
+
+void init()
+{
+
+	int i,t;
+
+	for(i=0;i<N;i++)
+	{
+
+	STARS[i].c=2;
+	STARS[i].x = random(640);
+	STARS[i].y = random(460);
+	STARS[i].x1= random(320);
+	STARS[i].y1= random(220);
+
+	t=random(325);
+	if(t==0)
+	STARS[i].z=t+random(25)+1;//TO AVOID ERROR(division by 0)
+
+	else
+	STARS[i].z=t;
+
+	}
+
+}
+
+void draw()
+{
+
+	int i;
+
+	for(i=0;i<N;i++)
+	{
+
+	if(STARS[i].y<480)
+	putpixel(STARS[i].x,STARS[i].y,STARS[i].c);
+	}
+
+}
+
+void erase()
+{
+
+	int i;
+
+	for(i=0;i<N;i++)
+	putpixel(STARS[i].x,STARS[i].y,0);  //putting black
+	    //color at stars position
+
+}
+	/* if you use z+=2 stars will go away from you , but remember to
+	change the condition :-
+	if(STARS[i].z<1) {STARS[i].z=325;}
+	to if(STARS[i].z>325) {STARS[i].z=1;} */
+void move()
+{
+
+	int i;
+	for(i=0;i<N;i++)
+	{
+
+	STARS[i].x=((STARS[i].x1 * 640)/STARS[i].z)+320;//320 x-origin
+	STARS[i].y=((STARS[i].y1 * 300)/STARS[i].z) +220;//220 y-origin
+	STARS[i].z-=2;
+
+	if(STARS[i].z<1)
+	STARS[i].z=325;
+
+	else if(STARS[i].z<162)
+	STARS[i].c=15;
+
+	else STARS[i].c=7;
+
+	}
+
+}
+
+void showstars()
+{
+
+	int i;
+
+	init();
+	while(!kbhit())
+	{
+
+	setcolor(3);  //3 for cyan
+	settextstyle(1,0,3);
+	outtextxy(230,5,"PROJECT ON");
+	settextstyle(10,0,3);
+	setcolor(i);
+	outtextxy(170,30,"MULTIPLEXERS");
+
+	setcolor(5);
+
+
+	move();
+	draw();
+	delay(15);
+	erase();
+	i++;
+
+	}
+
+	closegraph();
+	restorecrtmode();
+
+}
+
+void welcome()
+{
+
+	int i, j, x, y, color;
+	int MaxColors;
+	struct palettetype palette;
+	struct viewporttype vp;
+	int height, width;
+
+	initgraph(&driver,&mode,"f:\tc\bgi");
+
+	MaxColors = getmaxcolor() + 1;
+
+	textcolor(4+BLINK);
+	printf("  WELCOME");
+	textcolor(15);
+
+	getpalette( &palette );
+	setviewport(0,50,630,470,1);
+	getviewsettings( &vp );
+
+	width  = (vp.right - vp.left) / 15;	//width
+	height = (vp.bottom - vp.top) / 10;	// height
+
+	x = y = 0;	// Start in upper corner
+	color = 1;	// Begin at 1st color
+
+	for( j=0 ; j<10 ; ++j )
+	{	// 10 rows of boxes
+
+	for( i=0 ; i<15 ; ++i )
+	{	// 15 columns
+
+	setfillstyle( SOLID_FILL, color++ );//Set the color
+	bar( x, y, x+width, y+height );	    // Draw the box
+	x += width + 1;	      // Advance to next col
+	color = 1 + (color % (MaxColors - 2));// Set new color
+	}	// End of i loop
+
+	x = 0;	// Goto 1st column
+	y += height + 1;	// Goto next row
+
+	}	// End of j loop
+
+	while( !kbhit() )	// Until a key is hit
+	setpalette( 1+random(MaxColors - 2), random( 65 ) );
+
+
+	setallpalette( &palette );
+	getch();
+	closegraph();
+	restorecrtmode();
+	initgraph(&driver,&mode,"");
+	showstars();
+
+}
+
+/*********Begining GUI ends.Text mode begins*********/
+
+/**************MULTIPLEXER FUNCTIONS*****************/
+
+void message(int num)  //gives a message to user
+{                      //everytime select input is entered
+
+printf("Only first %d select inputs considered.rest rejected(if any)",num);
+
+}
+
+int check(int num) //For checking that a particular no.
+{                       //is present in function or not
+
+	int ctr2;
+
+	for(ctr2=0;ctr2<count;ctr2++)
+	if(function[ctr2]==num)
+	return (1);    //true
+
+	return(0);                     //false
+
+}
+
+void check_invalid_strobe(int ctr2)   //for checking invalid select input
+{
+
+	if(strobe[ctr2]>1 || strobe[ctr2]<0)
+	{
+
+	printf("Invalid select input");
+	exit(2);
+
+	}
+
+}
+
+void decide_output(int count)   //decides whether output is 1 or 0
+{                                  //for normal mux implementation
+
+	int ctr2;
+
+	for(ctr2=0;ctr2<count;ctr2++)
+	{
+
+	if(decieq==function[ctr2])
+	{
+
+	output = 1;
+	break;
+
+	}
+
+	}
+
+}
+
+void decide_complex_inputs(int num)   //decides inputs of a Mux which
+{                                     //implements a function of a higher
+	      //level Mux
+	int ctr2;
+
+	for(ctr2=0;ctr2<num;ctr2++)
+	{
+
+	if(check(ctr2))
+	{
+
+	if(check(ctr2+num))
+	inputs[ctr2]=1;
+
+	else
+	{
+
+	inputs[ctr2]=!(strobe[0]);
+	store[ctr2] = 0;
+
+	}
+
+	}
+
+	else
+	{
+
+	if(check(ctr2+num))
+	{
+
+	inputs[ctr2]=strobe[0];
+	store[ctr2] = 1;
+
+	}
+
+	else
+	inputs[ctr2]=0;
+
+	}
+
+	}
+
+}
+
+void display_complex_input(int num) //displays inputs of a Mux which
+{                                    //implements a function of a higher
+	     //level Mux
+	int i;
+
+	for(i=0;i<num;i++)
+	{
+
+	if(store[i]==0)
+	printf("Input %d = %s(%d)",i,"a bar",inputs[i]);
+
+	else if(store[i]==1)
+	printf("Input %d = %c(%d)",i,'a',inputs[i]);
+
+	else
+	printf("Input %d = %d",i,inputs[i]);
+
+	}
+
+}
+
+void take_input(int num)    //for taking select input in normal Mux
+{
+
+	int ctr2;
+
+	printf("Enter the select input: ");
+	for(ctr2=0;ctr2<num;ctr2++)
+	{
+
+	scanf("%d",&strobe[ctr2]);
+	check_invalid_strobe(ctr2);
+
+	}
+
+}
+
+void take_input_a(int num)  //for taking input a in case of complex
+{                             //implementation of a function
+
+	printf("Enter the value of a(MSB of select input for %d:1) : ",num);
+	scanf("%d",&strobe[0]);
+	check_invalid_strobe(0);
+	printf("Only one value of MSB considered.rest rejected(if any)");
+
+}
+
+void take_complex_select_input(int num)
+{
+
+	int ctr2;
+
+	printf("Enter the select input: ");
+	for(ctr2=1;ctr2<num;ctr2++)
+	{
+
+	scanf("%d",&strobe[ctr2]);
+	check_invalid_strobe(ctr2);
+
+	}
+	printf("Only first %d select inputs considered.rest rejected(ifany)",num-1);
+	printf("Press any key to continue....");
+	getch();
+
+}
+
+void display_output()
+{
+
+	printf("Output is : %d",output);
+	printf("Input %d is selected as output.",decieq);
+	printf("Press any key to continue.....");
+	getch();
+
+}
+
+void display_complex_output()
+{
+
+	output = inputs[decieq];
+	printf("Output is: %d",output);
+	printf("Input %d is selected as output.",decieq);
+	printf("Press any key to continue....");
+	getch();
+
+}
+
+void two_is_to_one()
+{
+
+	take_input(1);
+	message(1);
+
+	decieq = strobe[0]*1;
+
+	decide_output(count);
+	display_output();
+
+}
+
+void four_is_to_one()
+{
+
+	int ctr2;
+
+	take_input(2);
+	message(2);
+
+	decieq =  strobe[0]*2 + strobe[1]*1;
+
+	decide_output(count);
+	display_output();
+
+}
+
+void eight_is_to_one()
+{
+
+	int ctr2;
+
+	take_input(3);
+	message(3);
+
+	decieq = strobe[0]*4 + strobe[1]*2 + strobe[2]*1;
+
+	decide_output(count);
+	display_output();
+
+}
+
+void sixteen_is_to_one()
+{
+
+	int ctr2;
+
+	take_input(4);
+	message(4);
+
+	decieq = strobe[0]*8 + strobe[1]*4 + strobe[2]*2 + strobe[3]*1;
+
+	decide_output(count);
+	display_output();
+
+}
+
+void thirtytwo_is_to_one()
+{
+
+	int ctr2;
+
+	take_input(5);
+	message(5);
+
+	decieq = strobe[0]*16 + strobe[1]*8 + strobe[2]*4 + strobe[3]*2 +strobe[4]*1;
+
+	decide_output(count);
+	display_output();
+
+}
+
+void complex_two_is_to_one()
+{
+
+	int ctr2;
+
+	take_input_a(4);
+	take_complex_select_input(2);
+	message(1);
+	decide_complex_inputs(2);
+
+	decieq = strobe[1]*1;
+
+	clrscr();
+	display_complex_input(2);
+	display_complex_output();
+
+}
+
+void complex_four_is_to_one()
+{
+
+	int ctr2;
+
+	take_input_a(8);
+	take_complex_select_input(3);
+	message(2);
+	decide_complex_inputs(4);
+
+	decieq = strobe[1]*2 + strobe[2]*1;
+
+	clrscr();
+	display_complex_input(4);
+	display_complex_output();
+
+}
+
+void complex_eight_is_to_one()
+{
+
+	int ctr2;
+
+	take_input_a(16);
+	take_complex_select_input(4);
+	message(3);
+	decide_complex_inputs(8);
+
+	decieq = strobe[1]*4 + strobe[2]*2 + strobe[3]*1;
+
+	clrscr();
+	display_complex_input(8);
+	display_complex_output();
+
+}
+
+void complex_sixteen_is_to_one()
+{
+
+	int ctr2;
+	take_input_a(32);
+	take_complex_select_input(5);
+	message(4);
+	decide_complex_inputs(16);
+
+	decieq = strobe[1]*8 + strobe[2]*4 + strobe[3]*2 + strobe[4]*1;
+
+	clrscr();
+	display_complex_input(16);
+	display_complex_output();
+
+}
+
+/**********MULTIPLEXING FUNCTIONS END*******************/
+
+/****************CIRCUIT GUI****************************/
+
+
+void common_gui(int num)
+{
+
+	int y[32],i,i2,k;
+	double j=log(num)/log(2);
+	char str[2];
+	int stepsize=((280+num*3)-180)/(j+1);
+
+	for(i=0;i<32;i++)
+	y[i]=80 + (i+1)*10;
+
+	initgraph(&driver,&mode,"f:\tc\bgi");
+
+	outtextxy(20,5,"RED: logic level 1");
+	outtextxy(250,5,"Press any key to continue.....");
+	outtextxy(20,15,"GREEN:logic level 0");
+
+	for(i=0;i<num;i++)
+	{
+
+	if(check(i))
+	{
+
+	setcolor(WHITE);
+	circle(150,y[i],2);
+	setfillstyle(SOLID_FILL,RED);
+	floodfill(150,y[i],WHITE);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(150,y[i],2);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(150,y[i],WHITE);
+
+	}
+
+	line(154,y[i],180,y[i]);
+
+	}
+
+	rectangle(180,40,280+num*3,y[i-1]+40);
+	line(280+num*3,(y[i-1]-40)/2 + 60,280+3*num+40,(y[i-1]-40)/2 + 60);
+
+	if(output==1)
+	{
+
+	setcolor(15);
+	circle(280+num*3+44,(y[i-1]-40)/2 + 60,4);
+	setfillstyle(SOLID_FILL,RED);
+	floodfill(280+num*3+44,(y[i-1]-40)/2 + 60,WHITE);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(280+num*3+44,(y[i-1]-40)/2 + 60,4);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(280+num*3+44,(y[i-1]-40)/2 +60,WHITE);
+
+	}
+	outtextxy(280+num*3+50,(y[i-1]-40)/2 + 60," Y(Output =   )");
+	itoa(output,str,10);
+	outtextxy(280+num*3+150,(y[i-1]-40)/2 + 60,str);
+	itoa(num,str,10);
+
+	outtextxy(140,y[i-1]+72,"  Block Diagram of ");
+	outtextxy(290,y[i-1]+72,str);
+	outtextxy(293,y[i-1]+72,"  : 1 Mux");
+
+	outtextxy((280+num*3-180)/2 + 150,y[(i-1)/2],str);
+	outtextxy((280+num*3-180)/2 + 160,y[(i-1)/2],"  : 1");
+	outtextxy((280+num*3-180)/2 + 150,y[(i-1)/2+2],"  MUX");
+
+	outtextxy(280+num*3+170,(y[i-1]-40)/2 + 60,"(I ");
+	itoa(decieq,str,10);
+	outtextxy(280+num*3+185,(y[i-1]-40)/2 + 60,str);
+	outtextxy(280+num*3+192,(y[i-1]-40)/2 + 60," )");
+
+	outtextxy(130,y[0]-5,"I0");
+	itoa(num-1,str,10);
+	outtextxy(126,y[i-1],"I");
+	outtextxy(133,y[i-1],str);
+
+	for(i2=0;i2<j;i2++)
+	for(k=0;k<20;k++)
+	{
+	line(180+(i2+1)*stepsize,y[i-1]+40,180+(i2+1)*stepsize,y[i-1]+60);
+	if(strobe[i2]==0)
+	{
+
+	setcolor(15);
+	circle(180+(i2+1)*stepsize,y[i-1]+62,2);
+	setfillstyle(SOLID_FILL,2);
+	floodfill(180+(i2+1)*stepsize,y[i-1]+62,15);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(180+(i2+1)*stepsize,y[i-1]+62,2);
+	setfillstyle(SOLID_FILL,4);
+	floodfill(180+(i2+1)*stepsize,y[i-1]+62,15);
+
+	}
+
+	}
+
+	outtextxy(185+(i2)*stepsize,y[i-1]+62,"S0");
+	itoa(j-1,str,10);
+	outtextxy(162+stepsize,y[i-1]+62,"S ");
+	outtextxy(170+stepsize,y[i-1]+62,str);
+
+	if(num==2)
+	{
+	setcolor(0);
+	outtextxy(162+stepsize,y[i-1]+62,"S0");
+	setcolor(15);
+
+	}
+
+	getch();
+
+}
+
+void common_complex_gui(int num)
+{
+
+	int y[32],i,i2,k;
+	double j=log(num)/log(2);
+	char str[2];
+	int stepsize=((280+num*3)-180)/(j+1);
+
+	for(i=0;i<32;i++)
+	y[i]=80 + (i+1)*10;
+
+	initgraph(&driver,&mode,"");
+
+	outtextxy(20,5,"RED: logic level 1");
+	outtextxy(250,5,"Press any key to continue.....");
+	outtextxy(20,15,"GREEN:logic level zero");
+
+	for(i=0;i<num;i++)
+	{
+
+	if(inputs[i]==1)
+	{
+
+	setcolor(WHITE);
+	circle(150,y[i],2);
+	setfillstyle(SOLID_FILL,RED);
+	floodfill(150,y[i],WHITE);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(150,y[i],2);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(150,y[i],WHITE);
+
+	}
+
+	line(154,y[i],180,y[i]);
+
+	}
+
+	rectangle(180,40,280+num*3,y[i-1]+40);
+	line(280+num*3,(y[i-1]-40)/2 + 60,280+3*num+40,(y[i-1]-40)/2 + 60);
+
+	if(output==1)
+	{
+
+	setcolor(15);
+	circle(280+num*3+44,(y[i-1]-40)/2 + 60,4);
+	setfillstyle(SOLID_FILL,RED);
+	floodfill(280+num*3+44,(y[i-1]-40)/2 + 60,WHITE);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(280+num*3+44,(y[i-1]-40)/2 + 60,4);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(280+num*3+44,(y[i-1]-40)/2 +60,WHITE);
+
+	}
+
+	outtextxy(280+num*3+50,(y[i-1]-40)/2 + 60," Y(Output =   )");
+	itoa(output,str,10);
+	outtextxy(280+num*3+150,(y[i-1]-40)/2 + 60,str);
+	itoa(num,str,10);
+
+	outtextxy(140,y[i-1]+72,"  Block Diagram of ");
+	outtextxy(290,y[i-1]+72,str);
+	outtextxy(293,y[i-1]+72,"  : 1 Mux");
+
+	outtextxy((280+num*3-180)/2 + 150,y[(i-1)/2],str);
+	outtextxy((280+num*3-180)/2 + 160,y[(i-1)/2],"  : 1");
+	outtextxy((280+num*3-180)/2 + 150,y[(i-1)/2+2],"  MUX");
+
+	outtextxy(280+num*3+170,(y[i-1]-40)/2 + 60,"(I ");
+	itoa(decieq,str,10);
+	outtextxy(280+num*3+185,(y[i-1]-40)/2 + 60,str);
+	outtextxy(280+num*3+192,(y[i-1]-40)/2 + 60," )");
+
+	outtextxy(130,y[0]-5,"I0");
+	itoa(num-1,str,10);
+	outtextxy(126,y[i-1],"I");
+	outtextxy(133,y[i-1],str);
+
+	for(i2=1;i2<=j;i2++)
+	for(k=0;k<20;k++)
+	{
+	line(180+(i2)*stepsize,y[i-1]+40,180+(i2)*stepsize,y[i-1]+60);
+	if(strobe[i2]==0)
+	{
+
+	setcolor(15);
+	circle(180+(i2)*stepsize,y[i-1]+62,2);
+	setfillstyle(SOLID_FILL,2);
+	floodfill(180+(i2)*stepsize,y[i-1]+62,15);
+
+	}
+
+	else
+	{
+
+	setcolor(15);
+	circle(180+(i2)*stepsize,y[i-1]+62,2);
+	setfillstyle(SOLID_FILL,4);
+	floodfill(180+(i2)*stepsize,y[i-1]+62,15);
+
+	}
+
+	}
+
+	outtextxy(185+(i2-1)*stepsize,y[i-1]+62,"S0");
+	itoa(j-1,str,10);
+	outtextxy(162+stepsize,y[i-1]+62,"S ");
+	outtextxy(170+stepsize,y[i-1]+62,str);
+
+	if(num==2)
+	{
+	setcolor(0);
+	outtextxy(162+stepsize,y[i-1]+62,"S0");
+	setcolor(15);
+
+	}
+
+	getch();
+
+}
+
+/************CIRCUIT GUI ENDS**********************/
+
+/********************MAIN FUNCTION*****************/
+
+void main()
+{
+
+	int ctr=0;
+
+	welcome();
+
+clrscr();
+printf("Prog to implement a function using a multiplexer logic:-");
+
+printf("Enter the function in minterms only.");
+printf("Enter the function in form a b c d where a<b<c<d.");
+printf("Press enter or provide spaces after each input.");
+printf("Any value in input function cannot be repeated.");
+printf("Enter the select input in form of 1's & 0's.");
+printf("All the entered inputs are assumed to be high.");
+printf("Maximun value of the minterm that can be accepted :31");
+
+	textcolor(4+BLINK);
+	textbackground(3);
+	cprintf("Press any key to continue.......");
+	textcolor(15);
+	textbackground(0);
+
+	getch();
+	printf("How many input will you provide: ");
+	scanf("%d",&count);
+
+	if(count>32)
+	{
+
+	printf("Invalid function input.inputs can't be greater than 32");
+	exit(1);
+
+	}
+
+	clrscr();
+	printf("Enter the function to be implemented :	");
+	for(ctr=0;ctr<count;ctr++)
+	{
+
+	scanf("%d",&function[ctr]);
+
+	if(function[ctr]>31)
+	{
+
+	printf("Invalid function input");
+	exit(1);
+
+	}
+
+	}
+	printf("Only first %d inputs considered.rest rejected(if any)",count);
+
+	fflush(stdin);
+
+	if(function[count-1] <= 1)
+	{
+	two_is_to_one();
+	common_gui(2);
+
+	}
+
+	else if(function[count-1] <= 3)
+	{
+
+	label1:
+
+	printf("Implement using:-1.)4:1 Mux 2.)2:1 Mux Enter your choice?");
+	scanf("%d",&choice);
+
+	switch(choice)
+	{
+
+	case 1:	four_is_to_one();
+	common_gui(4);
+	break;
+
+	case 2:	complex_two_is_to_one();
+	common_complex_gui(2);
+	break;
+
+	default : printf("Invalid choice");
+	  goto label1;
+
+	}
+
+	}
+
+	else if(function[count-1] <= 7)
+	{
+
+	label2:
+
+	printf("Implement using:- 1.)8:1 Mux 2.)4:1 Mux Enter your choice?");
+	scanf("%d",&choice);
+
+	switch(choice)
+	{
+
+	case 1:	eight_is_to_one();
+	common_gui(8);
+	break;
+
+	case 2:	complex_four_is_to_one();
+	common_complex_gui(4);
+	break;
+
+	default : printf(" Invalid choice");
+	  goto label2;
+
+	}
+
+	}
+
+	else if(function[count-1] <= 15)
+	{
+
+	label3:
+
+	printf("Implement using:- 1.)16:1 Mux 2.)8:1 Mux Enter your choice?");
+	scanf("%d",&choice);
+
+	switch(choice)
+	{
+
+	case 1:	sixteen_is_to_one();
+	common_gui(16);
+	break;
+
+	case 2:	complex_eight_is_to_one();
+	common_complex_gui(8);
+	break;
+
+	default : printf(" Invalid choice");
+	  goto label3;
+
+	}
+
+	}
+
+	else if(function[count-1] <= 31)
+	{
+
+	label4:
+
+	printf("Implement using:- 1.)32:1 Mux 2.)16:1 Mux Enter your choice?");
+	scanf("%d",&choice);
+
+	switch(choice)
+	{
+
+	case 1:	thirtytwo_is_to_one();
+	common_gui(32);
+	break;
+
+	case 2:	complex_sixteen_is_to_one();
+	common_complex_gui(16);
+	break;
+
+	default : printf("Invalid choice");
+	  goto label4;
+
+	}
+
+	}
+
+	getch();
+
+}</pre>
+<pre class="prettyprint">
+<h2>Pac Man</h2>
+#include<graphics.h>
+#include<stdlib.h>
+#include<ctype.h>
+#include<dos.h>
+#include<time.h>
+#include<stdio.h>
+#include<conio.h>
+#define RIGHT 0
+#define LEFT 1
+#define UP 2
+#define DOWN 3
+
+void initialise(void);
+char endscreen(void);
+void startscreen(void);
+void music(int);
+void vline(unsigned char ,int,int,int,int);
+void hline(unsigned char,int,int,int,int);
+void drawbox (int,int,int,int,char);
+void gamescreen(void);
+void size (int,int);
+void writechar(char,int,int,int);
+void monitor(void);
+void getkeyhit(void);
+int testkeys(void);
+void readchar(int,int,unsigned char*);
+void bug(int *,int *,int *,unsigned char *);
+void movebugright(int *,int *,unsigned char *);
+void movebugleft(int *,int *,unsigned char *);
+void movebugup(int *,int *,unsigned char *);
+void movebugdown(int *,int *,unsigned char *);
+void killeater(void);
+
+int maze[25][80],score,row,col,ascii,scan,liveslost,delayfactor;
+int gd=DETECT,gm,midx,midy,maxx,maxy;
+int bugnumber , r[5],c[5],dir[5];
+unsigned  char charbelow[5];
+char far *vid_mem= (char far *) 0xB8000000L ;
+
+void main(void)
+{
+
+   char ans ;
+ clrscr();
+/* intialize randonm number generator wih a random value */
+
+randomize ();
+startscreen();
+
+while (1)
+{
+
+   /* Initialize variables at thee4 start of each game*/
+	    /*create opening screen*/
+initialise();
+/* Draw ther screen for the game*/
+gamescreen();
+/* monitor the movement of the bugs and the eater*/
+
+
+monitor();
+/*create ending screen*/
+ans=endscreen();
+
+/*check  whether the user wishes to continue playing*/
+if(ans== 'N')
+ break;
+}
+}
+void startscreen(void)
+{
+char ch;
+int i;
+
+/* Intialize the graphices system*/
+initgraph (&gd,&gm,"d:\tc\bgi");
+
+/* get maximum x and y screen coordinates*/
+
+maxx = getmaxx();
+maxy= getmaxy();
+
+/* calculate the center of the screen*/
+
+midx= maxx/2;
+midy=maxy/2;
+
+/* draw a double-lined box*/
+setcolor(GREEN);
+rectangle (0,0,maxx,midy);
+setcolor(BLUE);
+rectangle (2,2,maxx-2,maxy-2);
+setcolor(YELLOW);
+/* Draw two vertical lines*/
+line (55,1,55,maxy-2);
+line (maxx-55,1,maxx-55,maxy-2);
+
+/*display the string  "EATER" ,horizontally */
+setcolor(6);
+settextjustify (CENTER_TEXT,CENTER_TEXT);
+settextstyle (4,HORIZ_DIR,8);
+outtextxy (midx,midy,"The PacMan");
+
+
+/* Place the eater character at random on the start screen*/
+int loop;
+
+randomize();
+for(loop=0; loop<40;loop++)
+{
+gotoxy(rand() % 80,rand()%25);
+music(1);
+printf("%c",2);
+delay(100);
+}
+nosound();
+
+/*play the starting music*/
+
+
+/* Clear the area enclosed by the double-lined boundry */
+
+setviewport (0,0,maxx,maxy,1);
+
+clearviewport();
+
+/* Draw the screen for display instructions*/
+setcolor(BLUE);
+rectangle(30,0,maxx-33,maxy);
+
+setcolor(YELLOW);
+for (i=15;i<=maxy-15;i+=15)
+
+{
+ellipse(15,i,0,360,6,3);
+ellipse(maxx-15,i,0,360,6,3);
+}
+setcolor(5);
+settextjustify (CENTER_TEXT,TOP_TEXT);
+
+settextstyle(4,HORIZ_DIR,5);
+outtextxy (midx,60,"INSTRUCTION");
+
+/*display instruction*/
+
+settextstyle(2,HORIZ_DIR,5);
+outtextxy(midx,110,"You goal:- To eatup all the CRUNCHY MUNCHY      ");
+outtextxy(midx,130,"           UNDAY scattered throughtout the BHOOL
+BHULLYIAN   ");
+outtextxy(midx,170,"Your task is not a HALWA! There are 5 Rascals 
+chasing
+you     ");
+outtextxy(midx,210,"The Eater.You have to watch out for the bugs
+");
+outtextxy(midx,250,"To help you ,we have bestowed the PacMan with 3
+Janums");
+outtextxy(midx,290,"You can move around the BHOOL BHULLYIAN  using 
+arrow
+keys       ");
+outtextxy(midx,330,"If you are ready to start, press any  key");
+setcolor(GREEN);
+settextstyle (DEFAULT_FONT,HORIZ_DIR,3);
+outtextxy(midx,400,"We wish you Best of luck");
+
+
+/*Wait for key press*/
+
+while(!kbhit());
+/*Flush the keyboard buffer*/
+
+if (getch()==0)
+    getch();
+
+/*Draaw the screen for asking user level*/
+
+setviewport (0,0,maxx,maxy,1);
+clearviewport();
+rectangle(midx-200,midy-60,midx+200,midy+60);
+
+settextstyle (DEFAULT_FONT,HORIZ_DIR,2);
+outtextxy(midx,60,"Select Speed");
+
+settextstyle (DEFAULT_FONT,HORIZ_DIR,1);
+outtextxy(midx,90,"Slow(S)");
+outtextxy(midx,105,"Medium(M)");
+outtextxy(midx,120,"Fast(F)");
+
+/*Get user level*/
+
+/*flush the keyboard buffer*/
+
+if ((ch=getch())==0)
+getch();
+
+/*Set the value of variable delayfactor according to level selected*/
+
+switch(toupper(ch))
+{
+case'S':
+delayfactor=100;
+break;
+case'M':
+delayfactor=50;
+break;
+case'F':
+delayfactor=20;
+break;
+default:
+delayfactor=100;
+}
+if(delayfactor==100)
+outtextxy(midx,midy,"Slow(S)");
+if(delayfactor==50)
+outtextxy(midx,midy,"Medium(M)");
+if(delayfactor==20)
+outtextxy(midx,midy,"Fast(F)");
+/*Change over to text mode*/
+while(!kbhit());
+</pre>
+<pre class="prettyprint">
+#include<graphics.h>
+#include<conio.h>
+ 
+int main()
+{
+   int gd = DETECT, gm, midx, midy;
+ 
+   initgraph(&gd, &gm, "C:\\TC\\BGI");
+ 
+   setcolor(MAGENTA);
+   rectangle(0,40,639,450);
+   settextstyle(SANS_SERIF_FONT,HORIZ_DIR,2);
+   setcolor(WHITE);
+   outtextxy(275,10,"Pie Chart");
+ 
+   midx = getmaxx()/2;
+   midy = getmaxy()/2;
+ 
+   setfillstyle(LINE_FILL,BLUE);
+   pieslice(midx, midy, 0, 75, 100);
+   outtextxy(midx+100, midy - 75, "20.83%");
+ 
+   setfillstyle(XHATCH_FILL,RED);
+   pieslice(midx, midy, 75, 225, 100);
+   outtextxy(midx-175, midy - 75, "41.67%");
+ 
+   setfillstyle(WIDE_DOT_FILL,GREEN);
+   pieslice(midx, midy, 225, 360, 100);
+   outtextxy(midx+75, midy + 75, "37.50%");
+ 
+   getch();
+   return 0;
+</pre>
+<pre class="prettyprint">
+
+</pre>
+
+
+
+
+
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

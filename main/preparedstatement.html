@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="Designing content/css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="Designing content/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="Designing content/font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="Designing content/explore/js/jquery.js"></script>
+    <script src="Designing content/explore/js/jquery.flippy.min.js"></script>
+    <script src="Designing content/js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="Designing content/js/docs.js"></script>
+    <script src="Designing content/js/menuOption.js"></script>
+    <script src="Designing content/vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="Designing content/explore/js/explore.js"></script>
+      <script src="Designing content/explore/js/knockout.js"></script>
+     </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load= "header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		<div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		
+		<h3>Prepared Statement</h3>
+		<hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px;margin-left:1%;">		
+	 <!--	<pre class="prettyprint">-->
+<b>Table in Oracle Database (Prepared Statement) :- Insert , Update , Dynamic_Insert & Select</b><p>Select( Ctrl+a) , Copy ( Ctrl+c )  and Run the code for practice</p>
+<textarea style="margin:2%;padding:0%"> 
+package preparedStatement;
+
+import java.sql.*;
+class InsertPrepared{
+public static void main(String args[]){
+try{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+PreparedStatement stmt=con.prepareStatement("insert into Emp values(?,?)");
+stmt.setInt(1,101);//1 specifies the first parameter in the query
+stmt.setString(2,"Ratan");
+int i=stmt.executeUpdate();
+System.out.println(i+" records inserted");
+con.close();
+}catch(Exception e){ System.out.println(e);}
+}
+}</textarea>
+<textarea style="margin:2%;padding:0%"> 
+package preparedStatement;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+public class retrieveprepared {
+public static void main(String[] args) {
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+			PreparedStatement stmt=con.prepareStatement("update emp set name=? where id=?");
+			stmt.setString(1,"Sonoo");//1 specifies the first parameter in the query i.e. name
+			stmt.setInt(2,101);
+			int i=stmt.executeUpdate();
+			System.out.println(i+" records updated");
+			}catch(Exception e){ System.out.println(e);}
+			}
+			}
+		</textarea>
+<textarea style="margin:2%;padding:0%"> 
+package preparedStatement;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class prepared {
+
+	public static void main(String[] args) {String m;String choice; 
+	try{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","myresult ","myresult ");
+		PreparedStatement pstmt=con.prepareStatement("insert into student values (?,?, ?, ?,?)");
+		Statement stmt=con.createStatement();
+
+
+		do{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("id  of student");
+	    int a=sc.nextInt();
+	    System.out.println("Name  of student");
+	    String b=sc.next();
+	    System.out.println("Subject of student");
+	    String c=sc.next();
+	    System.out.println("Marks  of student");
+	    int d=sc.nextInt();
+	    if(d > 60)
+	    {m="Pass";}
+	    else
+	    {m="fail";}	
+	    pstmt.setInt(1, a);
+	    pstmt.setString(2, b);
+	    pstmt.setString(3, c);
+	    pstmt.setInt(4, d);
+	    pstmt.setString(5, m);
+	    pstmt.execute();
+	    System.out.println("Do you want to continue y/n"); 
+		//Scanner Stdin =new Scanner(System.in);
+		choice =sc.next();
+		}
+		while(choice.charAt(0)!= 'n');
+		System.out.println("record Entered");
+	    
+		String r="Select *from student ";
+		   ResultSet rs =  stmt.executeQuery(r);
+		   System.out.println("DATA  OF STUDENT TABLE ");
+		   while(rs.next() )
+		   {
+		   	int a1= rs.getInt(1);
+		   	System.out.print(a1+ "  " );
+		   	String b1=rs.getString(2);
+		   	System.out.print(b1 + "      ");
+		   	String c1=rs.getString(3);
+		   	System.out.print(c1 + " ");
+		   	int d1= rs.getInt(4);
+		   	System.out.print(d1+ "  " );
+		   	String e1=rs.getString(5);
+		   	System.out.print(e1 +" " );
+		   	System.out.println("\n");
+		}  
+}
+
+	catch(Exception e)
+	{System.out.println("some errror");
+		}}}
+	</textarea>
+	<hr>
+<h4>Interface PreparedStatement</h4>
+<ul>
+<li>If we use statement interface the perfomance of the appilication is affected , if there are many queries of same type</li>
+<ul><li>Like 500 insert Query </li>
+    <li>Like 600 Delete Query</li>
+    </ul>
+<li><b>When ever a query is executed there are two process that take place between JDBC manager at java end and Database manager at DB end .
+       two processes are Query parsing and execution plan for every Query. This is the performance overhead if we use statement interface . but when we
+	   use prepared statement interface these processes take place only once but they should be of same nature .</b></li>	
+	</ul>
+<br><img src="img/prepared/prepaerd.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+	<br>
+<br><b> Queries</b>
+  <ul>In Dynamic quries the data is input by Programmer , means data insert during   
+    	<li>Insert</li>
+		<li>Delete</li>
+		<li>select</li>
+		<li>update</li>
+		</ul>
+<b>Query Format</b>
+<br><img src="img/prepared/format.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+
+<hr>
+<b>Static Delete (Prepared)</b>
+<p>Delete command Delete the values from the table according to user which is already Exist in oracle Database.</p>
+<p>Query is:- delete from student where srno=" +a;</p>
+<ul><li>EX In Java:-</li><br>
+<br><img src="img/prepared/prepaerddelete.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Dynamic Update (Prepared)</b>
+<p>Update command is using for updating the values of the table dynamically which is already Exist in oracle Database.</p>
+<p>Query is:- update emp set ename='Tom' where eid=101</p>
+<ul><li>EX In Java:-</li><br>
+<br><img src="img/prepared/preparedupdate.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Dynamic Insert (Prepared)</b>
+<p>insert command is used to insert data in table by user through keyboard which is already Exist in oracle Database.</p>
+<p>Query is:- Select *from student</p>
+<ul><li>EX In Java:-</li><br>
+<br><img src="img/prepared/preparedinsert.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+
+
+</div>
+		</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

@@ -1,0 +1,364 @@
+
+/* ==== Scroll down to find where to put your styles :) ==== */
+
+/*  HTML5 ✰ Boilerplate  */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+body { font:13px/1.231 sans-serif; *font-size:small; } 
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+html { overflow-y: scroll; }
+a:hover, a:active { outline: none; }
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+textarea { overflow: auto; }
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+body, select, input, textarea {  color: #444; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+/*
+    // ========================================== \\
+   ||                                              ||
+   ||               Your styles !                  ||
+   ||                                              ||
+    \\ ========================================== //
+*/
+
+html { background: url(../img/background.png) repeat left top #000;}
+
+
+h1 {
+  padding-top:10px;
+  text-align:center;
+  font-family: 'Francois One', serif;
+  font-size: 90px;
+  font-weight: 700;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: -0.05em;
+  word-spacing: -0.008em;
+  line-height: .9em;
+  position:relative;
+  top:50px;
+}
+
+.go #h1title { visibility: hidden;}
+
+h1 a {color:#777 !important;text-decoration:none;
+   -webkit-transition:all 250ms ease-in;  
+   -moz-transition:all 250ms ease-in;  
+   -o-transition:all 250ms ease-in;  
+   transition:all 250ms ease-in;
+   text-shadow: 1px 1px 1px #cecece;
+
+}
+
+h1 a:hover, h1 a:active {text-shadow: 1px 1px 1px #000;}
+
+h1 a span {display:block;}
+
+h1 a span:nth-child(2) {
+  font-style: italic;
+  font-size: 50px;
+  letter-spacing: 0;
+  background: url(../img/h1line.png) no-repeat center center;
+  font-weight: normal;
+}
+
+#main {
+  border-bottom:3px solid #333;
+  height: 550px;
+  width: 800px;
+  margin: 0 auto;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+
+
+
+
+/*==================ROFOX==============================
+====================================================*/
+
+#container { -webkit-transform:translate3d(0px,0px,0px); }
+
+/* main container and positioning context for rofox's animated elements*/
+#rofox { 
+height: 300px;
+left: 270px;
+margin: 0;
+padding: 0;
+position: relative;
+top: -50px;
+visibility: hidden;
+width: 230px;
+z-index: 69;/* :) */ }
+
+/*apply background image sprite to all child divs and set all the divs to position absolute*/
+#rofox div { position:absolute;margin:0;padding:0;background-image:url(../img/rofox-bg.png); }
+ 
+/* THE SHIP 
+======================================*/ 
+#ship { background-image:none !important;width:230px;height:200px; }
+ 
+#ship-top { background-position:-5px -6px;width:230px;height:120px;top:7px; }
+ 
+#pilot { background-position:-21px -371px;left:19px;top:75px;width:190px;height:100px; }
+ 
+#ship-bottom { background-position:-5px -179px;width:230px;height:175px;top:30px; }
+ 
+#struts { background-position:-242px -38px;height:130px;left:21px;top:173px;width:175px; }
+
+/* THE ROCKETS 
+======================================*/
+#rockets-lt { width:87px;height:318px;background-image:none !important;left:-30px;top:50px; } 
+
+#rockets-rt { width:87px;height:318px;background-image:none !important;left:175px;top:50px; }
+
+#thruster-lt { width:87px;height:170px;background-position:-394px -178px; }
+
+#thruster-rt { width:87px;height:170px;background-position:-522px -178px; }
+
+#mask-thruster-flame-lt { background-image:none !important;width:87px;height:153px;top:151px; }
+ 
+#mask-thruster-flame-rt { background-image:none !important;width:87px;height:153px;top:151px;left:-1px; }
+ 
+#thruster-flame-lt { width:87px;height:153px;background-position:-301px -336px; }
+
+#thruster-flame-rt { width:87px;height:153px;background-position:-303px -336px; }
+
+/* THE GUNS MASKS 
+======================================*/
+.mask { background-image:none !important;overflow:hidden; }
+
+/*RIGHT ARM
+========================================*/
+#arm-rt { background-image:none !important;position:relative;width:280px;height:150px;left:207px;top:52px; }
+ 
+ 
+#gun-rt { background-image:none !important;position:relative;width:225px;height:150px;right:0px;background-position:-872px -42px; } 
+ 
+#mask-gun-barrel-rt { width:128px;height:90px;right:0; } 
+ 
+#gun-barrel-rt { width:128px;height:90px;background-position:-872px -42px; }
+
+#mask-gun-widget-top-rt { width:75px;height:38px;right:116px;top:16px; }
+
+#gun-widget-top-rt { width:75px;height:38px;background-position:-744px -39px; }
+
+#mask-gun-widget-bottom-rt { width:75px;height:38px;right:116px;top:68px; }
+
+#gun-widget-bottom-rt { width:75px;height:38px;background-position:-744px -140px; }
+ 
+#gun-stock-rt { /* THIS SLIDE RIGHT */
+ width:136px;height:33px;background-position:-715px -92px;right:84px;top:39px; }
+
+#bicep-rt { width:52px;height:15px;background-position:-766px -246px;left:5px;top:55px; }
+
+/*LEFT ARM
+=========================================*/
+#arm-lt { background-image:none !important;position:relative;width:280px;height:150px;left:-260px;top:52px; }
+ 
+#gun-lt { background-image:none !important;position:relative;width:225px;height:150px;left:0px;background-position:-872px -42px; } 
+ 
+#mask-gun-barrel-lt { width:128px;height:90px;left:0;top:2px; } 
+ 
+#gun-barrel-lt { width:128px;height:90px;background-position:-887px -278px; }
+
+#mask-gun-widget-top-lt { width:75px;height:38px;left:116px;top:16px; } 
+
+#gun-widget-top-lt { width:75px;height:38px;background-position:-760px -385px; }
+
+#mask-gun-widget-bottom-lt { width:75px;height:38px;left:116px;top:68px; }
+
+#gun-widget-bottom-lt { width:75px;height:38px;background-position:-763px -467px; }
+ 
+#gun-stock-lt { width:136px;height:33px;background-position:-728px -426px;left:84px;top:39px; }
+
+#bicep-lt { width:52px;height:15px;background-position:-616px -246px;right:5px;top:55px; }
+
+/* BANG BANNERS
+=====================================*/
+/*RIGHT ARM*/
+
+#gun-flag-rt { background-image:none !important;width:225px;height:275px;position:relative;top:35px; }
+
+#gun-flag-pole-rt { width:225px;height:17px;background-position:-980px 408px; }
+
+#gun-banner-rt { width:61px;height:145px;right:20px;background-position:-1128px 372px;top:10px; }
+
+#gun-banner-fringe-rt { width:61px;height:45px;bottom:-40px;background-position:-924px 200px; }
+
+#gun-flag-lt { background-image:none !important;width:225px;height:275px;position:relative;top:35px; }
+
+#gun-flag-pole-lt { width:125px;height:17px;background-position:-1039px 439px; }
+
+#gun-banner-lt { width:61px;height:145px;left:12px;background-position:-1031px 390px;top:10px; }
+
+#gun-banner-fringe-lt { width:61px;height:45px;bottom:-40px;background-position:-848px 200px; }
+
+/*THE LOGO AND OTHER STUFF
+==============================================*/
+#ff { width: 700px;
+height: 465px;
+position: absolute;
+bottom: -400px;
+left: 140px;
+margin: 0;
+padding: 0; }
+
+#ff-logo { width: 700px;
+height: 465px;
+background: url(../img/ff-logo.gif) no-repeat left bottom;
+position: absolute;
+left: 0;
+top: 5px; }
+
+#ff-planet { width: 700px;
+height: 130px;
+background: url(../img/ff-logo.gif) no-repeat left top;
+top: 0;
+position: absolute;
+left: 0; }
+
+
+/*==================END ROFOX==============================
+====================================================*/
+footer {
+  width: 800px;
+  margin: auto;
+}
+footer a {text-decoration:none;}
+footer label {
+  float: right;
+}
+
+footer h5 {
+  text-align:center;
+  padding: 20px 0 5px;
+  text-decoration:none;
+}
+
+footer p {
+  text-align:center;
+  font-size:.85em;
+}
+
+
+
+
+
+
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+.debug #rofox * {outline: 1px solid red; }
+
+.nocssanimations #fallback, #container {
+  display: none;
+}
+
+#fallback, .nocssanimations #container {
+  display: block;
+}
+
+@media all and (orientation:portrait) {
+
+}
+
+@media all and (orientation:landscape) {
+
+}
+
+@media screen and (max-device-width: 480px) {
+
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } 
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

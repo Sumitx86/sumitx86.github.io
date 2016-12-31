@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		 
+		  <div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h1>C graphics tutorial </h1><hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px">		
+		<p>The general purpose programming language C is the basic language in computer programming but at the same the application of this language is most widely used.C language is used to mimic text documents, mathematical and statistical operations and can also be used to create animation programs.With the help of theC language, programs which create computer graphics can be made. In the script of the C language,
+		you can input the logic of the code that can be used for designing graphics programsfor various animation needs, like that of car animation. 
+		</p>
+		<h3>Apllication </h3>
+			
+		<p>
+		This tutorial is for all those who wish to learn c graphics programming, no knowledge of graphics concepts is required. C Graphics programming is very easy and interesting. You can use graphics programming for developing your own games, in making projects, for animation etc. It's not like traditional C programming in which you have to apply complex logic in your program and then you end up with a lot of errors and warnings in your program. In C graphics programming you have to use standard library functions ( need not worry if you don't know functions ) to get your task done. Just you pass arguments to the functions and it's done. On this website you will find almost all functions with detailed explanation and a sample program showing the usage of a function. To make things easy you are provided with executable files which you can download and execute. Firstly you should know the function initgraph which is used to initialize the graphics mode . To initialize graphics mode we use initgraph function in our program. initgraph function is present in "graphics.h" header file, so your every graphics program should include "graphics.h" header file. We will discuss initgraph withe help of following sample program:-
+		</p>
+		<h3>Simple Graphics Code</h3>
+		<pre class="prettyprint">
+
+#include<graphics.h>
+#include<conio.h>
+ 
+int main()
+{
+   int gd = DETECT, gm;
+ 
+   initgraph(&gd, &gm, "C:\\TC\\BGI");
+ 
+   getch();
+   closegraph();
+   return 0;
+}</pre>
+		<p>
+		Firstly let me tell you what is the output of this program, this program initializes graphics mode and then closes it after a key is pressed. To begin with we have declared two variables of int type gd and gm for graphics driver and graphics mode respectively, you can choose any other variable name as you wish. DETECT is a macro defined in "graphics.h" header file, then we have passed three arguments to initgraph function first is the address of gd, second is the address of gm and third is the path where your BGI files are present ( you have to adjust this accordingly where you turbo compiler is installed). Initgraph function automatically decides an appropriate graphics driver and mode such that maximum screen resolution is set, getch helps us to wait until a key is pressed, closegraph function closes the graphics mode and finally return statement returns a value 0 to main indicating successful execution of your program. After you have understood initgraph function then you can use functions to draw shapes such as circle, line , rectangle etc, then you can learn how to change colors and fonts using suitable functions, then you can go for functions such as getimage, putimage etc for doing animation.
+		</p>
+<h4>C graphics programs</h4>
+<pre class="prettyprint">
+    C graphics functions
+    draw shapes
+    Moving car
+    Smiling face animation
+    Paint program in c
+    Press me button game
+    bar chart
+    pie chart
+    3d bar chart
+    captcha
+    Circles in circles
+    Countdown
+    Web browser program
+    Traffic Light Simulation
+    Mouse pointer restricted in circle
+    Captcha program
+		</pre>
+		<p>
+		These codes show how to use functions of graphics library and simple applications to learn programming. For more advanced applications you can use OpenGL which offer API for 2d and 3d graphics. Many games and application have been developed using it and there are many resources available on the web.</p>
+		
+		</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

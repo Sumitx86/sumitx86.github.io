@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
+    <link href="css/3Dcube.css" rel="stylesheet">
+<link href="css/bubble.css" rel="stylesheet">
+<link href="css/3d-transforms.css" rel="stylesheet">
+<link href="css/spiner.css" rel="stylesheet">
+<link href="rocket.css" rel="stylesheet">
+<link href="ballone.css" rel="stylesheet">
+<link href="css/apple.css" rel="stylesheet">
+<link href="css/textholder.css" rel="stylesheet">
+<link href="css/bounce-animation.css" rel="stylesheet">
+<link href="css/graber.css" rel="stylesheet">
+
+	<!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+    
+  </head>
+  <body>
+    <div id="waiting" style="display:none;position:fixed;width:100%;height:100%;background-color:black;background:url('explore/img/load.GIF') no-repeat center center fixed;"> 
+    </div>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12"  id="content">
+            <div id="flipbox" style="margin-top:-6px;position:relative;width:102%;min-height:1000px;box-shadow: 0px 4px 31px #888888;padding:1px;overflow:hidden">
+
+<div class="stable">
+<div class="step-right"></div>
+<div class="step-up"></div>
+</div><br>
+
+<h2>Now you can Explore Your animation...</h2>
+<p> To generate the fallowing example just have a look on the fallowing html code...</p>
+<pre class="prettyprint"><textarea id="styleid"rows="7" cols="70" >
+<div class="stable">
+<div class="step-right"></div>
+<div class="step-up"></div>
+</div></textarea>
+</pre>
+<script>
+function myFunction() {
+    var x = document.getElementById("styleid").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+<button type="button" onclick="myFunction()">Try it</button><p id="demo"></p>
+
+<br>
+<h2>Now have a look on the stylesheet of that Animation...</h2>
+<pre class="prettyprint">
+.stable {
+    position: relative;
+    height: 320px;
+  }
+  .stable .balloon {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 163px;
+    background: url(images/balloon.png) ;
+  }
+  .stable:hover .balloon {
+    bottom: 157px;
+    transition-duration: 3s;
+  }
+
+  .stable .balloon.default {
+    left: 39px;
+    background-image: url(images/balloon-blue.png);
+  }
+  .stable .balloon.linear {
+    left: 149px;
+    transition-timing-function: linear;
+  }
+  .stable .balloon.ease-in {
+    left: 259px;
+    transition-timing-function: ease-in;
+  }
+  .stable .balloon.ease-out {
+    left: 369px;
+    transition-timing-function: ease-out;
+  }
+  .stable .balloon.ease-in-out {
+    left: 479px;
+    transition-timing-function: ease-in-out;
+  }
+  .stable .balloon.cubic-bezier {
+    left: 589px;
+    transition-timing-function: cubic-bezier(0,1,1,0);
+  }
+
+  .stable .balloon.bezier1 {
+    transition-timing-function: cubic-bezier(0,1,0,1);
+  }
+  .stable .balloon.bezier2 {
+    transition-timing-function: cubic-bezier(0,1,1,0);
+  }
+  .stable .balloon.bezier3 {
+    transition-timing-function: cubic-bezier(1,0,1,0);
+  }
+  .stable .balloon.bezier4 {
+    transition-timing-function: cubic-bezier(0,1.5,0.5,1);
+  }
+  .stable .balloon.bezier5 {
+    transition-timing-function: cubic-bezier(0,2,1,0.5);
+  }
+
+  .step-right {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255,0,0,0.5);
+  }
+  .stable:hover .step-right {
+    width: 100%;
+    transition-duration: 5s;
+    transition-timing-function: steps(10, start);
+  }
+
+  .step-up {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0,0,255,0.5);
+  }
+  .stable:hover .step-up {
+    height: 100%;
+    transition-duration: 5s;
+    transition-timing-function: steps(10, end);
+  }
+
+
+</pre>
+ 
+	   </div>
+            </div>
+
+			</div><!-- /.row -->
+
+			</div><!-- /#page-wrapper -->
+
+			</div><!-- /#wrapper -->
+  </body>
+</html>

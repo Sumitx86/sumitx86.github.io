@@ -1,0 +1,108 @@
+/* SCSS */
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+/* SCSS */
+.btn {
+  @include rounded-corners(4px);
+}
+}
+/* CSS */
+.btn {
+   border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+/* SCSS */
+$color: #000000 !default;
+$width: 1px !default;
+$style: solid !default;
+@mixin border($color, $width, $style) {
+  border: {
+    color: $color;
+    width: $width;
+    style: $style;
+  }
+}
+div { 
+ @include border(); 
+}
+div { 
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid; }
+}
+/* SCSS */
+div { 
+ @include border(blue, 5px); 
+}
+/* CSS */
+div { 
+  border-color: blue;
+  border-width: 5px;
+  border-style: solid; }
+}
+/* SCSS */
+$default-color: #000000 !default;
+$default-width: 1px !default;
+$default-style: solid !default;
+@mixin border($color:$default-color, $width:$default-width, $style:$default-style) {
+  border: {
+    color: $color;
+    width: $width;
+    style: $style;
+  }
+}
+/* SCSS */
+div { 
+ @include border($style:dashed); 
+}
+/* CSS */
+div { 
+  border-color: #000;
+  border-width: 1px;
+  border-style: dashed; }
+}
+
+$params: #666 2px dashed;
+$params: #666 2px dashed;
+div { 
+ @include border($params...); 
+}
+div { 
+  border-color: #666;
+  border-width: 2px;
+  border-style: dashed;
+}
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(images/logo.gif);
+  }
+}
+* html #logo {
+  background-image: url(images/logo.gif);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

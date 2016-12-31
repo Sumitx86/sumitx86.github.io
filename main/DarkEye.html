@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
+    <link href="css/3Dcube.css" rel="stylesheet">
+<link href="css/bubble.css" rel="stylesheet">
+<link href="css/3d-transforms.css" rel="stylesheet">
+<link href="css/spiner.css" rel="stylesheet">
+<link href="rocket.css" rel="stylesheet">
+<link href="ballone.css" rel="stylesheet">
+<link href="css/apple.css" rel="stylesheet">
+<link href="css/textholder.css" rel="stylesheet">
+
+	<!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+    
+  </head>
+  <body>
+    <div id="waiting" style="display:none;position:fixed;width:100%;height:100%;background-color:black;background:url('explore/img/load.GIF') no-repeat center center fixed;"> 
+    </div>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12"  id="content">
+            <div id="flipbox" style="margin-top:-6px;position:relative;width:102%;min-height:1000px;box-shadow: 0px 4px 31px #888888;padding:1px;overflow:hidden">
+<pre class="prettyprint">
+<section class="stage">
+  <figure class="ball">
+    <span class="shadow"></span>
+    <span class="shadow"></span>
+    <span class="iris"></span>
+  </figure>
+</section>
+</pre>
+<br>
+
+<h2>Now you can Explore Your animation...</h2>
+<p> To generate the fallowing example just have a look on the fallowing html code...</p>
+<pre class="prettyprint">
+<script>
+function myFunction() {
+    var x = document.getElementById("styleid").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+<button type="button" onclick="myFunction()">Try it</button><p id="demo"></p>
+<textarea id="styleid"rows="7" cols="70" >
+<section class="stage">
+  <figure class="ball">
+    <span class="shadow"></span>
+    <span class="shadow"></span>
+    <span class="iris"></span>
+  </figure>
+</section>
+</textarea>
+</pre>
+
+<br>
+<h2>Now have a look on the stylesheet of that Animation...</h2>
+<pre class="prettyprint">
+ .circle {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0;
+}
+.circle {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0;
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+}
+.stage {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  margin: 20px;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+.ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  transform: rotateX(90deg) translateZ(-150px);
+  z-index: -1;
+}
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+  filter: blur(5px);
+  z-index: 2;
+}
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  filter: blur(5px);
+  z-index: 2;
+}
+.ball:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  filter: blur(10px);
+}
+.ball .eight {
+  width: 110px;
+  height: 110px;
+  margin: 30%;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+  position: absolute;
+}
+.ball .eight:before {
+  content: "8";
+  display: block;
+  position: absolute;
+  text-align: center;
+  height: 80px;
+  width: 100px;
+  left: 50px;
+  margin-left: -40px;
+  top: 44px;
+  margin-top: -40px;
+  color: black;
+  font-family: Arial;
+  font-size: 90px;
+  line-height: 104px;
+}
+.iris {
+  width: 40%;
+  height: 40%;
+  margin: 30%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+  transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+  position: absolute;
+  animation: move-eye-skew 5s ease-out infinite;
+}
+.iris:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 37.5%;
+  height: 37.5%;
+  border-radius: 50%;
+  top: 31.25%;
+  left: 31.25%;
+  background: black;
+}
+.iris:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 31.25%;
+  height: 31.25%;
+  border-radius: 50%;
+  top: 18.75%;
+  left: 18.75%;
+  background: rgba(255, 255, 255, 0.2);
+}
+@keyframes move-eye-skew {
+  0% {
+    transform: none;
+  }
+  20% {
+    transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+  }
+  25%, 44% {
+    transform: none;
+  }
+  50%, 60% {
+    transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+  }
+  66%, 100% {
+    transform: none;
+  }
+}
+@keyframes bubble-anim {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scaleY(0.95) scaleX(1.05);
+  }
+  48% {
+    transform: scaleY(1.1) scaleX(0.9);
+  }
+  68% {
+    transform: scaleY(0.98) scaleX(1.02);
+  }
+  80% {
+    transform: scaleY(1.02) scaleX(0.98);
+  }
+  97%, 100% {
+    transform: scale(1);
+  }
+}
+
+
+</pre>
+ 
+	   </div>
+            </div>
+
+			</div><!-- /.row -->
+
+			</div><!-- /#page-wrapper -->
+
+			</div><!-- /#wrapper -->
+  </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Andrew Hoyer">
+    <meta name="description" content="A simple rule based sudoku solver written entirely in JS">
+
+    <title>Andrew Hoyer | Simple Sudoku Solver</title>
+    <link rel="stylesheet" href="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/reset.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/main.css" type="text/css" charset="utf-8">
+    
+    <script src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/mootools-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/helpers.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/sudoku.js" type="text/javascript" charset="utf-8"></script>
+<script src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/button.js" async="" charset="utf-8" type="text/javascript"></script></head>
+<body>
+    <div id="sudoku_wrapper">
+        <table id="sudoku">
+            <caption>
+                <strong>Use arrow and number keys to enter a sudoku</strong><br>
+                (d for demo, c to clear, backspace to delete)
+            </caption>
+            <tbody><tr>
+                <td>
+                    <table>
+                        <tbody><tr><td>&nbsp;</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="horizontal-labels">
+                        <tbody><tr><td>1</td><td>2</td><td>3</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="horizontal-labels">
+                        <tbody><tr><td>4</td><td>5</td><td>6</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="horizontal-labels">
+                        <tbody><tr><td>7</td><td>8</td><td>9</td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="vertical-labels">
+                        <tbody><tr><td>A</td></tr>
+                        <tr><td>B</td></tr>
+                        <tr><td>C</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b11">
+                        <tbody><tr><td class="user-defined " id="c11">1</td><td class="user-defined " id="c12">4</td><td class="user-defined " id="c13">7</td></tr>
+                        <tr><td class="user-defined " id="c21">2</td><td class="user-defined " id="c22">5</td><td class="user-defined " id="c23">8</td></tr>
+                        <tr><td class="user-defined " id="c31">3</td><td class="user-defined " id="c32">6</td><td class="user-defined " id="c33">9</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b12">
+                        <tbody><tr><td class="" id="c14"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c15"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c16"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c24"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c25"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c26"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c34"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c35"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c36"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b13">
+                        <tbody><tr><td class="" id="c17"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c18"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c19"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c27"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c28"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c29"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c37"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c38"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c39"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table class="vertical-labels">
+                        <tbody><tr><td>D</td></tr>
+                        <tr><td>E</td></tr>
+                        <tr><td>F</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b21">
+                        <tbody><tr><td class="user-defined " id="c41">4</td><td class="user-defined " id="c42">7</td><td class="user-defined " id="c43">1</td></tr>
+                        <tr><td class="user-defined " id="c51">5</td><td class="user-defined " id="c52">8</td><td class="user-defined " id="c53">2</td></tr>
+                        <tr><td class="user-defined " id="c61">6</td><td class="user-defined " id="c62">9</td><td class="user-defined " id="c63">3</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b22">
+                        <tbody><tr><td class="" id="c44"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c45"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c46"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c54"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c55"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c56"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c64"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c65"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c66"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b23">
+                        <tbody><tr><td class="" id="c47"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c48"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c49"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c57"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c58"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c59"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c67"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c68"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c69"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table class="vertical-labels">
+                        <tbody><tr><td>G</td></tr>
+                        <tr><td>H</td></tr>
+                        <tr><td>I</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b31">
+                        <tbody><tr><td class="user-defined " id="c71">7</td><td class="user-defined " id="c72">1</td><td class="user-defined " id="c73">4</td></tr>
+                        <tr><td class="user-defined " id="c81">8</td><td class="user-defined " id="c82">2</td><td class="user-defined " id="c83">5</td></tr>
+                        <tr><td class="user-defined " id="c91">9</td><td class="user-defined " id="c92">3</td><td class="user-defined selected" id="c93">6</td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b32">
+                        <tbody><tr><td class="" id="c74"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c75"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c76"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c84"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c85"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c86"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c94"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c95"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c96"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+                <td>
+                    <table class="block" id="b33">
+                        <tbody><tr><td class="" id="c77"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c78"><pre>  2 3
+  5 6
+  8 9
+</pre></td><td class="" id="c79"><pre>  2 3
+  5 6
+  8 9
+</pre></td></tr>
+                        <tr><td class="" id="c87"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c88"><pre>1   3
+4   6
+7   9
+</pre></td><td class="" id="c89"><pre>1   3
+4   6
+7   9
+</pre></td></tr>
+                        <tr><td class="" id="c97"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c98"><pre>1 2  
+4 5  
+7 8  
+</pre></td><td class="" id="c99"><pre>1 2  
+4 5  
+7 8  
+</pre></td></tr>
+                    </tbody></table>
+                </td>
+            </tr>
+
+        </tbody></table>
+        <div id="completion">
+            <div style="width: 33%; background-color: rgb(209, 164, 133);" id="bar">&nbsp;</div>
+        </div>
+        <div id="output-wrapper">
+            <pre id="output"></pre>
+        </div>
+    </div>
+
+    <h2>What is this?</h2>
+    <p>This is an interactive sudoku solver that works on only the most 
+basic strategies for solving sudokus (which in the vast majority of 
+cases is enough). When ever a cell is entered by a user, the program 
+sets to work figuring out candidates using a simple set of rules.</p>
+
+    <p>Read more about this experiment <a href="http://andrew-hoyer.com/blog/2010/06/28/sudoku-solver/">here</a> (and watch me write the code!)</p>
+
+    <p class="social">
+        <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.andrew-hoyer.com/experiments/sudoku/&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true" frameborder="0"></iframe>
+        <iframe data-url="http://andrew-hoyer.com/experiments/sudoku/" src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/tweet_button.htm" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 61px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script type="text/javascript" src="Andrew%20Hoyer%20_%20Simple%20Sudoku%20Solver_files/widgets.js"></script>
+    </p>
+
+    <p class="social"><a href="http://andrew-hoyer.com/experiments/">More Experiments</a></p>
+
+
+
+<iframe style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>

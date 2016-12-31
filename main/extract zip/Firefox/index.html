@@ -1,0 +1,143 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>CSS3 Animation Demo for Firefox 5 by Anthony Calzadilla</title>
+  <meta name="description" content="CSS3 Animation of a little fox spaceship coming down and landing with a little firefox cartoon character within it.">
+  <meta name="author" content="Anthony Calzadilla">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+  <!-- Captain! There be Rofoxes here! -->
+  <link rel="stylesheet" href="css/animation.moz.css">
+  <link rel="stylesheet" href="css/animation.webkit.css">
+  <link  href="http://fonts.googleapis.com/css?family=Francois+One:regular&v1" rel="stylesheet" type="text/css" >
+
+</head>
+<body>
+  <div id="fallback">
+        <h1>
+          Your browser doesn't support CSS3 Animations :(
+        </h1>
+  </div>
+  <div id="container" style="">
+    <div id="main" role="main">
+      <header>
+        <h1 id="h1title">
+          <a href="#">
+            <span>Make the Web move</span>
+            <span>with</span> 
+            <span>CSS3 Animations</span>
+          </a>
+        </h1>
+      </header>
+      <!-- THIS IS CLASSIC DIVITIS, BUT HEY, THIS IS ALSO SOME UNCONVENTIONAL SH!T... IF YOU'RE GONNA MAKE AN OMELET YOU GOTTA BREAK SOME EGGS -->
+      <div id="rofox">
+        <div id="struts"></div><!-- END STRUTS -->	
+        <div id="ship">
+          <div id="rockets-lt">
+            <div id="mask-thruster-flame-lt">
+              <div id="thruster-flame-lt"></div>
+            </div><!-- END FLAME LT MASK -->
+            <div id="thruster-lt"></div>
+          </div><!-- END ROCKETS LEFT-->
+          <div id="rockets-rt">
+            <div id="mask-thruster-flame-rt">
+              <div id="thruster-flame-rt"></div>
+            </div><!-- END FLAME RT MASK -->	
+            <div id="thruster-rt"></div>
+          </div><!-- END ROCKETS RIGHT-->
+
+          <!-- DIV SOUP IS UP! DRINK UP JOHNNY!!!! -->
+          <div id="arm-lt">
+            <div id="bicep-lt"></div>
+
+            <div id="gun-lt">
+              <div id="gun-flag-lt">
+                <div id="gun-banner-lt">
+                  <div id="gun-banner-fringe-lt"></div>
+                </div><!-- END GUN BANNER -->
+
+                <div id="gun-flag-pole-lt"></div>
+              </div><!-- END GUN FLAG -->							
+              <div id="mask-gun-barrel-lt" class="mask">
+                <div id="gun-barrel-lt"></div>
+              </div><!-- END MASK BARREL LEFT -->
+              <div id="mask-gun-widget-top-lt" class="mask">
+                <div id="gun-widget-top-lt"></div>
+              </div><!-- END MASK WIDGET TOP LEFT -->
+              <div id="mask-gun-widget-bottom-lt" class="mask">
+                <div id="gun-widget-bottom-lt"></div>
+              </div><!-- END MASK WIDGET BOTTOM LEFT -->
+              <div id="gun-stock-lt"></div>
+            </div><!-- END GUN LEFT -->
+          </div><!-- END ARM LEFT -->
+
+          <div id="arm-rt">
+            <div id="bicep-rt"></div>
+            <div id="gun-rt">
+              <div id="gun-flag-rt">
+                <div id="gun-banner-rt">
+                  <div id="gun-banner-fringe-rt"></div>
+                </div><!-- END GUN BANNER -->
+                <div id="gun-flag-pole-rt"></div>
+              </div><!-- END GUN FLAG -->
+              <div id="mask-gun-barrel-rt" class="mask">
+                <div id="gun-barrel-rt"></div>
+              </div><!-- END MASK BARREL RIGHT -->
+              <div id="mask-gun-widget-top-rt" class="mask">
+                <div id="gun-widget-top-rt"></div>
+              </div><!-- END MASK WIDGET TOP RIGHT -->
+              <div id="mask-gun-widget-bottom-rt" class="mask">
+                <div id="gun-widget-bottom-rt"></div>
+              </div><!-- END MASK WIDGET BOTTOM RIGHT -->
+              <div id="gun-stock-rt"></div>
+            </div><!-- END GUN RIGHT -->
+          </div><!-- END ARM RIGHT -->
+
+
+          <div id="pilot">
+            <div id="pilot-paw"></div>
+          </div><!-- END SHIP TOP -->
+          <div id="ship-top"></div><!-- END SHIP TOP -->		
+          <div id="ship-bottom"></div><!-- END SHIP BOTTOM -->	
+        </div><!-- END ROFOX SHIP -->
+      </div><!-- END ROFOX -->
+
+
+      <div id="ff">
+        <div id="ff-logo"></div><!-- END FF LOGO -->
+        <div id="ff-planet"></div><!-- END FF PLANET -->
+      </div><!-- END FF -->
+
+    </div><!-- END MAIN -->
+
+
+    <footer> 
+      <label>debug mode <input type="checkbox" onclick="updateDebug()"></input></label>
+      <h5>Another fun CSS3 animation by your homie, <a href="http://www.anthonycalzadilla.com/" title="ANTHONY CALZADILLA">Anthony Calzadilla</a></h5>
+      <p>(Space Background was lifted from Chris Coyiers "<a href="http://css-tricks.com/2008/03/3d-parralax-background-effect-610" title="Starry Night: Incredible 3D Background Effect with Parallax | CSS-Tricks">Starry Night</a>" article.)</p>
+    </footer>
+  </div><!-- END CONTAINER -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!--[if lt IE 7 ]>
+  <script src="js/libs/dd_belatedpng.js"></script>
+  <script> DD_belatedPNG.fix('img, .png_bg');</script>
+  <![endif]-->
+</body>

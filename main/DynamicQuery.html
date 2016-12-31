@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="Designing content/css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="Designing content/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="Designing content/font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="Designing content/explore/js/jquery.js"></script>
+    <script src="Designing content/explore/js/jquery.flippy.min.js"></script>
+    <script src="Designing content/js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="Designing content/js/docs.js"></script>
+    <script src="Designing content/js/menuOption.js"></script>
+    <script src="Designing content/vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="Designing content/explore/js/explore.js"></script>
+      <script src="Designing content/explore/js/knockout.js"></script>
+     </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load= "header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		<div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		
+		<h3>Dynamic Query</h3>
+		<hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px;margin-left:1%;">		
+	 <!--	<pre class="prettyprint">-->
+<b>Table in Oracle Database  :- Insert , Update , Delete , Select</b><p>Select( Ctrl+a) , Copy ( Ctrl+c )  and Run the code for practice</p>
+<textarea style="margin:2%;padding:0%"> 
+package dynamicQuery;
+import java.sql.*;
+import java.util.*;
+
+public class insert {
+
+public static void main(String[] args) {
+try{
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","myresult ","myresult ");
+	Statement stmt=con.createStatement();
+    Scanner sc=new Scanner(System.in);
+
+    System.out.println("Serial number no of student");
+    int a=sc.nextInt();
+    System.out.println("Name  of student");
+    String b=sc.next();
+    System.out.println("Subject of student");
+    String c=sc.next();
+    System.out.println("Marks  of student");
+    int d=sc.nextInt();
+    System.out.println("Status of student");
+    String e=sc.next();
+    String q="insert into student values("+a+",' "+b+" ',' "+c+" ', "+d+ ",'" +e+ "')" ;
+    stmt.execute(q);
+
+    
+   String r="Select *from student ";
+   ResultSet rs =  stmt.executeQuery(r);
+   System.out.println("DATA  OF STUDENT TABLE ");//assume that EMP is already created;
+   while(rs.next() )
+   {
+   	int a1= rs.getInt(1);
+   	System.out.print(a1+ "  " );
+   	
+   	String b1=rs.getString(2);
+   	System.out.print(b1 + "      ");
+   	
+   	String c1=rs.getString(3);
+   	System.out.print(c1 + " ");
+   	
+   	int d1= rs.getInt(4);
+   	System.out.print(d1+ "  " );
+   	
+   	String e1=rs.getString(5);
+   	System.out.print(e1 +" " );
+       
+   	System.out.println("\n");
+}  
+   }
+
+catch(Exception e)
+{System.out.println("some errror");
+	}}}
+
+</textarea>
+<textarea style="margin:2%;padding:0%"> 
+package dynamicQuery;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
+
+public class update {
+
+	public static void main(String[] args) {String choice; 
+	Scanner sc =new Scanner(System.in);
+	System.out.println("Enter Sr no of the row ");
+	int a=sc.nextInt();
+		
+	try{
+	/* for printing the Existing data of table */	   
+		Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+	    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+		Statement stmt=con.createStatement();
+
+		   String r="Select *from student where srno ="+a ;
+		   ResultSet rs =  stmt.executeQuery(r);
+		   System.out.println("DATA  OF STUDENT TABLE ");//assume that EMP is already created;
+		   while(rs.next() )
+		   {
+		   	int a1= rs.getInt(1);
+		   	System.out.print(a1+ "  " );
+		   	
+		   	String b1=rs.getString(2);
+		   	System.out.print(b1 + "      ");
+		   	
+		   	String c1=rs.getString(3);
+		   	System.out.print(c1 + " ");
+		   	
+		   	int d1= rs.getInt(4);
+		   	System.out.print(d1+ "  " );
+		   	
+		   	String e1=rs.getString(5);
+		   	System.out.print(e1 +" " );
+		       
+		   	System.out.println("\n");
+		   }     
+		   
+		
+		
+		do{
+			System.out.println("Press q for updating Name");
+			System.out.println("Press w For updating sub ");
+			System.out.println("Press e for updating marks");
+			System.out.println("Press r for exit");
+			String option =sc.next();
+			char c = option.charAt(0);
+			switch(c)
+				{
+				case 'q':
+				case 'Q':
+				System.out.println("Enter the Updated Name");	
+				String name=sc.next();	
+				String b1="update student set sname='"+name+ "'where srno=" +a ;
+			    stmt.execute(b1);
+				break;
+				
+				case'w':
+				case 'W':
+					System.out.println("Enter the Updated Subject");	
+					String sub=sc.next();	
+					String b2="update student set sub='"+sub+ "'where srno=" +a ;
+				    stmt.execute(b2);
+					break;
+				
+				case'e':
+				case 'E':
+					System.out.println("Enter the Updated Name");	
+					int marks=sc.nextInt();	
+					String b3="update student set marks='"+marks+ "'where srno=" +a ;
+				    stmt.execute(b3);
+				break;
+				case 'X':
+				case 'x':
+				System.exit(0);
+				break;
+				default:
+				System.out.println("Sorry your choice is wrong:");
+				}
+			    System.out.println("Do you want to continue y/n"); 
+				Scanner Stdin =new Scanner(System.in);
+				choice =Stdin.next();
+				}
+				while(choice.charAt(0)!= 'n');
+			
+	
+	    String r1="Select *from student where srno ="+a ;
+	    ResultSet rs1 =  stmt.executeQuery(r1);
+	    System.out.println("DATA  OF STUDENT TABLE ");//assume that EMP is already created;
+	    while(rs1.next() )
+	    {
+	   	int a1= rs1.getInt(1);
+	   	System.out.print(a1+ "  " );
+	   	
+	   	String b1=rs1.getString(2);
+	   	System.out.print(b1 + "      ");
+	   	
+	   	String c1=rs1.getString(3);
+	   	System.out.print(c1 + " ");
+	   	
+	   	int d1= rs1.getInt(4);
+	   	System.out.print(d1+ "  " );
+	   	
+	   	String e1=rs1.getString(5);
+	   	System.out.print(e1 +" " );
+	       
+	   	System.out.println("\n");
+	   }     
+	  
+	}
+	
+    catch(Exception e)
+	{
+    	System.out.println("some errror "+e);
+	}
+	
+	}}
+		</textarea>
+<textarea style="margin:2%;padding:0%"> 
+package dynamicQuery;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class delete {
+	public static void main(String[] arg ) {
+
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","myresult ","myresult ");
+			Statement stmt=con.createStatement();
+		    Scanner sc=new Scanner(System.in);
+
+		    System.out.println("Serial number no of table row to delete the row");
+		    int a=sc.nextInt();
+		    String q="delete from student where srno=" +a;
+		    stmt.execute(q);
+
+		    
+		   String r="Select *from student ";
+		   ResultSet rs =  stmt.executeQuery(r);
+		   System.out.println("DATA  OF STUDENT TABLE ");
+		   while(rs.next() )
+		   {
+		   	int a1= rs.getInt(1);
+		   	System.out.print(a1+ "  " );
+		   	
+		   	String b1=rs.getString(2);
+		   	System.out.print(b1 + "      ");
+		   	
+		   	String c1=rs.getString(3);
+		   	System.out.print(c1 + " ");
+		   	
+		   	int d1= rs.getInt(1);
+		   	System.out.print(d1+ "  " );
+		   	
+		   	String e1=rs.getString(4);
+		   	System.out.print(e1 +" " );
+		       
+		   	System.out.println("\n");
+		}  
+		   }
+
+		catch(Exception e)
+		{System.out.println("some errror");
+			}}}</textarea>
+	<textarea style="margin:2%;padding:0%"> 
+package dynamicQuery;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class select {
+	public void dataselect( ) {
+
+		try{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","myresult ","myresult ");
+			Statement stmt=con.createStatement();
+		    Scanner sc=new Scanner(System.in);
+
+		    System.out.println("Enter the Srno of row for viewing the data");
+		    int a=sc.nextInt();
+		    String r="Select *from student where srno=" +a;
+		    ResultSet rs =  stmt.executeQuery(r);
+		    System.out.println("DATA  OF STUDENT TABLE ");//assume that EMP is already created;
+		    while(rs.next() )
+		    {
+		   	int a1= rs.getInt(1);
+		   	System.out.print(a1+ "  " );
+		   	
+		   	String b1=rs.getString(2);
+		   	System.out.print(b1 + "      ");
+		   	
+		   	String c1=rs.getString(3);
+		   	System.out.print(c1 + " ");
+		   	
+		   	int d1= rs.getInt(1);
+		   	System.out.print(d1+ "  " );
+		   	
+		   	String e1=rs.getString(4);
+		   	System.out.print(e1 +" " );
+		       
+		   	System.out.println("\n");
+		}  
+		   }
+
+		catch(Exception e)
+		{System.out.println("some errror");
+			}}}
+
+	</textarea>
+<br><b>Dynamic Quries</b>
+  <ul>   
+    	<li>Insert</li>
+		<li>Delete</li>
+		<li>select</li>
+		<li>update</li>
+		</ul>
+<b>Query Format</b>
+<br><img src="img/jdbcQuery.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+<hr>
+
+<b>Dynamic select</b>
+<p>Select command is used to view data of the table according to user which is already created in oracle Database.</p>
+<p>Query is:- "Select *from student where srno=" +a;</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/dynamicquery/dynamicselect.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Dynamic Delete</b>
+<p>Delete command Delete the values from the table according to user which is already Exist in oracle Database.</p>
+<p>Query is:- delete from student where srno=" +a;</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/dynamicquery/dynamicdelete.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Dynamic Update</b>
+<p>Update command is using for updating the values of the table dynamically which is already Exist in oracle Database.</p>
+<p>Query is:- update emp set ename='Tom' where eid=101</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/dynamicquery/dynamicupdate.PNG"style="Margin-left:10%;width:90%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Dynamic Insert</b>
+<p>insert command is used to insert data in table by user through keyboard which is already Exist in oracle Database.</p>
+<p>Query is:- Select *from student</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/dynamicquery/dynamicinsert.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+
+
+</div>
+		</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

@@ -1,0 +1,250 @@
+/*==========================================================
+ANIMATION KEYFRAMES
+==========================================================*/
+/*ROFOX DESCENT*/
+.go #rofox{visibility:visible;-webkit-transform-origin :50% 0;-webkit-animation:rofox-action 60s linear 1s 1 both;}
+@-webkit-keyframes rofox-action{/*0 SEC:START THE ROFOX IN THE UPPER LEFT OF THE SITE*/
+0%{-webkit-transform :translate(-100px,-550px) rotate(5deg);}
+/*5-10 SEC:THRUSTERS ACTIVATED TO SLOW DESCENT;ROFOX DRAMATICALLY SLOWS DOWN;STRUTS LOWERED*/
+13.5%{-webkit-transform :translate(0px,0px) rotate(0deg);}
+45%{-webkit-transform :translate(0px,0px) rotate(0deg);}
+/*TAKE OFF*/
+50%{-webkit-transform :translate(-100px,-600px) rotate(5deg);}
+100%{-webkit-transform :translate(-100px,-600px) rotate(5deg);}
+}
+.go #struts{/*STRUTS DEPLOYMENT - APPLY ANIMATION DELAY FOR 1+7 SECONDS (DELAY + TIME FROM PRIOR KEYFRAMES)*/
+-webkit-transform-origin :50% 0;-webkit-animation:struts-action 60s linear 6s 1 both;}
+@-webkit-keyframes struts-action{0%{-webkit-transform :translate(0,-100px);}
+1%{-webkit-transform :translate(0,-100px);}
+4%{-webkit-transform :translate(0,0);}
+36.7%{-webkit-transform :translate(0,0);}
+37.7%{-webkit-transform :translate(0,-100px);}
+100%{-webkit-transform :translate(0,-100px);}
+}
+.go #thruster-flame-rt{/*APPLY ANIMATION DELAY FOR 1+4 SECONDS ( TIME + DELAY FROM PRIOR KEYFRAMES)
+THE THRUSTERS HAVE TO ACTIVATE AN INSTANT BEFORE THE STRUTS START LOWERING*/
+-webkit-transform-origin :50% 0;-webkit-animation:flame-action-01 180ms linear 1s infinite both;}
+.go #thruster-flame-lt{/*APPLY ANIMATION DELAY FOR 1+4 SECONDS ( TIME + DELAY FROM PRIOR KEYFRAMES)
+THE THRUSTERS HAVE TO ACTIVATE AN INSTANT BEFORE THE STRUTS START LOWERING*/
+-webkit-transform-origin :50% 0;-webkit-animation:flame-action-01 150ms linear 1s infinite both;}
+@-webkit-keyframes flame-action-01{0%{-webkit-transform :translate(0,-50px);}
+/* TRYING TO GIVE THE FLAMES A 'FLICKERING' LOOK */
+100%{-webkit-transform :translate(3px,-55px);}
+}
+.go #mask-thruster-flame-lt,
+.go #mask-thruster-flame-rt{/* THIS WILL SHOW/HIDE THE FLAME BASED ON WHETHER THE THRUSTER IS ACTIVE */
+-webkit-animation:mask-flame-hide-action 60s linear 10s 1 both;}
+@-webkit-keyframes mask-flame-hide-action{0%{-webkit-transform :translate(0,0);}
+1%{-webkit-transform :translate(0,-85px);}
+28.5%{-webkit-transform :translate(0,-85px);}
+29.5%{-webkit-transform :translate(0,0);}
+100%{-webkit-transform :translate(0,0);}
+}
+.go #rockets-rt{/* THIS WILL TUCK AWAY THE THRUSTERS AFTER ROFOX HAS LANDED AND SHOW THEM WHEN READY TO TAKE-OFF*/
+-webkit-animation:rockets-hide-action-rt 60s linear 10s 1 both;}
+/*HIDE THE RIGHT THRUSTERS*/
+@-webkit-keyframes rockets-hide-action-rt{0%{-webkit-transform :translate(0,0);}
+2%{-webkit-transform :translate(-30px,0);}
+27.5%{-webkit-transform :translate(-30px,0);}
+28.5%{-webkit-transform :translate(0,0);}
+100%{-webkit-transform :translate(0,0);}
+}
+.go #rockets-lt{/* THIS WILL TUCK AWAY THE THRUSTERS AFTER ROFOX HAS LANDED AND SHOW THEM WHEN READY TO TAKE-OFF*/
+-webkit-animation:rockets-hide-action-lt 60s linear 10s 1 both;}
+/*HIDE THE LEFT THRUSTERS*/
+@-webkit-keyframes rockets-hide-action-lt{0%{-webkit-transform :translate(0,0);}
+2%{-webkit-transform :translate(30px,0);}
+27.5%{-webkit-transform :translate(30px,0);}
+28.5%{-webkit-transform :translate(0,0);}
+100%{-webkit-transform :translate(0,0);}
+}
+.go #ship{/* WE GOING TO GIVE THE SHIP A LITTLE WEIGHT BY MAKING IT SLIGHTLY BOUNCE UPON LANDING
+USING THE EASE-OUT TIMING FUNCTION GIVES IT A MORE REALISTIC BOUNCE*/
+-webkit-animation:ship-action 1750ms ease-out 9s 1 both;}
+@-webkit-keyframes ship-action{/* BOUNCE BABY! BOUNCE! */
+0%{-webkit-transform :translate(0,0);}
+25%{-webkit-transform :translate(0,10px);}
+50%{-webkit-transform :translate(0,0);}
+75%{-webkit-transform :translate(0,6px);}
+100%{-webkit-transform :translate(0,0);}
+}
+/*RIGHT ARM ANIMATION*/
+.go #arm-rt{/* ARM SLIDING OUT FROM BODY */
+-webkit-transform-origin:0 50%;-webkit-animation:arm-rt-action-01 60s ease-out 10s 1 both;}
+@-webkit-keyframes arm-rt-action-01{0%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+5%{-webkit-transform :translate(0,0) rotate(0deg);}
+6%{-webkit-transform :translate(0,0) rotate(-16deg);}
+21%{-webkit-transform :translate(0,0) rotate(-16deg);}
+22%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+100%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+}
+.go #gun-rt{/* GUN SLIDES OUT */
+-webkit-transform-origin:0% 50%;-webkit-animation:gun-rt-action 60s ease-out 10s 1 both;}
+@-webkit-keyframes gun-rt-action{0%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+2%{-webkit-transform :translate(0,0) rotate(0deg);}
+3%{-webkit-transform :translate(0,0) rotate(-16deg);}
+22%{-webkit-transform :translate(0,0) rotate(-16deg);}
+23%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+100%{-webkit-transform :translate(-100px,0) rotate(0deg);}
+}
+.go #gun-widget-top-rt{/* GUN WIDGET THING SLIDES UPWARD OUT OF BARREL */
+-webkit-animation:widget-top-rt-action 60s ease-out 12s 1 both;}
+@-webkit-keyframes widget-top-rt-action{0%{-webkit-transform :translate(0,30px);}
+0.5%{-webkit-transform :translate(0,-10px);}
+1%{-webkit-transform :translate(0,0);}
+17%{-webkit-transform :translate(0,0);}
+17.5%{-webkit-transform :translate(0,30px);}
+100%{-webkit-transform :translate(0,30px);}
+}
+.go #gun-widget-bottom-rt{/* GUN WIDGET THING SLIDES DOWNWARD OUT OF BARREL */
+-webkit-animation:widget-bott-rt-action 60s ease-out 12s 1 both;}
+@-webkit-keyframes widget-bott-rt-action{0%{-webkit-transform :translate(0,-30px);}
+0.5%{-webkit-transform :translate(0,-30px);}
+1%{-webkit-transform :translate(0,10px);}
+1.5%{-webkit-transform :translate(0,0);}
+17.25%{-webkit-transform :translate(0,0);}
+17.75%{-webkit-transform :translate(0,-30px);}
+100%{-webkit-transform :translate(0,-30px);}
+}
+.go #gun-barrel-rt{/* GUN BARREL SLIDES OUT FROM WIDGETS */
+-webkit-transform-origin:0 50%;-webkit-animation:barrel-rt-action 60s ease-out 12500ms 1 both;}
+@-webkit-keyframes barrel-rt-action{0%{-webkit-transform :translate(-130px,0);}
+0.5%{-webkit-transform :translate(10px,0);}
+1%{-webkit-transform :translate(-1px,0);}
+14.5%{-webkit-transform :translate(-1px,0);}
+15.5%{-webkit-transform :translate(-130px,15px);}
+100%{-webkit-transform :translate(-130px,15px);}
+}
+/* POP OPEN THE BANG! FLAGS
+===================================== */
+.go #gun-flag-rt{/* FLAG MAKES ITSELF VISIBLE AND SLIDES OUT */
+-webkit-transform-origin:0 50%;-webkit-animation:flag-rt-action 60s ease-out 12s 1 both;}
+/*pop the flag pole out and give it some reflex action */
+@-webkit-keyframes flag-rt-action{0%{-webkit-transform :translate(0,0);opacity:0;}
+3%{-webkit-transform :translate(0,0);opacity:0;}
+3.25%{-webkit-transform :translate(50px,0);opacity:1;}
+3.35%{-webkit-transform :translate(40px,0);opacity:1;}
+14%{-webkit-transform 	:translate(40px,0);opacity:1;}
+15%{-webkit-transform :translate(0,0);opacity:0;}
+100%{-webkit-transform :translate(0,0);opacity:0;}
+}
+/*pop the flag pole out and give it some reflex action */
+.go #gun-banner-rt{/* BANNER DROPS DOWN */
+-webkit-transform-origin:50% 0;-webkit-transform:skew(-30deg);-webkit-animation:banner-rt-action 60s ease-in-out 13500ms 1 both;/* BANNER DROPS DOWN */}
+/* drop the banner down and make it bounce a few times */
+@-webkit-keyframes banner-rt-action{0%{height:10px;}
+1.5%{height:145px;}
+1.75%{height:135px;}
+2%{height:145px;}
+/* suck that that banner up */
+10%{height:145px;}
+11%{height:10px;}
+100%{height:10px;}
+}
+/*LEFT ARM ANIMATION
+==================================================*/
+.go #arm-lt{/* ARM SLIDING OUT FROM BODY */
+-webkit-transform-origin:100% 50%;-webkit-animation:arm-lt-action 60s ease-out 10s 1 both;}
+@-webkit-keyframes arm-lt-action{0%{-webkit-transform :translate(100px,0) rotate(0deg);}
+2%{-webkit-transform :translate(0,0) rotate(0deg);}
+3%{-webkit-transform :translate(0,0) rotate(17deg);}
+22%{-webkit-transform :translate(0,0) rotate(17deg);}
+23%{-webkit-transform :translate(100px,0) rotate(0deg);}
+100%{-webkit-transform :translate(100px,0) rotate(0deg);}
+}
+.go #gun-lt{/* GUN SLIDES OUT */
+-webkit-transform-origin:100% 50%;-webkit-animation:gun-lt-action 60s ease-out 10s 1 both;}
+@-webkit-keyframes gun-lt-action{0%{-webkit-transform :translate(100px,0) rotate(0deg);}
+2%{-webkit-transform :translate(0,0) rotate(0deg);}
+3%{-webkit-transform :translate(0,0) rotate(16deg);}
+22%{-webkit-transform :translate(0,0) rotate(16deg);}
+23%{-webkit-transform :translate(100px,0) rotate(0deg);}
+100%{-webkit-transform :translate(100px,0) rotate(0deg);}
+}
+.go #gun-widget-top-lt{/* GUN WIDGET THING SLIDES UPWARD OUT OF BARREL */
+-webkit-animation:widget-top-lt-action 60s ease-out 12500ms 1 both;}
+@-webkit-keyframes widget-top-lt-action{0%{-webkit-transform :translate(0,30px);}
+0.5%{-webkit-transform :translate(0,-10px);}
+1%{-webkit-transform :translate(0,0);}
+17%{-webkit-transform :translate(0,0);}
+17.5%{-webkit-transform :translate(0,30px);}
+100%{-webkit-transform :translate(0,30px);}
+}
+.go #gun-widget-bottom-lt{/* GUN WIDGET THING SLIDES DOWNWARD OUT OF BARREL */
+-webkit-animation:widget-bott-lt-action 60s ease-out 12250ms 1 both;}
+@-webkit-keyframes widget-bott-lt-action{0%{-webkit-transform :translate(0,-30px);}
+0.5%{-webkit-transform :translate(0,-30px);}
+1%{-webkit-transform :translate(0,10px);}
+1.5%{-webkit-transform :translate(0,0);}
+17.25%{-webkit-transform :translate(0,0);}
+17.75%{-webkit-transform :translate(0,-30px);}
+100%{-webkit-transform :translate(0,-30px);}
+}
+.go #gun-barrel-lt{/* GUN BARREL SLIDES OUT FROM WIDGETS */
+-webkit-animation:barrel-lt-action 60s ease-out 12750ms 1 both;}
+@-webkit-keyframes barrel-lt-action{0%{-webkit-transform :translate(130px,0);}
+0.5%{-webkit-transform :translate(10px,0);}
+1%{-webkit-transform :translate(0px,0);}
+14.5%{-webkit-transform :translate(0px,0);}
+15.5%{-webkit-transform :translate(130px,15px);}
+100%{-webkit-transform :translate(130px,15px);}
+}
+/* POP OPEN THE BANG! FLAGS
+===================================== */
+/* LEFT ARM FLAG */
+.go #gun-flag-lt{/* FLAG MAKES ITSELF VISIBLE AND SLIDES OUT */
+-webkit-transform:rotate(5deg);-webkit-transform-origin:0 50%;-webkit-animation:flag-lt-action 60s ease-out 12s 1 both;}
+/*pop the flag pole out and give it some reflex action */
+@-webkit-keyframes flag-lt-action{0%{-webkit-transform :translate(0,0);opacity:0;}
+3%{-webkit-transform :translate(0,0);opacity:0;}
+3.25%{-webkit-transform :translate(-50px,0);opacity:1;}
+3.35%{-webkit-transform :translate(-40px,0);opacity:1;}
+14%{-webkit-transform   :translate(-40px,0);opacity:1;}
+15%{-webkit-transform :translate(0,0);opacity:0;}
+100%{-webkit-transform :translate(0,0);opacity:0;}
+}
+/*pop the flag pole out and give it some reflex action */
+.go #gun-banner-lt{/* BANNER DROPS DOWN */
+-webkit-transform-origin:50% 0;-webkit-transform:skew(35deg);-webkit-animation:banner-lt-action 60s ease-in-out 13500ms 1 both;/* BANNER DROPS DOWN */}
+/* drop the banner down and make it bounce a few times */
+@-webkit-keyframes banner-lt-action{0%{height:10px;}
+1.5%{height:145px;}
+1.75%{height:135px;}
+2%{height:145px;}
+/* suck that that banner up */
+10%{height:145px;}
+11%{height:10px;}
+100%{height:10px;}
+}
+/* drop the banner down and make it bounce a few times */
+/*OPEN HATCH SO FF PILOT CAN WAVE OR SOMETHING-AFTER 25 SECONDS CLOSE THE HATCH AGAIN*/
+.go #ship-top{-webkit-animation:ship-top-action 60s ease-in-out 13500ms 1 both;}
+@-webkit-keyframes ship-top-action{0%{-webkit-transform :translate(0,0);}
+3%{-webkit-transform :translate(0,0);}
+4%{-webkit-transform :translate(0,-80px);}
+4.25%{-webkit-transform :translate(0,-75px);}
+16.5%{-webkit-transform :translate(0,-75px);}
+19.5%{-webkit-transform :translate(0,0px);}
+100%{-webkit-transform :translate(0,0px);}
+}
+.go #pilot{/* PILOT POPS OUT OF CABIN TO WAVE-THEN POPS BACK DOWN */
+-webkit-animation:pilot-action 60s linear 14s 1 both;}
+@-webkit-keyframes pilot-action{0%{-webkit-transform :translate(0,0);}
+3%{-webkit-transform :translate(0,-50px);}
+15%{-webkit-transform :translate(0,-50px);}
+18%{-webkit-transform :translate(0,0);}
+100%{-webkit-transform :translate(0,0);}
+}
+.go #ff{-webkit-animation:ff-action 6s ease-out 30s 1 both;}
+@-webkit-keyframes ff-action{0%{-webkit-transform :translate(0,0);}
+100%{-webkit-transform :translate(0,-425px);}
+}
+.go #ff-logo{-webkit-animation:logo-action 3s ease-out 30s 1 both;}
+@-webkit-keyframes logo-action{0%{opacity:0;}
+10%{opacity:1;}
+100%{opacity:1;}
+}
+.go #ff-planet{-webkit-animation:plt-action 500ms ease-out 30s 1 both;}
+@-webkit-keyframes plt-action{0%{opacity:1;}
+100%{opacity:0;}
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="Designing content/css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="Designing content/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="Designing content/font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="Designing content/explore/js/jquery.js"></script>
+    <script src="Designing content/explore/js/jquery.flippy.min.js"></script>
+    <script src="Designing content/js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="Designing content/js/docs.js"></script>
+    <script src="Designing content/js/menuOption.js"></script>
+    <script src="Designing content/vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="Designing content/explore/js/explore.js"></script>
+      <script src="Designing content/explore/js/knockout.js"></script>
+     </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load= "header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		<div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		
+		<h3>Static Query</h3>
+		<hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px;margin-left:1%;">		
+	 <!--	<pre class="prettyprint">-->
+<b>Table in Oracle Database  :- Create , Insert , Update , Delete , Select</b><p>Select( Ctrl+a) , Copy ( Ctrl+c )  and Run the code for practice</p>
+<textarea style="margin:2%;padding:0%"> 
+import java.sql.*;
+public class Createtabledemo {
+
+	public static void main(String[] args) {
+
+		try{
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+		Statement stmt=con.createStatement();
+		String q="create table emp(eid number, ename varchar2(20),edate date)";
+		stmt.execute(q);
+		
+		System.out.println("table Created");
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println("Some Error");
+		}
+			}}
+</textarea>
+
+<textarea style="margin:2%;padding:0%"> 
+import java.sql.*;
+
+public class InsertTableDemo {
+
+		public static void main(String[] args) {
+
+			try{
+				
+		    Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+		    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+			Statement stmt=con.createStatement();
+			String q="insert into emp values(1329310017, 'sasi','01-jan-2016')";
+			stmt.execute(q);
+			
+			System.out.println("data Inserted");
+			}
+			
+			catch(Exception e)
+			{
+				System.out.println("Some Error");
+			}
+			
+		}
+
+	}
+</textarea>
+<textarea style="margin:2%;padding:0%"> 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class UpdateTableDemo {
+
+		public static void main(String[] args) {
+
+			try{
+				
+		    Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+		    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+			Statement stmt=con.createStatement();
+			String q="update emp set ename='Suraj' where eid=1329310022";
+
+
+			stmt.execute(q);
+			
+			System.out.println("data updated");
+			}
+			
+			catch(Exception e)
+			{
+				System.out.println("Some Error");
+			}
+			
+		}
+
+	}
+</textarea>
+<textarea style="margin:2%;padding:0%"> 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class DeleteTableDemo {
+
+		public static void main(String[] args) {
+
+			try{
+				
+		    Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+		    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+			Statement stmt=con.createStatement();
+			String q="delete from emp where eid=1329310022";
+
+
+			stmt.execute(q);
+			
+			System.out.println("data deleted");
+			}
+			
+			catch(Exception e)
+			{
+				System.out.println("Some Error");
+			}
+			
+		}
+
+	}
+</textarea>
+	<textarea style="margin:2%;padding:0%"> 
+import java.sql.*;
+public class SelectTableDemo {
+
+		public static void main(String[] args) {
+
+			try{
+				
+		    Class.forName("oracle.jdbc.driver.OracleDriver");//fully qualified class name
+		    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "myresult", "myresult");
+			Statement stmt=con.createStatement();
+			String q="Select *from emp ";
+            ResultSet rs =  stmt.executeQuery(q);
+			System.out.println("DATA  OF EMP TABLE ");//assume that EMP is already created;
+            while(rs.next() )
+            {
+            	int a= rs.getInt(1);
+            	System.out.print(a+ "  " );
+            	
+            	String b=rs.getString(2);
+            	System.out.print(b + "      ");
+            	
+            	String c=rs.getString(3);
+            	System.out.print(c + " ");
+            	
+            	String d=rs.getString(4);
+            	System.out.print(d +" " );
+                
+            	System.out.println("\n");
+            }
+            	}
+			catch(Exception e)
+			{
+				System.out.println("Some Error");
+			}
+		}
+}
+
+	</textarea>
+<br><b>Static Quries</b>
+  <ul>In Static quries the data is input by Programmer , means data insert during   
+        <li>Create</li>
+		<li>Insert</li>
+		<li>Delete</li>
+		<li>select</li>
+		<li>update</li>
+		</ul>
+<b>Query Format</b>
+<br><img src="img/jdbcQuery.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+<hr>
+<b>Static Create</b>
+<p>This is a command for creating a table in to oracle database</p>
+<p>Query is :-    select * from TableName(column_names column_datatypes, - - - - , - - - - );</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/query/staticcreate.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+<li>Two Ex in SQL Command Line</li>
+<br><img src="img/query/staticcreateSQL.PNG"style="width:90%;height:70%;"></img><br>
+<img src="img/query/staticcreateSQL1.PNG"style="width:90%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Static Insert</b>
+<p>Insert command Insert the values in the table which is already created in oracle Database.</p>
+<p>Query is:- insert into TableName values(123,'Sam','12-jan-2000')</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/query/staticincert.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+<li>Ex in SQL Command Line</li>
+<br><img src="img/query/staticinsertSQL.PNG"style="width:90%;height:70%;"></img><br>
+</ul><hr>
+
+<b>Static Delete</b>
+<p>Delete command Delete the values from the table which is already Exist in oracle Database.</p>
+<p>Query is:- delete from emp where eid=1329310022;</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/query/staticdelete.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Static Update</b>
+<p>Update command is using for updating the values of the table which is already Exist in oracle Database.</p>
+<p>Query is:- update emp set ename='Tom' where eid=101</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/query/staticupdate.PNG"style="Margin-left:10%;width:70%;height:70%;"></img><br><br>
+</ul><hr>
+
+<b>Static Select</b>
+<p>Select command is used view data of the table which is already Exist in oracle Database.</p>
+<p>Query is:- Select *from student</p>
+<ul><li>EX In Java:-</li><br>
+<img src="img/query/staticselect.PNG"style="Margin-left:10%;width:80%;height:70%;"></img><br><br>
+</ul><hr>
+
+
+
+</div>
+		</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

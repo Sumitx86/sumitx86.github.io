@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class=" js cssanimations csstransforms3d"><head><style type="text/css">#guidat { position: fixed; top: 0; right: 0; width: auto; z-index: 1001; text-align: right; } .guidat { color: #fff; opacity: 0.97; text-align: left; float: right; margin-right: 20px; margin-bottom: 20px; background-color: #fff; } .guidat, .guidat input { font: 9.5px Lucida Grande, sans-serif; } .guidat-controllers { height: 300px; overflow-y: auto; overflow-x: hidden; background-color: rgba(0, 0, 0, 0.1); } a.guidat-toggle:link, a.guidat-toggle:visited, a.guidat-toggle:active { text-decoration: none; cursor: pointer; color: #fff; background-color: #222; text-align: center; display: block; padding: 5px; } a.guidat-toggle:hover { background-color: #000; } .guidat-controller { padding: 3px; height: 25px; clear: left; border-bottom: 1px solid #222; background-color: #111; } .guidat-controller, .guidat-controller input, .guidat-slider-bg, .guidat-slider-fg { -moz-transition: background-color 0.15s linear; -webkit-transition: background-color 0.15s linear; transition: background-color 0.15s linear; } .guidat-controller.boolean:hover, .guidat-controller.function:hover { background-color: #000; } .guidat-controller input { float: right; outline: none; border: 0; padding: 4px; margin-top: 2px; background-color: #222; } .guidat-controller select { margin-top: 4px; float: right; } .guidat-controller input:hover { background-color: #444; } .guidat-controller input:focus, .guidat-controller.active input { background-color: #555; color: #fff; } .guidat-controller.number { border-left: 5px solid #00aeff; } .guidat-controller.string { border-left: 5px solid #1ed36f; } .guidat-controller.string input { border: 0; color: #1ed36f; margin-right: 2px; width: 148px; } .guidat-controller.boolean { border-left: 5px solid #54396e; } .guidat-controller.function { border-left: 5px solid #e61d5f; } .guidat-controller.number input[type=text] { width: 35px; margin-left: 5px; margin-right: 2px; color: #00aeff; } .guidat .guidat-controller.boolean input { margin-top: 6px; margin-right: 2px; font-size: 20px; } .guidat-controller:last-child { border-bottom: none; -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); } .guidat-propertyname { padding: 5px; padding-top: 7px; cursor: default; display: inline-block; } .guidat-controller .guidat-slider-bg:hover, .guidat-controller.active .guidat-slider-bg { background-color: #444; } .guidat-controller .guidat-slider-bg .guidat-slider-fg:hover, .guidat-controller.active .guidat-slider-bg .guidat-slider-fg { background-color: #52c8ff; } .guidat-slider-bg { background-color: #222; cursor: ew-resize; width: 40%; margin-top: 2px; float: right; height: 21px; } .guidat-slider-fg { cursor: ew-resize; background-color: #00aeff; height: 21px; } </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Andrew Hoyer">
+    <meta name="description" content="An early animation device built entirely with CSS">
+
+    <title>CSS Zoetrope - Andrew Hoyer</title>
+
+    <script type="text/javascript" src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/DAT.js"></script>
+    <script type="text/javascript" src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/modernizr.js"></script>
+
+    <link rel="stylesheet" href="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/main.css" type="text/css">
+    <link rel="stylesheet" href="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/zoetrope.css" type="text/css">
+    <link rel="stylesheet" href="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/frames.css" type="text/css">
+<script src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/button.js" async="" charset="utf-8" type="text/javascript"></script></head><body>
+
+    <div id="controls">
+        <h1>CSS Zoetrope <a href="http://andrew-hoyer.com/">(More Experiments)</a></h1>
+
+        <p>Yup, all CSS and a very minimal amount of html (and pinch of js for the controls). You can find the source <a href="https://github.com/ndrwhr/zoetrope">here</a> and/or you can read my small blog post about it <a href="http://andrew-hoyer.com/blog/2011/09/28/building-the-zoetrope/">here</a>.</p>
+
+        <h2>What is a Zoetrope?</h2>
+
+        <p>An old timey moving picture machine is what it is. You can read more <a href="http://en.wikipedia.org/wiki/Zoetrope" target="blank">here</a>.</p>
+
+        <div class="supported-options">
+            <h2>Options:</h2>
+
+            <div class="AVAST_PAM_nonloginform" id="options"><div style="width: 280px;" class="guidat"><div style="height: 159px; overflow-y: auto;" class="guidat-controllers"><div style="-moz-user-select: none;" class="guidat-controller string"><span style="-moz-user-select: none;" class="guidat-propertyname">Animation</span><select><option selected="selected" value="horse">Muybridge Horse</option><option value="ball">Bouncing Ball</option><option value="willie">Steamboat Willie</option></select></div><div style="-moz-user-select: none;" class="guidat-controller number"><span style="-moz-user-select: none;" class="guidat-propertyname">Rotational Period</span><input step="0.01" value="1.2" id="period" type="text"><div class="guidat-slider-bg"><div style="width: 23.8477%;" class="guidat-slider-fg"></div></div></div><div style="-moz-user-select: none;" class="guidat-controller number"><span style="-moz-user-select: none;" class="guidat-propertyname">Scale</span><input step="0.01" value="1" id="scale" type="text"><div class="guidat-slider-bg"><div style="width: 11.1111%;" class="guidat-slider-fg"></div></div></div><div style="-moz-user-select: none;" class="guidat-controller number"><span style="-moz-user-select: none;" class="guidat-propertyname">Angle</span><input step="0.1" value="-11" id="angle" type="text"><div class="guidat-slider-bg"><div style="width: 22.5%;" class="guidat-slider-fg"></div></div></div><div style="-moz-user-select: none;" class="guidat-controller number"><span style="-moz-user-select: none;" class="guidat-propertyname">Background</span><input step="1" value="238" id="background" type="text"><div class="guidat-slider-bg"><div style="width: 93.3333%;" class="guidat-slider-fg"></div></div></div></div><a href="#" class="guidat-toggle">Close Controls</a></div></div>
+        </div>
+
+        <p class="social">
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http://andrew-hoyer.com/experiments/zoetrope/&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true" frameborder="0"></iframe>
+
+            <iframe data-url="http://andrew-hoyer.com/experiments/zoetrope/" src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/tweet_button.htm" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 61px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script type="text/javascript" src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/widgets.js"></script>
+        </p>
+
+        <a id="controls-toggle" href="#">Hide Controls</a>
+
+    </div>
+
+    <div class="wrapper">
+        <div class="zoetrope horse">
+            <div class="frames">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fallback">
+        <h1>Oh no!</h1>
+        <p>Your browser does not support some of the technology required
+ for this experiment. You'll need a relatively modern browser that 
+supports both <b>CSS 3D-Transforms</b> as well as <b>CSS Animations</b>. Maybe try <a href="http://www.google.com/chrome" target="blank">Google Chrome</a> or <a href="http://www.apple.com/safari/" target="blank">Safari</a>, or just watch the video below:</p>
+        <iframe src="http://www.youtube.com/embed/z--YZq68fmA" allowfullscreen="" frameborder="0" height="360" width="480"></iframe>
+        <p class="alternate">It may also be that your computer/device does not support hardware acceleration.</p>
+    </div>
+
+    <script type="text/javascript" src="CSS%20Zoetrope%20-%20Andrew%20Hoyer_files/controls.js"></script>
+
+
+<iframe style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>

@@ -1,0 +1,40 @@
+.stable {
+    position: relative;
+    height: 320px;
+  }
+  .stable .balloon {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 163px;
+    background: url(images/balloon.png) ;
+  }
+  .stable:hover .balloon {
+    bottom: 157px;
+    transition-duration: 3s;
+  }
+
+  .stable .balloon.default {
+    left: 39px;
+    background-image: url(images/balloon-blue.png);
+  }
+  .stable .balloon.linear {
+    left: 149px;
+    transition-timing-function: linear;
+  }
+  .stable .balloon.ease-in {
+    left: 259px;
+    transition-timing-function: ease-in;
+  }
+  .stable .balloon.ease-out {
+    left: 369px;
+    transition-timing-function: ease-out;
+  }
+  .stable .balloon.ease-in-out {
+    left: 479px;
+    transition-timing-function: ease-in-out;
+  }
+  .stable .balloon.cubic-bezier {
+    left: 589px;
+    transition-timing-function: cubic-bezier(0,1,1,0);
+  }

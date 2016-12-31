@@ -1,0 +1,58 @@
+  color: #ffffff;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -ms-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden;
+}
+
+body.bg{
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-clip: none;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+    body.bg:after{
+    content : "";
+    background-image: url('../img/hildasball_7_d_s_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-clip: none;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity : 1.0;
+    z-index: -2;
+
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    /*width: auto;
+    height: auto;*/
+}
+
+
+@media (max-width: 767px) {
+  body{
+    min-height: 800px;
+  }
+  body.bg:after{ 
+
+    position: fixed;
+  }
+
+  .floatContact {
+    float: none;
+  }
+}

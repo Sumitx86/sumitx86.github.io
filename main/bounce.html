@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
+    <link href="css/3Dcube.css" rel="stylesheet">
+<link href="css/bubble.css" rel="stylesheet">
+<link href="css/3d-transforms.css" rel="stylesheet">
+<link href="css/spiner.css" rel="stylesheet">
+<link href="rocket.css" rel="stylesheet">
+<link href="ballone.css" rel="stylesheet">
+<link href="css/apple.css" rel="stylesheet">
+<link href="css/textholder.css" rel="stylesheet">
+<link href="css/bounce-animation.css" rel="stylesheet">
+
+	<!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+    
+  </head>
+  <body>
+    <div id="waiting" style="display:none;position:fixed;width:100%;height:100%;background-color:black;background:url('explore/img/load.GIF') no-repeat center center fixed;"> 
+    </div>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12"  id="content">
+            <div id="flipbox" style="margin-top:-6px;position:relative;width:102%;min-height:1000px;box-shadow: 0px 4px 31px #888888;padding:1px;overflow:hidden">
+
+<div id="stage">
+<div id="traveler">
+<div id="bouncer"><!-- --></div>
+</div>
+</div>
+
+<br>
+
+<h2>Now you can Explore Your animation...</h2>
+<p> To generate the fallowing example just have a look on the fallowing html code...</p>
+<pre class="prettyprint">
+<script>
+function myFunction() {
+    var x = document.getElementById("styleid").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+<button type="button" onclick="myFunction()">Try it</button><p id="demo"></p>
+<textarea id="styleid"rows="7" cols="70" >
+<div id="stage">
+<div id="traveler">
+<div id="bouncer"><!-- --></div>
+</div>
+</div>
+</textarea>
+</pre>
+
+<br>
+<h2>Now have a look on the stylesheet of that Animation...</h2>
+<pre class="prettyprint">
+  /* keyframes definition for WebKit browsers */
+
+@-webkit-keyframes travel {
+  from { left: 0;     }
+  to   { left: 640px; }
+}
+
+@-webkit-keyframes bounce {
+  from, to  {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 220px;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+
+@-webkit-keyframes spin {
+  from {                                     }
+  to   { -webkit-transform: rotateZ(360deg); }
+}
+
+/* keyframes definition for other browsers */
+
+@keyframes travel {
+  from { left: 0;     }
+  to   { left: 640px; }
+}
+
+@keyframes bounce {
+  from, to  {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 220px;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes spin {
+  from {
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* styles for the stage and animated elements */
+
+#stage {
+  position: relative;
+  margin: 1em auto;
+  width: 660px;
+  height: 240px;
+  border: 2px solid #666;
+  background: #cff;
+}
+
+#traveler {
+  position: absolute;
+  width: 20px;
+  height: 240px;
+
+  -webkit-animation-name: travel;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-duration: 4.8s;
+
+  animation-name: travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 4.8s;
+}
+
+#bouncer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: red;
+  background: -webkit-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -moz-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -o-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -ms-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+
+  -webkit-animation-name: bounce, spin;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 4.2s;
+
+  animation-name: bounce, spin;
+  animation-iteration-count: infinite;
+  animation-duration: 4.2s;
+}
+
+</pre>
+ 
+	   </div>
+            </div>
+
+			</div><!-- /.row -->
+
+			</div><!-- /#page-wrapper -->
+
+			</div><!-- /#wrapper -->
+  </body>
+</html>

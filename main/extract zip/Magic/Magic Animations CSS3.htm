@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class=" mod-js mod-audio mod-svg mod-webaudio mod-fullscreen"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>The Tumbler</title>
+    <link href="Magic%20Animations%20CSS3_files/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Magic%20Animations%20CSS3_files/main-processed.css">
+
+    <meta property="og:title" content="The Tumbler by Andrew Hoyer.">
+    <meta property="og:type" content="experiment">
+    <meta property="og:url" content="http://andrew-hoyer.com/experiments/tumbler">
+    <meta property="og:image" content="http://andrew-hoyer.com/experiments/tumbler/images/loading.png">
+    <meta property="og:site_name" content="Andrew-Hoyer.com">
+    <meta property="og:description" content="A simple physics simulation/meditation/relaxation experiment.">
+</head>
+<body class="loading">
+    <svg xmlns="http://www.w3.org/2000/svg" height="400" width="400" viewBox="0 0 400 400" id="main-canvas"></svg>
+
+    <div class="controls">
+        <svg id="slow-clock" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <line x1="50" y1="50" x2="50" y2="18" stroke="#ccc" stroke-width="4" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="30s" repeatCount="indefinite"></animateTransform>
+            </line>
+            <line x1="50" y1="50" x2="50" y2="28" stroke="#ccc" stroke-width="4" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="360s" repeatCount="indefinite"></animateTransform>
+            </line>
+            <circle cx="50" cy="50" r="43" stroke="#ccc" stroke-width="4" fill="none"></circle>
+        </svg>
+        <input id="rate" min="0" max="1" value="1" step="0.001" type="range">
+        <svg id="fast-clock" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <line x1="50" y1="50" x2="50" y2="18" stroke="#ccc" stroke-width="4" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="6s" repeatCount="indefinite"></animateTransform>
+            </line>
+            <line x1="50" y1="50" x2="50" y2="28" stroke="#ccc" stroke-width="4" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="60s" repeatCount="indefinite"></animateTransform>
+            </line>
+            <circle cx="50" cy="50" r="43" stroke="#ccc" stroke-width="4" fill="none"></circle>
+        </svg>
+
+        <input checked="checked" id="mute" type="checkbox">
+        <label for="mute" title="mute!">
+            <svg id="speaker" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                <g>
+                    <polygon points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769" style="stroke:#ccc;stroke-width:5;stroke-linejoin:round;fill:#ccc;"></polygon>
+                    <path d="M 48.128,49.03 C 50.057,45.934 51.19,42.291 51.19,38.377 C 51.19,34.399 50.026,30.703 48.043,27.577" style="fill:none;stroke:#ccc;stroke-width:5;stroke-linecap:round"></path>
+                    <path d="M 55.082,20.537 C 58.777,25.523 60.966,31.694 60.966,38.377 C 60.966,44.998 58.815,51.115 55.178,56.076" style="fill:none;stroke:#ccc;stroke-width:5;stroke-linecap:round"></path>
+                    <path d="M 61.71,62.611 C 66.977,55.945 70.128,47.531 70.128,38.378 C 70.128,29.161 66.936,20.696 61.609,14.01" style="fill:none;stroke:#ccc;stroke-width:5;stroke-linecap:round"></path>
+                </g>
+            </svg>
+            <svg id="speaker-muted" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                <g>
+                    <polygon points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769" style="stroke:#ccc;stroke-width:5;stroke-linejoin:round;fill:#ccc;"></polygon>
+                    <path d="M 48.651772,50.269646 69.395223,25.971024" style="fill:none;stroke:#ccc;stroke-width:5;stroke-linecap:round"></path>
+                    <path d="M 69.395223,50.269646 48.651772,25.971024" style="fill:none;stroke:#ccc;stroke-width:5;stroke-linecap:round"></path>
+                </g>
+            </svg>
+        </label>
+    </div>
+
+    <div class="loading-splash">
+        <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 100 100" id="loading-canvas"><g><rect class="" style="fill: rgb(236, 240, 241);" y="56.4020146528473" x="93.34378581522745" height="2.824306684329129" width="1.9451261406438332"><animateTransform repeatCount="indefinite" dur="28.640457458262535s" to="360 94.31634888554936 57.814167995011864" from="0 94.31634888554936 57.814167995011864" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(243, 156, 18);" y="64.37298595656308" x="91.02559141805436" height="2.035840986184007" width="2.521153034623052"><animateTransform repeatCount="indefinite" dur="26.82152700606124s" to="360 92.28616793536588 65.39090644965509" from="0 92.28616793536588 65.39090644965509" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(231, 76, 60);" cy="71.90516691492161" cx="88.37631008522135" r="1.1896661701567708"></circle><rect class="" style="fill: rgb(22, 160, 133);" y="78.34067971330452" x="83.31653892030432" height="1.1695254451794979" width="2.3109220400993786"><animateTransform repeatCount="indefinite" dur="22.45345371456228s" to="360 84.47199994035401 78.92544243589427" from="0 84.47199994035401 78.92544243589427" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(149, 165, 166);" cy="83.60870606204553" cx="78.06214855758579" r="1.7265877566169694"></circle><circle class="" style="fill: rgb(39, 174, 96);" cy="88.34275687066813" cx="71.87161370036839" r="1.2567725992632384"></circle><circle class="" style="fill: rgb(236, 240, 241);" cy="91.78430997961607" cx="64.88904849390528" r="1.0037159114996137"></circle><rect class="" style="fill: rgb(52, 152, 219);" y="93.50963540874092" x="56.896150911835285" height="1.6134269536168837" width="1.836034166353178"><animateTransform repeatCount="indefinite" dur="29.07393793438377s" to="360 57.81416799501187 94.31634888554936" from="0 57.81416799501187 94.31634888554936" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(41, 128, 185);" y="94.38964064004655" x="49.03043211158874" height="1.2207187199068872" width="1.939135776822524"><animateTransform repeatCount="indefinite" dur="17.262322869539926s" to="0 50 95" from="360 50 95" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(230, 126, 34);" cy="93.51738440465985" cx="41.386867524098626" r="1.5979289617790247"></circle><circle class="" style="fill: rgb(39, 174, 96);" cy="91.67342141546253" cx="33.99634703044156" r="1.2254930398066959"></circle><rect class="" style="fill: rgb(243, 156, 18);" y="88.41876848958327" x="26.314988662284158" height="1.1047493614329467" width="2.370022675431709"><animateTransform repeatCount="indefinite" dur="22.808714733742146s" to="360 27.50000000000001 88.97114317029974" from="0 27.50000000000001 88.97114317029974" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(142, 68, 173);" cy="83.77236630151208" cx="20.37492392526379" r="1.3992672776839012"></circle><circle class="" style="fill: rgb(127, 140, 141);" cy="78.01255749372939" cx="14.615115117481098" r="1.8257698843298136"></circle><circle class="" style="fill: rgb(230, 126, 34);" cy="71.7418488434489" cx="10.270705673149166" r="1.5163023131022308"></circle><circle class="" style="fill: rgb(189, 195, 199);" cy="64.48971801214228" cx="6.8126436271212825" r="1.8023768750257139"></circle><circle class="" style="fill: rgb(142, 68, 173);" cy="56.990258118526214" cx="4.8597412379649425" r="1.6478197529714098"></circle><circle class="" style="fill: rgb(26, 188, 156);" cy="49.4379136893221" cx="4.437913689322035" r="1.1241726213559302"></circle><circle class="" style="fill: rgb(142, 68, 173);" cy="41.567714659344944" cx="5.065533768807361" r="1.236234691286529"></circle><rect class="" style="fill: rgb(142, 68, 173);" y="34.04960290187031" x="6.7272621320114085" height="1.1189812969493604" width="1.9731398652453778"><animateTransform repeatCount="indefinite" dur="16.541352470586073s" to="360 7.713832064634097 34.60909355034499" from="0 7.713832064634097 34.60909355034499" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(149, 165, 166);" cy="26.85344645046337" cx="10.3823032801635" r="1.2931070990734193"></circle><rect class="" style="fill: rgb(41, 128, 185);" y="20.00996626660404" x="14.681529261728869" height="2.129182595003543" width="1.6929415958341132"><animateTransform repeatCount="indefinite" dur="16.971657571757454s" to="360 15.528000059645926 21.07455756410581" from="0 15.528000059645926 21.07455756410581" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(26, 188, 156);" cy="14.702266788376795" cx="20.248824292836407" r="1.651466542538505"></circle><rect class="" style="fill: rgb(26, 188, 156);" y="9.832952333557278" x="26.01779753251899" height="2.3918089922860775" width="2.9644049349618466"><animateTransform repeatCount="indefinite" dur="17.073205865241874s" to="0 27.499999999999915 11.028856829700317" from="360 27.499999999999915 11.028856829700317" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(142, 68, 173);" cy="6.993864150372859" cx="33.8891256360835" r="1.4399358285226034"></circle><circle class="" style="fill: rgb(142, 68, 173);" cy="4.722475714670564" cx="41.22465660520792" r="1.9223507995601956"></circle><circle class="" style="fill: rgb(44, 62, 80);" cy="4.113007258630889" cx="49.11300725863076" r="1.7739854827382227"></circle><circle class="" style="fill: rgb(52, 152, 219);" cy="4.859520786270672" cx="56.99003766683179" r="1.6482606563598794"></circle><circle class="" style="fill: rgb(155, 89, 182);" cy="7.071301259354878" cx="64.74837564437576" r="1.2850616105583816"></circle><rect class="" style="fill: rgb(46, 204, 113);" y="10.490603067763887" x="71.03869192438573" height="1.0765075238725892" width="2.922616151228255"><animateTransform repeatCount="indefinite" dur="27.54288542944367s" to="360 72.49999999999986 11.028856829700182" from="0 72.49999999999986 11.028856829700182" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(192, 57, 43);" y="14.421350174429962" x="78.11772306614581" height="2.213299770431841" width="1.6154387394966467"><animateTransform repeatCount="indefinite" dur="17.40384470476628s" to="360 78.92544243589414 15.528000059645883" from="0 78.92544243589414 15.528000059645883" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(39, 174, 96);" y="19.819180856980108" x="83.25586876240186" height="2.5107534142509866" width="2.4322623559040704"><animateTransform repeatCount="indefinite" dur="15.618709763038783s" to="0 84.4719999403539 21.0745575641056" from="360 84.4719999403539 21.0745575641056" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(142, 68, 173);" y="26.773208396278147" x="87.63068010612031" height="1.453583207443389" width="2.680926128358694"><animateTransform repeatCount="indefinite" dur="15.302700980425932s" to="360 88.97114317029965 27.49999999999984" from="0 88.97114317029965 27.49999999999984" type="rotate" attributeName="transform"></animateTransform></rect><rect class="" style="fill: rgb(52, 152, 219);" y="33.66133616359584" x="91.15632043001477" height="1.895514773497762" width="2.2596950107020684"><animateTransform repeatCount="indefinite" dur="29.045487367132303s" to="0 92.28616793536581 34.609093550344724" from="360 92.28616793536581 34.609093550344724" type="rotate" attributeName="transform"></animateTransform></rect><circle class="" style="fill: rgb(127, 140, 141);" cy="41.33516424062524" cx="93.46568112118663" r="1.701335528725401"></circle><rect class="" style="fill: rgb(243, 156, 18);" y="48.562455880747564" x="93.52799349146035" height="2.8750882385044396" width="2.9440130170792944"><animateTransform repeatCount="indefinite" dur="24.678551596865063s" to="360 95 49.99999999999979" from="0 95 49.99999999999979" type="rotate" attributeName="transform"></animateTransform></rect><animateTransform repeatCount="indefinite" dur="300s" to="360 50 50" from="0 50 50" type="rotate" attributeName="transform"></animateTransform></g></svg>
+        <ol class="">
+            <li>Sit back, relax,</li>
+            <li>slow it down,</li>
+            <li><a href="#">watch it all tumble by</a></li>
+        </ol>
+    </div>
+
+    <ul class="links">
+        <li>
+            ░ <a href="http://andrew-hoyer.com/experiments/">EXPERIMENTS</a>
+        </li>
+        <li>
+            ░ <a href="https://github.com/ndrwhr/tumbler">README.md</a>
+        </li>
+        <li>
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http://andrew-hoyer.com/experiments/tumbler/&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true" frameborder="0"></iframe>
+        </li>
+        <li>
+            <iframe allowtransparency="true" scrolling="no" src="Magic%20Animations%20CSS3_files/tweet_button.htm" class="twitter-share-button twitter-count-horizontal" style="width: 92px; height: 20px;" title="Twitter Tweet Button" data-twttr-rendered="true" frameborder="0"></iframe>
+        </li>
+        <li>
+            <script async="" src="Magic%20Animations%20CSS3_files/cbgapi.loaded_1"></script><script async="" src="Magic%20Animations%20CSS3_files/cbgapi.loaded_0"></script><script gapi_processed="true" type="text/javascript" src="Magic%20Animations%20CSS3_files/plusone.js"></script>
+            <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Magic%20Animations%20CSS3_files/fastbutton.htm" name="I0_1452880208086" id="I0_1452880208086" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="Magic%20Animations%20CSS3_files/Box2dWeb-2.js"></script>
+    <script type="text/javascript" src="Magic%20Animations%20CSS3_files/modernizr.js"></script>
+    <script type="text/javascript" src="Magic%20Animations%20CSS3_files/index.js"></script>
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Magic%20Animations%20CSS3_files/postmessageRelay.htm" id="oauth2relay405951113" name="oauth2relay405951113"></iframe></body></html>

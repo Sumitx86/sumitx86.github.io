@@ -1,0 +1,237 @@
+<script src="code-css/prettify.js"></script>
+<link href="code-css/prettify.css" rel="stylesheet">
+<style>
+#close#close:after{
+	content: '\D7';
+	left: 50%;
+	margin-left: 1.3em;
+	margin-top: 4px;
+	color: white;
+	color: white;
+	font-weight: bolder;
+}
+</style>
+
+<script>
+function openBlogDrive(id)
+{
+	$("#dataInHome").html('');
+}
+function openExploreDrive(id)
+{
+	alert(id);
+}
+function openVocabDrive(id)
+{
+	alert(id);
+}
+</script>
+
+<div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h1>Home <small>complete detail</small></h1><hr style="margin-top:-8px">
+		<br>
+		</div>
+		<div id="dataInHome" style="padding:10px;margin-top:-35px">
+<pre class="prettyprint">
+
+#include <stdio.h>
+#include <iostream.h>
+#include <stdlib.h>
+#include <values.h>
+#include <time.h>
+
+
+
+void main()
+{
+int i,j,k,l,list[1000];
+FILE *fp;
+char any[8];
+
+cout << "Enter a file name\n";
+cin >> any;
+
+fp = fopen(any,"wb");
+    for(j=0;j<50;j++)
+    {
+       for(i=0;i<200;i++)
+       {
+	   k = rand() % RAND_MAX;
+	   fwrite(&k,sizeof(int),1,fp);
+       }
+    }
+/*fclose(fp);
+
+fp = fopen(any,"rb");   */
+    i = 0;
+    while (fread(&l,sizeof(int),1,fp) != 0)
+    {
+	  list[i] = l;
+	  i = i + 1;
+    }
+fclose(fp);
+
+for (i=0;i<50;i++)
+    cout << list[i] << '\n';
+
+/*for(i=0;i<900;i++)
+    {
+	k = list[i];
+	fwrite(&k,sizeof(int),1,fp);
+    }
+
+fp = fopen("ggg.txt","wb");
+    for(int a=1;a<900;a++)
+    {
+       int v = list[a];
+       int b = a;
+       while(list[b-1] > v)
+       {
+	   list[b] = list[b-1];
+	   b = b - 1;
+       }
+       list[b] = v;
+    }
+    for(i=0;i<900;i++)
+    {
+	k = list[i];
+	fwrite(&k,sizeof(int),1,fp);
+    }
+fclose(fp);    */
+
+
+}
+
+</pre>
+
+
+<pre class="prettyprint">
+
+<h2>circle</h2>
+<p>
+<br>int main(void){
+ <br>  /* request auto detection */
+<br>   int gdriver = DETECT, gmode, errorcode;
+<br>   int midx, midy;
+<br>   int radius = 100;
+
+<br>   /* initialize graphics and local variables */
+<br>   initgraph(&gdriver, &gmode, "C:\\turboc3\\bgi");
+<br>   /* read result of initialization */
+<br>   errorcode = graphresult();
+<br>   if (errorcode != grOk)  /* an error occurred */
+<br>   {
+<br>      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+<br>      printf("Press any key to halt:");
+ <br>     getch();
+ <br>     exit(1); /* terminate with an error code */
+ <br>  }
+
+<br>   midx = getmaxx() / 2;
+<br>   midy = getmaxy() / 2;
+ <br>  setcolor(getmaxcolor());
+<br>   /* draw the circle */
+ <br>  circle(midx, midy, radius);
+
+<br>   /* clean up */1
+ <br>  getch();
+ <br>  closegraph();
+ <br>  return 0;
+</pre>
+
+<pre class="prettyprint">
+
+<p>#include<conio.h>
+<br>#include<graphics.h>
+<br>#include<math.h>
+<br>#include<dos.h>
+
+<br>#define WBC 5
+<br>//^watchbackcolor
+<br>#define X 200
+<br>#define Y 200
+
+<br>void dial(int x, int y);
+<br>void sechand(int timeminute);
+
+<br>void minhand(int t)
+<br>{
+<br>int x1,y1;
+<br>setlinestyle(0,0,3);
+
+<br>x1= X+ (80 * cos(t*0.1047));
+<br>y1= Y+ (80 * sin(t*0.1047));
+
+<br>setcolor(BLACK);
+<br>line( X, Y, x1, y1);
+
+<br>setcolor(WBC+1);
+<br>line( X, Y, X+ 80 * cos((t-1)*0.1047),Y+ 80 * sin((t-1)*0.1047));
+<br>circle(X,Y,4);
+<br>}
+
+<br>void sechand(int t){
+<br>int x1,y1;
+<br>setlinestyle(0,0,3);
+
+<br>x1= X+(100 * cos(t*0.1047));
+<br>y1= Y+(100 * sin(t*0.1047));
+
+<br>setcolor(RED);
+<br>line(X, Y, x1, y1);
+
+<br>setcolor(WBC+1);
+<br>line(X, Y, X+ 100 * cos((t-1)*0.1047),Y+ 100 * sin((t-1)*0.1047));
+
+<br>circle(X,Y,4);}
+
+<br>void dial(int x,int y){
+<br>int const size=200;
+
+<br>setfillstyle(1,WBC);
+<br>fillellipse(x,y,size,size);
+
+<br>setfillstyle(1,WBC+1);
+<br>fillellipse(x,y,size-20,size-20);
+
+<br>outtextxy(x,y-(size-40),"12");
+<br>outtextxy(x,y+(size-40),"6");
+<br>outtextxy(x+(size-40),y,"3");
+<br>outtextxy(x-(size-40),y,"9");
+<br>outtextxy(x+size/3,y-2*size/3,"1");
+<br>outtextxy(x+2*size/3,y-size/3,"2");
+<br>outtextxy(x+2*size/3,y+size/3,"4");
+<br>outtextxy(x+size/3,y+2*size/3,"5");
+<br>outtextxy(x-size/3,y+2*size/3,"7");
+<br>outtextxy(x-2*size/3,y+size/3,"8");
+<br>outtextxy(x-size/3,y-2*size/3,"11");
+<br>outtextxy(x-2*size/3,y-size/3,"10");
+
+<br>circle(x,y,4);}
+
+<br>void main(){
+<br>int gd=DETECT, gm,i,j, flag=1;
+<br>initgraph(&gd,&gm,"C:\\turboc3\\bgi");
+
+<br>dial(200,200);
+<br>do{
+<br>minhand(i);
+<br>for(j=0;j<60;j++){
+<br>sechand(j);
+<br>delay(1000);
+<br>if(kbhit()) {
+<br>flag =0;
+<br>break;}}
+<br>i++;
+<br>}while(flag);
+<br>closegraph();
+<br>}
+    </pre>	
+     </div>
+	   </div>
+         </div>

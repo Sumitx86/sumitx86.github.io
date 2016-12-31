@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/w3.css">
+	<!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		 
+		  <div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h2>Get-Started.. </h2><hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px">		
+<div class="w3 w3-container w3-green">
+
+<h3><b> Basics of C Programming...</b></h3> 
+<marquee><p><i>Before Learning C you have to know about..</i></p> </marquee>
+
+<div class="w3-card-24" style="margin: 0px;padding:15px;">
+<h3>Semicolons</h3>
+<p>
+In a C program, the semicolon is a statement terminator. That is, each individual statement must be ended with a semicolon. It indicates the end of one logical entity.
+</p><p>
+Given below are two different statements -
+</p><pre class="prettyprint">
+printf("Hello, World! \n");
+return 0;</pre>
+<h3>Comments</h3>
+<p>
+Comments are like helping text in your C program and they are ignored by the compiler. They start with /* and terminate with the characters */ as shown below -
+</p><pre class="prettyprint">
+/* my first program in C */</pre>
+<h3>Identifiers
+</h3><p>
+A C identifier is a name used to identify a variable, function, or any other user-defined item. An identifier starts with a letter A to Z, a to z, or an underscore '_' followed by zero or more letters, underscores, and digits (0 to 9).
+</p><p>
+C does not allow punctuation characters such as @, $, and % within identifiers. C is a case-sensitive programming language. Thus, Manpower and manpower are two different identifiers in C. Here are some examples of acceptable identifiers -
+</p><pre class="prettyprint">
+mohd       zara    abc   move_name  a_123
+myname50   _temp   j     a23b9      retVal</pre>
+<h3>Keywords</h3>
+<p>
+The following list shows the reserved words in C. These reserved words may not be used as constants or variables or any other identifier names.
+</p><pre class="prettyprint">
+auto 	else 	long 	switch
+break 	enum 	register 	typedef
+case 	extern 	return 	union
+char 	float 	short 	unsigned
+const 	for 	signed 	void
+continue 	goto 	sizeof 	volatile
+default 	if 	static 	while
+do 	int 	struct 	_Packed
+double 	</pre>
+<h3>Whitespace in C</h3>
+<p>
+A line containing only whitespace, possibly with a comment, is known as a blank line, and a C compiler totally ignores it.
+</p><p>
+Whitespace is the term used in C to describe blanks, tabs, newline characters and comments. Whitespace separates one part of a statement from another and enables the compiler to identify where one element in a statement, such as int, ends and the next element begins. Therefore, in the following statement -
+</p><pre class="prettyprint">
+int age;
+</pre><p>
+there must be at least one whitespace character (usually a space) between int and age for the compiler to be able to distinguish them. On the other hand, in the following statement -
+</p><pre class="prettyprint">
+fruit = apples + oranges;   // get the total fruit
+</pre><p>
+no whitespace characters are necessary between fruit and =, or between = and apples, although you are free to include some if you wish to increase readability.
+</p>
+</div>
+
+<div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - printf and scanf:</h3>
+<p>printf() and scanf() functions are inbuilt library functions in C which are available in the C library by default. These functions are declared and related 
+macros are defined in "stdio.h" which is a header file. We have to include "stdio.h" file as shown in below C program to make use of these printf() and scanf()
+</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Data Types:</h3>
+<p>C data types are defined as the data storage format that a variable can store a data to perform a specific operation. Data types are used to define a
+ variable before using in a program. Size of variable, const and array are determined by data types. There are four data types in the C language.</p>
+ 
+</div>
+<div class="w3-card-24" style="margin: 0px;padding:15px;">
+ 
+ <h3>C - Tokens and keywords:</h3>
+<p>C tokens, Identifiers and Keywords are the basics in a C program. All are explained in this page with definition and simple example programs. C tokens
+ are the basic building blocks in C language which are constructed together to write a C program. Each program element in a C program is given a name called</p>
+ <h3>Tokens </h3>
+		<p>
+A C program consists of various tokens and a token is either a keyword, an identifier, a constant, a string literal, or a symbol. For example, the following C statement consists of five tokens -
+printf("Hello, World! \n");	</p>	
+	
+<p>The individual tokens are -</p>
+
+
+		<pre class="prettyprint"style="width:30%;">
+printf
+(
+"Hello, World! \n"
+);
+</pre></div>
+ 
+<div class="w3-card-24" style="margin: 0px;padding:15px;">
+  <h3>C - Constants:</h3>
+<p>C Constants are also like normal variables. But, the only difference is, their values can't be modified by the program once they are defined. Constants 
+refer to fixed values. They are also called as literals.</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Variables:</h3>
+<p>C variable is a named location in a memory where a program can manipulate the data. This location is used to hold the value of the variable. The value of 
+the C variable may get changed in the program. The C variable might be belonging to any of the data types like int, float, char etc</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Operators and Expressions:</h3>
+<p>The symbols which are used to perform logical and mathematical operations in a C program are called C operators. These C operators join individual 
+constants and variables to form expressions. Operators, functions, constants and variables are combined together to form expressions.</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Decision Control statements:</h3>
+<p>In decision control statements (C - if else and nested if), group of statement is executed when the condition is true.  If  the condition is false, then,
+ else part statements are executed. In C programming, there are 3 types of decision making control statements in C language.</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Loop control statements:</h3>
+<p>Loop control statements in C programming are used to perform looping operations until the given condition is true. Control comes out of the loop statements
+ once the condition becomes false. There are 3 types of loop control statements in C language.</p>
+ </div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Case control statements:</h3>
+<p>The statements which are used to execute only specific block of statements in a series of blocks are called case control statements. There are 4 types of 
+case control statements in C programming. They are 1) switch 2) break 3) continue 4) </p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Type Qualifiers:</h3>
+<p>
+The keywords which are used to modify the properties of a variable are called type qualifiers.There are two types of qualifiers available in C programming. They are 1) const 2) volatile. Constants are also like normal variables..</p>
+ </div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Storage Class Specifiers:</h3>
+<p>Storage class specifiers in C programming tell the compiler where to store a variable, how to store the variable, what is the initial value of the variable 
+and the lifetime of the variable. There are 4 storage class specifiers available in C language.</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Array:</h3>
+<p>C Array is a collection of variables belongings to the same data type. You can store group of data of the same data type in an array. There are 2 types of
+ arrays in C programming. They are 1) One dimensional array 2) Multidimensional array..</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - String:</h3>
+<p>C Strings are nothing but array of characters ended with null character ('\0'). This null character indicates the end of the string. In C programming, 
+strings are always enclosed by double quotes. Whereas, character is enclosed by single quotes in C</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C - Pointer:</h3>
+<p>C Pointer is a variable that stores/points the address of the other variable. C Pointer is used to allocate memory dynamically,  i.e. at run time. 
+The variable might be any of the data types such as int, float, char, double, short etc. Normal variable stores the value, whereas pointer variable stores the
+ address of the variable.</p>
+ </div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+<h3>C Programming - Functions:</h3>
+<p>Functions in C programming are basic building blocks in a program. All C programs are written using functions to improve re-usability, understandability 
+and to keep track of them. A large C program is divided into basic building blocks called C function. C function contains set of instructions enclosed
+ by "{  }" which performs specific.</p> 
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+ <h3>C Programming - Library functions:</h3>
+<p>Library functions in C language are inbuilt functions which are grouped together and placed in a common place called a library. Each library function in C
+ programming language performs a specific operation. We can make use of these library functions to get the pre-defined output instead of writing our own code 
+ to get those outputs.,.</p>
+</div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+ <h3>C Programming - Command line arguments:</h3>
+<p>main() function of a C program accepts arguments from command line or from other shell scripts by following commands. They are 1. argc 2. argv[]. In real 
+time application, it will happen to pass arguments to the main program itself.  These arguments are passed to the main () function while executing binary file
+ from command line..</p>
+ </div><div class="w3-card-24" style="margin: 0px;padding:15px;">
+
+ <h3>C programming - Variable length argument:</h3>
+<p>
+Variable length arguments in C programming are an advanced concept offered by C99 standard. In C89 standard, fixed arguments only can be passed to the 
+functions. When a function gets the number of arguments that changes at run time, we can go for a variable length arguments. It is denoted as (3 dots).</p>
+</div>		
+		
+		
+
+
+
+
+		</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

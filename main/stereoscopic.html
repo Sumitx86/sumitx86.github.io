@@ -1,0 +1,118 @@
+<html>
+<style>
+.stage {
+  width: 580px;
+  height: 500px;
+  margin: 10px auto;
+  position: relative;
+  perspective: 1600px;
+}
+.cube {
+  transform-style: preserve-3d;
+  transform-origin: 100px 50%;
+  position: absolute;
+  top: 120px;
+  left: 140px;
+}
+.cube span {
+  color: white;
+  display: block;
+  font-size: 100px;
+  height: 200px;
+  line-height: 200px;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  width: 200px;
+}
+.back {
+  background-color: #f00;
+  transform: rotateY(180deg) translateZ(100px);
+}
+.top {
+  background-color: #ff7400;
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  background-color: #aaa;
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.7);
+  transform: rotateX(-90deg) translateZ(100px);
+}
+.left {
+  background-color: #099;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.right {
+  background-color: #0c0;
+  transform: rotateY(90deg) translateZ(100px);
+}
+.front {
+  background-color: #ff0;
+  transform: translateZ(100px);
+}
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.left, .right {
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+.left .stage {
+  perspective-origin: 63.5% -340px;
+}
+
+.right .stage {
+  perspective-origin: 36.5% -340px;
+}
+</style>
+<body>
+<div class="stage">
+  <figure class="cube">
+    <span class="back">S</span>
+    <span class="top"></span>
+    <span class="bottom"></span>
+    <span class="left">3D!</span>
+    <span class="right">S</span>
+    <span class="front">C</span>
+
+<div class="container">
+  <div class="left">
+    <div class="stage">
+      <figure class="cube">
+        <span class="back">S</span>
+        <span class="top"></span>
+        <span class="bottom"></span>
+        <span class="left">3D!</span>
+        <span class="right">S</span>
+        <span class="front">C</span>
+      </figure>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="stage">
+      <figure class="cube">
+        <span class="back">S</span>
+        <span class="top"></span>
+        <span class="bottom"></span>
+        <span class="left">3D!</span>
+        <span class="right">S</span>
+        <span class="front">C</span>
+      </figure>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

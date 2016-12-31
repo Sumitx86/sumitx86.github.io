@@ -1,0 +1,1891 @@
+
+    @font-face {
+      font-family: "Downcome";
+      src: url("Fonts/chinese_rocks_rg-webfont.ttf");
+    }
+
+
+
+body { 
+	font-family: "Downcome", sans-serif;
+	background-color: #fff;
+	top: 120px;
+	overflow-x:hidden;
+	}
+	
+	#RightBar{
+	position: absolute;
+	top: 0px;
+	margin-left: 1255px;
+	background-color: #000;
+	height: 3600px;
+	width: 10000%;
+	float: right;
+
+	}  
+  p{
+	font-size: 2em;
+	text-align: center;
+	color: #fff;
+  }
+  
+  #BottomBar{
+	position: absolute;
+	margin-top: 600px;
+	left: 0px;
+	background-color: #000;
+	width: 100%;
+	height: 3000px;
+}
+
+	
+  h1 {
+	background-color: #111;
+	color: #fff;
+	font-family: 'Downcome', sans-serif; 
+	font-size: 128px;
+	text-align: center;
+	margin-bottom: 35px;
+  }  
+
+#runAgain{
+	background-color: #444;
+	color: #dedede;
+	font-family: 'Downcome', sans-serif; 
+	font-size: 2em;
+	text-align: center;
+	-webkit-animation-name: runAgainBar;
+	-webkit-animation-duration:  57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+	-moz-animation-name: runAgainBar;
+	-moz-animation-duration:  57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+}
+
+#countDown{
+background-color: #255C92;
+width: 100%;
+text-align: center;
+line-height: 600px;
+position: absolute;
+font-family: 'Downcome', sans-serif; 
+font-size: 1.5em;
+top: -610px;
+opacity: 0;
+-webkit-animation-fill-mode: backwards;
+-webkit-animation-name: countDown;
+-webkit-animation-duration:  5.5s;
+-moz-animation-fill-mode: backwards;
+-moz-animation-name: countDown;
+-moz-animation-duration: 5.5s;
+}
+
+#hint{
+	background-color: #000;
+	color: #dedede;
+	font-family: 'Downcome', sans-serif; 
+	font-size: 1.2em;
+	text-align: left;
+	position: absolute;
+	top: -600px;
+	margin-left: 10px;
+	float: top;
+}
+
+#browserLogos{text-align: center;}
+#browserLogos img{
+width: 32px;
+}
+
+#CinematicBar_Top{
+background-color: #000;
+position: absolute;
+top: 0px;
+left: 0px;
+width:100%;
+height:96px;
+}
+#CinematicBar_Bottom{
+background-color: #000;
+position: absolute;
+top: 512px;
+left: 0px;
+width:100%;
+height:96px;
+}
+
+/* webkit TIME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* OBJECTS */
+
+    #mushroomCloud{
+    position:absolute;	
+	opacity: 0;
+	-webkit-animation-name: mushroomCloud;
+	-webkit-animation-duration: 57s;	
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+   }
+   #blownTankGround{
+       position: absolute;
+	-webkit-animation-name: blownTankGround;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+   }
+   
+     #soldierWalkie{
+    position: absolute;
+	-webkit-animation-name: soldierWalkie;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+  }
+  
+  #soldierWalkieRun{
+      position: absolute;
+	-webkit-animation-name: soldierWalkieRun;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+	-webkit-animation-timing-function: linear;
+  }
+  #jets{
+    position: absolute;
+	-webkit-animation-duration: 57s;
+    -webkit-animation-name: jetsFlyOverhead;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+  }
+
+  #fighteroverhead{
+      position: absolute;
+-webkit-animation-duration: 57s;
+    -webkit-animation-name: fighterOverhead;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 5s;
+  }
+    #droppedBomb{
+      position: absolute;
+	-webkit-animation-duration: 57s;
+    -webkit-animation-name: droppedBomb;
+    -webkit-animation-fill-mode: forwards;
+
+    -webkit-animation-delay: 5s;
+  }
+  #smokeFromTankBlast{
+    position: absolute;
+	-webkit-animation-duration: 57s;
+    -webkit-animation-name: smokeFromTankBlast;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 5s;
+  }
+   #tankLeft{
+    position: absolute;
+	-webkit-animation-name: tankLeft;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+  }
+  #tankFade{
+    position: absolute;
+	-webkit-animation-name: tankFade;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+	-webkit-animation-timing-function: linear;
+  }
+  #buildings{
+    position: absolute;
+	top: 290px;
+	-webkit-animation-name: BackDrop;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+  }
+    #hillTank{
+    position: absolute;
+	top: 0px;
+	-webkit-animation-name: hillTankClimb;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+  }
+  #ground{
+    position: absolute;
+	width: 100%;
+	top: 470px;
+    -webkit-animation-name: Ground;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+	-webkit-animation-timing-function: linear;
+  }
+  #cityTopView{
+    position: absolute;
+    -webkit-animation-name: cityTopView;
+	-webkit-animation-duration: 57s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 5s;
+	-webkit-animation-timing-function: linear;
+  }
+  
+#tankGround{
+position: absolute;
+width: 100%;
+top: 470px;
+-webkit-animation-name: tankGround;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+}
+
+#runningGround{
+   position: absolute;
+    -webkit-animation-name: runningGround;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+  
+#runningBackdrop{
+position: absolute;
+-webkit-animation-name: runningBackdrop;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#Clouds{
+position: absolute;
+-webkit-animation-name: Clouds;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+}
+
+#Silhouette{
+position: absolute;
+-webkit-animation-name: Silhouette;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-out;
+}
+
+#FlyingV{
+position: absolute;
+-webkit-animation-name: FlyingV;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#ChopperDownLeft{
+position: absolute;
+-webkit-animation-name: ChopperDownLeft;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+  
+#ChopperTopView{
+position: absolute;
+-webkit-animation-name: ChopperTopView;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+}
+
+#SilhouetteChopperShot{
+position: absolute;
+-webkit-animation-name: SilhouetteChopperShot;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-out;
+}
+
+#SilhouetteFar{
+position: absolute;
+-webkit-animation-name: SilhouetteFar;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-in;
+}
+
+#ChopperSideView{
+position: absolute;
+-webkit-animation-name: ChopperSideView;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-in;
+}
+
+#RPGTower{
+position: absolute;
+-webkit-animation-name: RPGTower;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-out;
+}
+
+#RPG{
+position: absolute;
+-webkit-animation-name: RPG;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-in;
+}
+
+#RPGBullet{
+position: absolute;
+-webkit-animation-name: RPGBullet;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#smokeFromRPG{
+position: absolute;
+-webkit-animation-name: smokeFromRPG;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-in;
+}
+
+#RPGStationFar{
+position: absolute;
+-webkit-animation-name: RPGStationFar;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease;
+}
+
+#ChopperRight{
+position: absolute;
+-webkit-animation-name: ChopperRight;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-in
+}
+
+#RPGBulletTowardsCamera{
+position: absolute;
+-webkit-animation-name: RPGBulletTowardsCamera;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#ChopperSmoke{
+position: absolute;
+-webkit-animation-name: ChopperSmoke;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#JumpingRPG{
+position: absolute;
+-webkit-animation-name: JumpingRPG;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#Scope{
+position: absolute;
+-webkit-animation-name: Scope;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#JumpingRPGStation{
+position: absolute;
+-webkit-animation-name: JumpingRPGStation;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#BloodSpray{
+position: absolute;
+-webkit-animation-name: BloodSpray;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#SniperHill{
+position: absolute;
+-webkit-animation-name: SniperHill;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+}
+
+#Sniper{
+position: absolute;
+-webkit-animation-name: Sniper;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease-out;
+}
+
+#BulletCasing{
+position: absolute;
+-webkit-animation-name: BulletCasing;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#BulletCasingBackground{
+position: absolute;
+-webkit-animation-name: BulletCasingBackground;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: ease;
+}
+
+#Grenade{
+position: absolute;
+-webkit-animation-name: Grenade;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#GrenadeSmoke{
+position: absolute;
+-webkit-animation-name: GrenadeSmoke;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+-webkit-animation-timing-function: linear;
+}
+
+#TitleText{
+position: absolute;
+-webkit-animation-name: TitleText;
+-webkit-animation-duration: 57s;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 5s;
+}
+
+  /* ANIMATIONS ----------------------------------------------*/
+  
+@-webkit-keyframes countDown{
+from{opacity:1; background-color: #dedede; color: #dedede;}
+90%{opacity:1;background-color: #fff; color:#000;}
+to{opacity:0;background-color: #fff; color:#000;}
+}  
+  
+@-webkit-keyframes runAgainBar{
+from{opacity:0;}
+63%{opacity:0;}
+68%{opacity:1;}
+to{opacity:1;}
+}
+
+   @-webkit-keyframes BackDrop {
+	from{-webkit-transform: translateX(-50px); opacity:0;}
+	4.5%{-webkit-transform: translateX(-50px);opacity:1;}
+	7%{-webkit-transform: translate(100px,50px);opacity:1;}
+	8%{-webkit-transform: translate(100px,60px);opacity:1;}
+	12.99%{-webkit-transform: translate(100px,50px);opacity:1;}
+	13%{-webkit-transform: translate(100px,50px);opacity:0;}
+	25%{-webkit-transform: translate(140px,50px);opacity:0;}
+	to{-webkit-transform: translate(100px,50px);opacity:0;}
+  }
+  
+   @-webkit-keyframes Ground {
+	from{-webkit-transform: translateX(-50px); opacity:1;}
+	11.99%{-webkit-transform: translateX(-50px);opacity:1;}
+
+	12%{-webkit-transform: translateX(-50px);opacity:0;}
+	20%{-webkit-transform: translateX(-50px);opacity:0;}
+	to{-webkit-transform: translateX(-50px);opacity:0;}
+  }
+  
+   @-webkit-keyframes jetsFlyOverhead {
+	from{-webkit-transform: translate(-500px,200px);}
+	5%{-webkit-transform: translate(1300px,200px)scale(0.6);}
+	to{-webkit-transform: translate(1500px,200px);}
+  }
+  
+  @-webkit-keyframes SmokeFromAirplanes {
+	from{-webkit-transform: translate(-400px,-500px) scale(0); opacity: 0;}
+	2%{-webkit-transform: translate(-400px,-500px) scale(0); opacity: 0;}
+	4%{-webkit-transform: translate(-150px,-500px) scale(1);opacity: 1;}
+	5.5%{-webkit-transform: translate(-100px,-500px) scale(1);opacity: 0;}
+	to{ -webkit-transform: translate(-100px,-500px) scale(1);	opacity: 0;}
+  }
+  
+    @-webkit-keyframes soldierWalkie {
+	from{-webkit-transform: translate(-500px,320px);}
+	4%{-webkit-transform: translate(-500px,320px);}
+	6%{-webkit-transform: translate(0px,320px);}
+	7%{-webkit-transform: translate(0px,320px);}
+	9%{-webkit-transform: translate(-500px,500px);}
+	to{ -webkit-transform: translate(-500px,500px);}
+  } 
+	
+     @-webkit-keyframes tankGround{
+	from{-webkit-transform: translateY(1000px); opacity:0;}
+	3%{-webkit-transform: translateY(1000px);opacity:1;}
+	7%{-webkit-transform: translate(-30px,-275px);opacity:1;}
+	9%{-webkit-transform: translate(-30px,-75px);opacity:1;}
+	11.99%{-webkit-transform: translate(-120px,-175px);opacity:1;}
+	12%{-webkit-transform: translate(-100px,-175px);opacity:0;}
+	to{-webkit-transTitleTextform: translate(-100px,-175px);opacity:0;}
+  }
+  
+   @-webkit-keyframes hillTankClimb{
+	from{-webkit-transform: translateX(0px); opacity:0;}
+	3%{-webkit-transform: translate(1500px,2000px);opacity:0;}
+	4%{-webkit-transform: translate(1500px,2000px);opacity:1;}
+	7%{-webkit-transform: translate(400px,20px);opacity:1;}
+	9%{-webkit-transform: translate(350px,120px)rotate(-25deg);opacity:1;}
+	11%{-webkit-transform: translate(340px,180px)rotate(-25deg);opacity:1;}
+	11.1%{-webkit-transform: translate(340px,180px);opacity:0;}
+	to{-webkit-transform: translate(340px,180px);opacity:0;}
+  }
+
+    @-webkit-keyframes  smokeFromHillTank {
+	from{opacity:0;}
+	9.5%{opacity:0;-webkit-transform:translate(1000px, 000px) scale(0);}
+	9.51%{opacity:0;-webkit-transform:translate(1000px, 000px) scale(0);}
+	12%{-webkit-transform: translate(-100px, -600px) scale(1); opacity:1; }
+	14%{opacity:0; }
+	to{opacity:0;}
+} 
+
+  @-webkit-keyframes tankFade{
+  	from{opacity:0;}
+	5.5%{opacity:0;-webkit-transform:translate(1660px, -200px) scale(1);opacity:0}
+	5.51%{opacity:1;-webkit-transform:translate(1260px, -200px) scale(1);opacity:1}
+	11.9%{opacity:1;-webkit-transform:translate(-2400px, -200px) scale(1);opacity:1}
+	12%{-webkit-transform: translate(-2000px, -2000px) ; opacity:0}
+	to{opacity:0;-webkit-transform: scale(0);}
+  }
+
+   @-webkit-keyframes soldierWalkieRun {
+	from{-webkit-transform: translate(-500px,320px);}
+	9%{-webkit-transform: translate(-800px,70px); opacity: 0;}
+	9.01%{-webkit-transform: translate(-800px, 70px); opacity: 1;}
+	11.7%{-webkit-transform: translate(520px, 70px); opacity:1;}
+	12.49%{-webkit-transform: translate(1300px,70px);opacity:1;}
+	12.5%{-webkit-transform: translate(1420px,70px);opacity:0;}
+	to{ -webkit-transform: translate(1420px, 70px);opacity:0;}
+  }
+  
+  @-webkit-keyframes runningGround{
+	from{-webkit-transform: translate(0px, 470px); opacity:0;}
+	9%{-webkit-transform: translate(-1200px, 470px);opacity:0;}
+	9.01%{-webkit-transform: translate(-2200px, 470px);opacity:1;}
+	12.24%{-webkit-transform: translate(-200px,470px);opacity:1;}
+	13%{-webkit-transform: translate(-200px,700px);opacity:1;}
+	13.01%{-webkit-transform: translate(-200px,700px);opacity:0;}
+	25%{-webkit-transform: translate(-200px,470px);opacity:0;}
+	to{-webkit-transform: translate(-200px, 470px);opacity:0;}
+  }
+  
+    @-webkit-keyframes runningBackdrop{
+  	from{-webkit-transform: translate(0px, -590px); opacity:0;}
+	9%{-webkit-transform: translate(-3400px, 0px);opacity:0;}
+	9.01%{-webkit-transform: translate(-3400px, -560px);opacity:1;}
+	11.24%{-webkit-transform: translate(-300px, -560px);opacity:1;}
+	12.2%{-webkit-transform: translate(300px,-560px);opacity:1;}
+	12.21%{-webkit-transform: translate(300px,-560px);opacity:0;}
+	to{-webkit-transform: translate(-500px, 0px);opacity:0;}
+	}
+
+   @-webkit-keyframes fighterOverhead {
+	from{opacity:0;}
+	12.999%{-webkit-transform: translate(1000px, 700px); opacity:0;}
+	13%{-webkit-transform: translate(1000px, 700px); opacity:1;}
+	20%{-webkit-transform: translate(-1000px, -1300px); opacity:1;}
+	26%{-webkit-transform: translate(-1000px, -1300px) ; opacity:0;}
+	to{opacity:0;}
+  }
+   @-webkit-keyframes cityTopView {
+	from{opacity:0;}
+	0.001%{-webkit-transform: translate(-3000px, -3000px); opacity:0;}
+	11.5%{-webkit-transform: translate(-3000px, -3000px)scale(1); opacity:0;}
+	12%{-webkit-transform: translate(-600px, -600px)scale(1); opacity:1;}
+	16.5%{-webkit-transform: translate(0px, 00px)scale(1); opacity:1;}
+	17%{-webkit-transform: translate(50px, -1850px)scale(5); opacity:0;}
+	to{opacity:0;}
+  }
+  
+     @-webkit-keyframes droppedBomb {
+	from{opacity:0;}
+	14.4%{-webkit-transform: translate(600px, 300px) scale(0); opacity: 0;}
+	14.401%{-webkit-transform: translate(600px, 300px) scale(0.8); opacity: 1;}
+	16.5%{-webkit-transform: translate(450px, 400px) scale(0.1); opacity: 1;}
+	16.8%{-webkit-transform: translate(-50px, -500px)scale(0); opacity: 0;}
+	to{opacity:0;}
+  } 
+
+    @-webkit-keyframes mushroomCloud {
+	from{opacity: 0;}
+	22%{-webkit-transform: translate(0px, -100px) scale(0); opacity: 0;}
+	22.87%{-webkit-transform: translate(0px, 50px) scale(0.6); opacity: 1;}
+	25%{-webkit-transform: translate(20px, -250px) scale(1); opacity: 0;}
+	25.01%{-webkit-transform: translate(-420px, -500px) scale(0); opacity: 0;}
+	to{opacity: 0;}
+	}
+	
+      @-webkit-keyframes smokeFromTankBlast {
+	from{opacity: 0;}
+	22%{-webkit-transform: translate(-100px, -100px) scale(0); opacity: 0;}
+	24%{-webkit-transform: translate(-150px, -100px) scale(1); opacity: 1;}
+	24.5%{-webkit-transform: translate(0px, 0px) scale(1); opacity: 0;}
+	to{opacity: 0;}
+	}
+	
+    @-webkit-keyframes tankLeft {
+	from{opacity: 0;}
+	18.01%{-webkit-transform: translate(400px, 680px); opacity:0;}
+	19%{-webkit-transform: translate(400px, 380px); opacity:1;}
+	22.6%{-webkit-transform: translate(440px, 420px) scale(0.7); opacity:1;}
+	22.65%{-webkit-transform: translate(440px, 420px)scale(0); opacity:1;}
+	24.5%{-webkit-transform: translate(440px, 420px)scale(0); opacity:0;}
+	to{opacity: 0;}
+	}  
+  
+	@-webkit-keyframes blownTankGround{
+	from{opacity:0;}
+	18%{-webkit-transform: translate(20px, 800px) scale(0); opacity:0;}
+	18.01%{-webkit-transform: translate(20px, 800px)scale(1.1,1); opacity:1;}
+	19%{-webkit-transform: translate(20px, 450px)scale(1.1,1); opacity:1;}
+	26%{-webkit-transform: translate(-20px, 480px)scale(1.1,1); opacity:1;}
+	26.001%{-webkit-transform: translate(20px, 1450px)scale(0); opacity:0;}
+	to{opacity: 0;}
+	}
+	
+
+	@-webkit-keyframes Silhouette{
+	from{opacity:0;}
+	18%{ opacity:0;}
+	18.01%{-webkit-transform: translate(460px, 660px); opacity:1;}
+	19%{-webkit-transform: translate(20px, -220px); opacity:1;}
+	26%{-webkit-transform: translate(350px, -220px)scale(0.2); opacity:1;}
+	26.001%{-webkit-transform: translate(350px, 1220px)scale(0);opacity:0;}
+	to{-webkit-transform: translate(350px, 0px); opacity: 0;}
+	}
+
+@-webkit-keyframes FlyingV{
+from{opacity:0;}
+19%{ opacity:0;}
+19.01%{-webkit-transform: translate(0px, 800px)scale(0.001); opacity:1;}
+24%{-webkit-transform: translate(0px, -470px)scale(1); opacity:1;}
+24.001%{opacity:0;}
+to{-webkit-transform: translate(300px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes ChopperDownLeft{
+from{opacity:0;}
+23%{ opacity:0;}
+23.001%{-webkit-transform: translate(1280px, 750px)scale(0.05)rotate(-70deg); opacity:1;}
+26%{-webkit-transform: translate(850px, 150px)scale(0.4)rotate(-35deg); opacity:1;}
+26.01%{-webkit-transform: translate(-50px, 200px); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes ChopperTopView{
+from{opacity:0;}
+26%{ opacity:0;}
+26.001%{-webkit-transform: translate(1280px, 750px); opacity:1;}
+28%{-webkit-transform: translate(-400px, -105px)scale(0.7); opacity:1;}
+29%{-webkit-transform: translate(-400px, -125px)scale(0.7); opacity:1;}
+29.001%{-webkit-transform: translate(-100px, 150px); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes SilhouetteChopperShot{
+from{opacity:0;}
+26% {opacity:0;}
+26.001%{-webkit-transform: translate(-80px, -50px)scale(0.5); opacity:1;}
+29%{-webkit-transform: translate(250px, 250px)scale(0.5); opacity:1;}
+29.001%{-webkit-transform: translate(-50px, 200px)scale(0.5); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes ChopperSideView{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-webkit-transform: translate(480px, 75px)scale(1); opacity:1;}
+
+30%{-webkit-transform: translate(500px, 80px)scale(0.95); opacity:1;}
+30.2%{-webkit-transform: translate(570px, 75px)scale(0.5); opacity:1;}
+
+37%{-webkit-transform: translate(520px, 78px)scale(0.5); opacity:1;}
+37.001%{-webkit-transform: translate(250px, 75px); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes RPGTower{	
+from{opacity:0;}
+29% {-webkit-transform: translate(-300px, 1200px); opacity:0;}
+
+30.0%{-webkit-transform: translate(-200px, 450px)scale(0.7); opacity:1;}
+30.2%{-webkit-transform: translate(-140px, 250px)scale(1); opacity:1;}
+
+37%{-webkit-transform: translate(-150px, 260px)scale(1); opacity:1;}
+37.001%{-webkit-transform: translate(-140px, 250px)scale(1); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes RPG{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-webkit-transform: translate(-1280px, 850px)scale(1); opacity:1;}
+
+30.0%{-webkit-transform: translate(180px, 300px)scale(0.7); opacity:1;}
+30.2%{-webkit-transform: translate(180px, 300px)scale(1); opacity:1;}
+
+31%{-webkit-transform: translate(180px, 300px)scale(1); opacity:1;}
+31.01%{-webkit-transform: translate(180px, 300px)scale(1); opacity:1;}
+33%{-webkit-transform: translate(150px, 340px)scale(1.1); opacity:1;}
+35%{-webkit-transform: translate(145px, 345px)scale(1.1); opacity:1;}
+
+37%{-webkit-transform: translate(135px, 355px)scale(1.1); opacity:1;}
+37.001%{-webkit-transform: translate(145px, 265px)scale(1.1); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes RPGBullet{
+from{opacity:0;}
+31% {opacity:0;}
+31.001%{-webkit-transform: translate(450px, 300px)scale(0.4); opacity:1;}
+
+37%{-webkit-transform: translate(600px, 250px)scale(0.2); opacity:1;}
+37.001%{-webkit-transform: translate(145px, 265px)scale(0.2); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes smokeFromRPG{
+from{opacity:0;}
+30% {-webkit-transform: translate(-300px, -300px)scale(0);opacity:0;}
+30.5%{-webkit-transform: translate(-300px, -300px)scale(1); opacity:0.7;}
+
+35.001%{-webkit-transform: translate(0px, 0px)scale(1.2); opacity:0;}
+to{-webkit-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-webkit-keyframes RPGStationFar{
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-webkit-transform: translate(1060px, 350px)scale(1); opacity:1;}
+
+42%{-webkit-transform: translate(1100px, 350px)scale(1); opacity:1;}
+43%{-webkit-transform: translate(1200px, 450px)scale(0.8); opacity:1;}
+43.001%{-webkit-transform: translate(145px, 265px)scale(1); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes ChopperRight{
+
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-webkit-transform: translate(20px, 30px)scale(1); opacity:1;}
+
+42.2%{-webkit-transform: translate(130px, 50px)scale(1); opacity:1;}
+43%{-webkit-transform: translate(350px, 60px)scale(3); opacity:1;}
+43.001%{-webkit-transform: translate(0px, 0px)scale(1.8); opacity:0;}
+
+44%{-webkit-transform: translate(1440px, 900px)scale(1.8); opacity:0;}
+44.001%{-webkit-transform: translate(1440px, 400px)scale(-1.8, 1.7)rotate(0); opacity:1;}
+
+47%{-webkit-transform: translate(-700px, 0px)scale(-2, 1)rotate(-240deg); opacity:1;}
+47.001%{-webkit-transform: translate(-500px, 0px); opacity:0;}
+to{-webkit-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-webkit-keyframes RPGBulletTowardsCamera{
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-webkit-transform: translate(700px, 300px)scale(0.1); opacity:1;}
+
+42%{-webkit-transform: translate(550px, 250px)scale(0.2); opacity:1;}
+43%{-webkit-transform: translate(350px, 150px)scale(0.8); opacity:1;}
+43.001%{-webkit-transform: translate(0px, 0px)scale(0.4); opacity:0;}
+to{-webkit-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-webkit-keyframes SilhouetteFar{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-webkit-transform: translate(680px, 375px)scale(1); opacity:1;}
+
+30%{-webkit-transform: translate(650px, 380px)scale(0.95); opacity:1;}
+30.2%{-webkit-transform: translate(670px, 375px)scale(0.5); opacity:1;}
+
+37%{-webkit-transform: translate(690px, 358px)scale(0.35); opacity:1;}
+37.001%{-webkit-transform: translate(650px, 375px); opacity:0;}
+to{-webkit-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes ChopperSmoke{
+from{opacity:0;}
+43% {opacity:0;}
+43.001%{-webkit-transform: translate(680px, 300px)scale(0.06); opacity:1;}
+
+44%{-webkit-transform: translate(680px, 300px)scale(5); opacity:1;}
+44.001%{-webkit-transform: translate(680px, 300px); opacity:0;}
+45%{-webkit-transform: translate(1440px, -100px)scale(0.51); opacity:0;}
+45.001%{-webkit-transform: translate(1440px, -100px)scale(0.51); opacity:1;}
+
+48%{-webkit-transform: translate(-100px, -400px)scale(2); opacity:0.7;}
+49%{-webkit-transform: translate(-100px, -400px)scale(2); opacity:0.;}
+49.001%{-webkit-transform: translate(0px, 0px); opacity:0;}
+to{-webkit-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes JumpingRPGStation{
+from{opacity:0;}
+46.5%{-webkit-transform: translate(620px, 615px)scale(1); opacity:0;}
+48%{-webkit-transform: translate(620px, 615px)scale(1); opacity:1;}
+48.2%{-webkit-transform: translate(620px, 615px)scale(3); opacity:1;}
+
+53%{-webkit-transform: translate(600px, 605px)scale(3); opacity:1;}
+53.001%{-webkit-transform: translate(620px, 505px); opacity:0;}
+to{-webkit-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes JumpingRPG{
+from{-webkit-transform: translate(650px, -1280px); opacity: 0;}
+47%{-webkit-transform: translate(650px, 100px)scale(0.25); opacity:0;}
+48%{-webkit-transform: translate(620px, 200px)scale(0.25); opacity:1;}
+48.2%{-webkit-transform: translate(620px, 200px)scale(1); opacity:1;}
+
+48.9%{-webkit-transform: translate(610px, 200px)scale(1); opacity:1;}
+49.4%{-webkit-transform: translate(600px, 140px)scale(1); opacity:1;}
+49.8%{-webkit-transform: translate(600px, 200px)scale(1); opacity:1;}
+50.2%{-webkit-transform: translate(600px, 110px)scale(1); opacity:1;}
+50.8%{-webkit-transform: translate(600px, 200px)scale(1); opacity:1;}
+51.3%{-webkit-transform: translate(600px, 110px)scale(1); opacity:1;}
+51.8%{-webkit-transform: translate(600px, 200px)scale(1); opacity:1;}
+52.5%{-webkit-transform: translate(600px, 170px)scale(1); opacity:1;}
+53%{-webkit-transform: translate(600px, 600px)scale(1); opacity:1;}
+53.001%{-webkit-transform: translate(-600px, -900px); opacity:0;}
+to{-webkit-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-webkit-keyframes Scope{
+from{opacity:0;}
+49% {opacity:0;}
+49.01%{-webkit-transform: translate(-120px, -100px)scale(0.9); opacity:1;}
+49.7%{-webkit-transform: translate(-110px, -0px)scale(1); opacity:1;}
+
+52.1%{-webkit-transform: translate(-100px, -120px)scale(1); opacity:1;}
+52.3%{-webkit-transform: translate(-100px, -110px)scale(1); opacity:1;}
+53%{-webkit-transform: translate(-100px, -200px)scale(1.4); opacity:1;}
+53.8%{-webkit-transform: translate(-100px, -140px)scale(1); opacity:1;}
+55%{-webkit-transform: translate(-100px, -130px); opacity:0;}
+to{-webkit-transform: translate(-100px, -130px); opacity: 0;}
+}
+
+@-webkit-keyframes BloodSpray{
+from{opacity:0;}
+52.3% {opacity:0;}
+52.5%{-webkit-transform: translate(525px, 120px)scale(0.1); opacity:0.4;}
+52.9%{-webkit-transform: translate(525px, 120px)scale(1); opacity:1;}
+54%{-webkit-transform: translate(525px, 120px); opacity:0;}
+to{-webkit-transform: translate(-525px, -150px); opacity: 0;}
+}
+
+@-webkit-keyframes SniperHill{
+from{opacity:0;}
+53.8% {opacity:0;}
+53.801%{-webkit-transform: translate(300px,300px);opacity:1;}
+
+55%{-webkit-transform: translate(300px,300px);opacity:1;}
+57%{-webkit-transform: translate(300px, 400px)scale(0.003);opacity:1;}
+57.001%{-webkit-transform: translate(300px, 300px);opacity:0;}
+to{-webkit-transform: translate(-300px, -300px); opacity: 0;}
+}
+
+@-webkit-keyframes Sniper{
+from{opacity:0;}
+53.8% {opacity:0;}
+53.801%{-webkit-transform: translate(680px,350px);opacity:1;}
+54%{-webkit-transform: translate(750px, 350px);opacity:1;}
+55%{-webkit-transform: translate(670px, 350px);opacity:1;}
+59%%{-webkit-transform: translate(770px, 650px)scale(0.005);opacity:1;}
+59.001%{-webkit-transform: translate(770px, 750px);opacity:0;}
+to{-webkit-transform: translate(770px, 550px);opacity:0;}
+}
+
+@-webkit-keyframes BulletCasing{
+from{opacity:0;}
+53% {opacity:0;}
+53.801%{-webkit-transform: translate(780px,150px)scale(0.001);opacity:0;}
+
+55%{-webkit-transform: translate(670px, 50px)scale(0.05)rotate(180deg);opacity:1;}
+
+58.599%{-webkit-transform: translate(530px, 70px)scale(1)rotate(360deg);opacity:1;}
+58.8%{-webkit-transform: translate(530px, 70px);opacity:0;}
+to{-webkit-transform: translate(-670px, -350px); opacity: 0;}
+}
+
+@-webkit-keyframes BulletCasingBackground{
+from{opacity:0;}
+53% {opacity:0;}
+53.801%{-webkit-transform: translate(780px,150px)scale(0.001);opacity:0;}
+
+55%{-webkit-transform: translate(840px, 50px)scale(0.05)rotate(180deg);opacity:1;}
+
+57%{-webkit-transform: translate(930px, 155px)scale(0.001)rotate(360deg);opacity:1;}
+59%{-webkit-transform: translate(930px, 155px)scale(0.001);opacity:0;}
+to{-webkit-transform: translate(-670px, -350px); opacity:0;}
+}
+
+@-webkit-keyframes Grenade{
+from{opacity:0;}
+57% {-webkit-transform: translate(450px, -50px)scale(0.25)rotate(-70deg);opacity:0;}
+58.6%{-webkit-transform: translate(450px, -50px)scale(1)rotate(0deg);opacity:1;}
+62%{-webkit-transform: translate(450px, -50px)scale(1)rotate(119deg);opacity:1;}
+64%{-webkit-transform: translate(450px, 250px)scale(0.1)rotate(239deg);opacity:1;}
+65.1%{-webkit-transform: translate(450px, 0px)scale(0.1)rotate(359deg);opacity:1;}
+65.101%{-webkit-transform: translate(450px, 100px)scale(0.1)rotate(359deg);opacity:0;}
+to{-webkit-transform: translate(450px, -50px); opacity: 0;}
+}
+
+@-webkit-keyframes GrenadeSmoke{
+from{-webkit-transform: translate(-150px, -400px) scale(0); opacity:0;}
+65% {-webkit-transform: translate(-150px, -400px) scale(0);opacity:0;}
+66%{-webkit-transform: translate(-150px, -400px) scale(0.6);opacity:0.4;}
+69% {-webkit-transform: translate(-150px, -400px) scale(1);opacity:1;}
+72%{-webkit-transform: translate(-150px, -400px) scale(1.2);opacity:0;}
+to{-webkit-transform: translate(-150px, -400px) scale(0);opacity: 0;}
+}
+
+@-webkit-keyframes Clouds{
+from{-webkit-transform: translate(-100px, 0px) scale(0); opacity:0;}
+68% {-webkit-transform: translate(-100px, 0px) scale(0.9);opacity:0;}
+90%{-webkit-transform: translate(-600px, -500px) scale(1);opacity:1;}
+to{-webkit-transform: translate(-600px, -500px) scale(1);opacity: 1;}
+}
+
+@-webkit-keyframes TitleText{
+from{-webkit-transform: translate(10px, 200px) scale(0); opacity:0;}
+68% {-webkit-transform: translate(10px, 200px) scale(0.3);opacity:0;}
+90%{-webkit-transform: translate(10px, 200px) scale(1);opacity:1;}
+to{-webkit-transform: translate(10px, 200px) scale(1);opacity: 1;}
+}
+
+/* MOZILLA TIME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* OBJECTS */
+
+    #mushroomCloud{
+    position:absolute;	
+	opacity: 0;
+	-moz-animation-name: mushroomCloud;
+	-moz-animation-duration: 57s;	
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+   }
+   #blownTankGround{
+       position: absolute;
+	-moz-animation-name: blownTankGround;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+   }
+   
+     #soldierWalkie{
+    position: absolute;
+	-moz-animation-name: soldierWalkie;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+  }
+  
+  #soldierWalkieRun{
+      position: absolute;
+	-moz-animation-name: soldierWalkieRun;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+	-moz-animation-timing-function: linear;
+  }
+  #jets{
+    position: absolute;
+	-moz-animation-duration: 57s;
+    -moz-animation-name: jetsFlyOverhead;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+  }
+
+  #fighteroverhead{
+      position: absolute;
+-moz-animation-duration: 57s;
+    -moz-animation-name: fighterOverhead;
+    -moz-animation-fill-mode: forwards;
+    -moz-animation-delay: 5s;
+  }
+    #droppedBomb{
+      position: absolute;
+	-moz-animation-duration: 57s;
+    -moz-animation-name: droppedBomb;
+    -moz-animation-fill-mode: forwards;
+
+    -moz-animation-delay: 5s;
+  }
+  #smokeFromTankBlast{
+    position: absolute;
+	-moz-animation-duration: 57s;
+    -moz-animation-name: smokeFromTankBlast;
+    -moz-animation-fill-mode: forwards;
+    -moz-animation-delay: 5s;
+  }
+   #tankLeft{
+    position: absolute;
+	-moz-animation-name: tankLeft;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+  }
+  #tankFade{
+    position: absolute;
+	-moz-animation-name: tankFade;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+	-moz-animation-timing-function: linear;
+  }
+  #buildings{
+    position: absolute;
+	top: 290px;
+	-moz-animation-name: BackDrop;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+  }
+    #hillTank{
+    position: absolute;
+	top: 0px;
+	-moz-animation-name: hillTankClimb;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+  }
+  #ground{
+    position: absolute;
+	width: 100%;
+	top: 470px;
+    -moz-animation-name: Ground;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+	-moz-animation-timing-function: linear;
+  }
+  #cityTopView{
+    position: absolute;
+    -moz-animation-name: cityTopView;
+	-moz-animation-duration: 57s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-delay: 5s;
+	-moz-animation-timing-function: linear;
+  }
+  
+#tankGround{
+position: absolute;
+width: 100%;
+top: 470px;
+-moz-animation-name: tankGround;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+}
+
+#runningGround{
+   position: absolute;
+    -moz-animation-name: runningGround;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+  
+#runningBackdrop{
+position: absolute;
+-moz-animation-name: runningBackdrop;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#Clouds{
+position: absolute;
+-moz-animation-name: Clouds;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+}
+
+#Silhouette{
+position: absolute;
+-moz-animation-name: Silhouette;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-out;
+}
+
+#FlyingV{
+position: absolute;
+-moz-animation-name: FlyingV;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#ChopperDownLeft{
+position: absolute;
+-moz-animation-name: ChopperDownLeft;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+  
+#ChopperTopView{
+position: absolute;
+-moz-animation-name: ChopperTopView;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+}
+
+#SilhouetteChopperShot{
+position: absolute;
+-moz-animation-name: SilhouetteChopperShot;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-out;
+}
+
+#SilhouetteFar{
+position: absolute;
+-moz-animation-name: SilhouetteFar;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-in;
+}
+
+#ChopperSideView{
+position: absolute;
+-moz-animation-name: ChopperSideView;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-in;
+}
+
+#RPGTower{
+position: absolute;
+-moz-animation-name: RPGTower;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-out;
+}
+
+#RPG{
+position: absolute;
+-moz-animation-name: RPG;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-in;
+}
+
+#RPGBullet{
+position: absolute;
+-moz-animation-name: RPGBullet;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#smokeFromRPG{
+position: absolute;
+-moz-animation-name: smokeFromRPG;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-in;
+}
+
+#RPGStationFar{
+position: absolute;
+-moz-animation-name: RPGStationFar;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease;
+}
+
+#ChopperRight{
+position: absolute;
+-moz-animation-name: ChopperRight;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-in
+}
+
+#RPGBulletTowardsCamera{
+position: absolute;
+-moz-animation-name: RPGBulletTowardsCamera;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#ChopperSmoke{
+position: absolute;
+-moz-animation-name: ChopperSmoke;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#JumpingRPG{
+position: absolute;
+-moz-animation-name: JumpingRPG;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#Scope{
+position: absolute;
+-moz-animation-name: Scope;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#JumpingRPGStation{
+position: absolute;
+-moz-animation-name: JumpingRPGStation;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#BloodSpray{
+position: absolute;
+-moz-animation-name: BloodSpray;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#SniperHill{
+position: absolute;
+-moz-animation-name: SniperHill;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+}
+
+#Sniper{
+position: absolute;
+-moz-animation-name: Sniper;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease-out;
+}
+
+#BulletCasing{
+position: absolute;
+-moz-animation-name: BulletCasing;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#BulletCasingBackground{
+position: absolute;
+-moz-animation-name: BulletCasingBackground;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: ease;
+}
+
+#Grenade{
+position: absolute;
+-moz-animation-name: Grenade;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#GrenadeSmoke{
+position: absolute;
+-moz-animation-name: GrenadeSmoke;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+-moz-animation-timing-function: linear;
+}
+
+#TitleText{
+position: absolute;
+-moz-animation-name: TitleText;
+-moz-animation-duration: 57s;
+-moz-animation-fill-mode: forwards;
+-moz-animation-delay: 5s;
+}
+
+  /* ANIMATIONS ----------------------------------------------*/
+  
+@-moz-keyframes countDown{
+from{opacity:1; background-color: #dedede; color: #dedede;}
+90%{opacity:1;background-color: #fff; color:#000;}
+to{opacity:0;background-color: #fff; color:#000;}
+}  
+  
+@-moz-keyframes runAgainBar{
+from{opacity:0;}
+63%{opacity:0;}
+68%{opacity:1;}
+to{opacity:1;}
+}
+
+   @-moz-keyframes BackDrop {
+	from{-moz-transform: translateX(-50px); opacity:0;}
+	4.5%{-moz-transform: translateX(-50px);opacity:1;}
+	7%{-moz-transform: translate(100px,50px);opacity:1;}
+	8%{-moz-transform: translate(100px,60px);opacity:1;}
+	12.99%{-moz-transform: translate(100px,50px);opacity:1;}
+	13%{-moz-transform: translate(100px,50px);opacity:0;}
+	25%{-moz-transform: translate(140px,50px);opacity:0;}
+	to{-moz-transform: translate(100px,50px);opacity:0;}
+  }
+  
+   @-moz-keyframes Ground {
+	from{-moz-transform: translateX(-50px); opacity:1;}
+	11.99%{-moz-transform: translateX(-50px);opacity:1;}
+
+	12%{-moz-transform: translateX(-50px);opacity:0;}
+	20%{-moz-transform: translateX(-50px);opacity:0;}
+	to{-moz-transform: translateX(-50px);opacity:0;}
+  }
+  
+   @-moz-keyframes jetsFlyOverhead {
+	from{-moz-transform: translate(-500px,200px);}
+	5%{-moz-transform: translate(1300px,200px)scale(0.6);}
+	to{-moz-transform: translate(1500px,200px);}
+  }
+  
+  @-moz-keyframes SmokeFromAirplanes {
+	from{-moz-transform: translate(-400px,-500px) scale(0); opacity: 0;}
+	2%{-moz-transform: translate(-400px,-500px) scale(0); opacity: 0;}
+	4%{-moz-transform: translate(-150px,-500px) scale(1);opacity: 1;}
+	5.5%{-moz-transform: translate(-100px,-500px) scale(1);opacity: 0;}
+	to{ -moz-transform: translate(-100px,-500px) scale(1);	opacity: 0;}
+  }
+  
+    @-moz-keyframes soldierWalkie {
+	from{-moz-transform: translate(-500px,320px);}
+	4%{-moz-transform: translate(-500px,320px);}
+	6%{-moz-transform: translate(0px,320px);}
+	7%{-moz-transform: translate(0px,320px);}
+	9%{-moz-transform: translate(-500px,500px);}
+	to{ -moz-transform: translate(-500px,500px);}
+  } 
+	
+     @-moz-keyframes tankGround{
+	from{-moz-transform: translateY(1000px); opacity:0;}
+	3%{-moz-transform: translateY(1000px);opacity:1;}
+	7%{-moz-transform: translate(-30px,-275px);opacity:1;}
+	9%{-moz-transform: translate(-30px,-75px);opacity:1;}
+	11.99%{-moz-transform: translate(-120px,-175px);opacity:1;}
+	12%{-moz-transform: translate(-100px,-175px);opacity:0;}
+	to{-moz-transTitleTextform: translate(-100px,-175px);opacity:0;}
+  }
+  
+   @-moz-keyframes hillTankClimb{
+	from{-moz-transform: translateX(0px); opacity:0;}
+	3%{-moz-transform: translate(1500px,2000px);opacity:0;}
+	4%{-moz-transform: translate(1500px,2000px);opacity:1;}
+	7%{-moz-transform: translate(400px,20px);opacity:1;}
+	9%{-moz-transform: translate(350px,120px)rotate(-25deg);opacity:1;}
+	11%{-moz-transform: translate(340px,180px)rotate(-25deg);opacity:1;}
+	11.1%{-moz-transform: translate(340px,180px);opacity:0;}
+	to{-moz-transform: translate(340px,180px);opacity:0;}
+  }
+
+    @-moz-keyframes  smokeFromHillTank {
+	from{opacity:0;}
+	9.5%{opacity:0;-moz-transform:translate(1000px, 000px) scale(0);}
+	9.51%{opacity:0;-moz-transform:translate(1000px, 000px) scale(0);}
+	12%{-moz-transform: translate(-100px, -600px) scale(1); opacity:1; }
+	14%{opacity:0; }
+	to{opacity:0;}
+} 
+
+  @-moz-keyframes tankFade{
+  	from{opacity:0;}
+	5.5%{opacity:0;-moz-transform:translate(1660px, -200px) scale(1);opacity:0}
+	5.51%{opacity:1;-moz-transform:translate(1260px, -200px) scale(1);opacity:1}
+	11.9%{opacity:1;-moz-transform:translate(-2400px, -200px) scale(1);opacity:1}
+	12%{-moz-transform: translate(-2000px, -2000px) ; opacity:0}
+	to{opacity:0;-moz-transform: scale(0);}
+  }
+
+   @-moz-keyframes soldierWalkieRun {
+	from{-moz-transform: translate(-500px,320px);}
+	9%{-moz-transform: translate(-800px,70px); opacity: 0;}
+	9.01%{-moz-transform: translate(-800px, 70px); opacity: 1;}
+	11.7%{-moz-transform: translate(520px, 70px); opacity:1;}
+	12.49%{-moz-transform: translate(1300px,70px);opacity:1;}
+	12.5%{-moz-transform: translate(1420px,70px);opacity:0;}
+	to{ -moz-transform: translate(1420px, 70px);opacity:0;}
+  }
+  
+  @-moz-keyframes runningGround{
+	from{-moz-transform: translate(0px, 470px); opacity:0;}
+	9%{-moz-transform: translate(-1200px, 470px);opacity:0;}
+	9.01%{-moz-transform: translate(-2200px, 470px);opacity:1;}
+	12.24%{-moz-transform: translate(-200px,470px);opacity:1;}
+	13%{-moz-transform: translate(-200px,700px);opacity:1;}
+	13.01%{-moz-transform: translate(-200px,700px);opacity:0;}
+	25%{-moz-transform: translate(-200px,470px);opacity:0;}
+	to{-moz-transform: translate(-200px, 470px);opacity:0;}
+  }
+  
+    @-moz-keyframes runningBackdrop{
+  	from{-moz-transform: translate(0px, -590px); opacity:0;}
+	9%{-moz-transform: translate(-3400px, 0px);opacity:0;}
+	9.01%{-moz-transform: translate(-3400px, -560px);opacity:1;}
+	11.24%{-moz-transform: translate(-300px, -560px);opacity:1;}
+	12.2%{-moz-transform: translate(300px,-560px);opacity:1;}
+	12.21%{-moz-transform: translate(300px,-560px);opacity:0;}
+	to{-moz-transform: translate(-500px, 0px);opacity:0;}
+	}
+
+   @-moz-keyframes fighterOverhead {
+	from{opacity:0;}
+	12.999%{-moz-transform: translate(1000px, 700px); opacity:0;}
+	13%{-moz-transform: translate(1000px, 700px); opacity:1;}
+	20%{-moz-transform: translate(-1000px, -1300px); opacity:1;}
+	26%{-moz-transform: translate(-1000px, -1300px) ; opacity:0;}
+	to{opacity:0;}
+  }
+   @-moz-keyframes cityTopView {
+	from{opacity:0;}
+	0.001%{-moz-transform: translate(-3000px, -3000px); opacity:0;}
+	11.5%{-moz-transform: translate(-3000px, -3000px)scale(1); opacity:0;}
+	12%{-moz-transform: translate(-600px, -600px)scale(1); opacity:1;}
+	16.5%{-moz-transform: translate(0px, 00px)scale(1); opacity:1;}
+	17%{-moz-transform: translate(50px, -1850px)scale(5); opacity:0;}
+	to{opacity:0;}
+  }
+  
+     @-moz-keyframes droppedBomb {
+	from{opacity:0;}
+	14.4%{-moz-transform: translate(600px, 300px) scale(0); opacity: 0;}
+	14.401%{-moz-transform: translate(600px, 300px) scale(0.8); opacity: 1;}
+	16.5%{-moz-transform: translate(450px, 400px) scale(0.1); opacity: 1;}
+	16.8%{-moz-transform: translate(-50px, -500px)scale(0); opacity: 0;}
+	to{opacity:0;}
+  } 
+
+    @-moz-keyframes mushroomCloud {
+	from{opacity: 0;}
+	22%{-moz-transform: translate(0px, -100px) scale(0); opacity: 0;}
+	22.87%{-moz-transform: translate(0px, 50px) scale(0.6); opacity: 1;}
+	25%{-moz-transform: translate(20px, -250px) scale(1); opacity: 0;}
+	25.01%{-moz-transform: translate(-420px, -500px) scale(0); opacity: 0;}
+	to{opacity: 0;}
+	}
+	
+      @-moz-keyframes smokeFromTankBlast {
+	from{opacity: 0;}
+	22%{-moz-transform: translate(-100px, -100px) scale(0); opacity: 0;}
+	24%{-moz-transform: translate(-150px, -100px) scale(1); opacity: 1;}
+	24.5%{-moz-transform: translate(0px, 0px) scale(1); opacity: 0;}
+	to{opacity: 0;}
+	}
+	
+    @-moz-keyframes tankLeft {
+	from{opacity: 0;}
+	18.01%{-moz-transform: translate(400px, 680px); opacity:0;}
+	19%{-moz-transform: translate(400px, 380px); opacity:1;}
+	22.6%{-moz-transform: translate(440px, 420px) scale(0.7); opacity:1;}
+	22.65%{-moz-transform: translate(440px, 420px)scale(0); opacity:1;}
+	24.5%{-moz-transform: translate(440px, 420px)scale(0); opacity:0;}
+	to{opacity: 0;}
+	}  
+  
+	@-moz-keyframes blownTankGround{
+	from{opacity:0;}
+	18%{-moz-transform: translate(20px, 800px) scale(0); opacity:0;}
+	18.01%{-moz-transform: translate(20px, 800px)scale(1.1,1); opacity:1;}
+	19%{-moz-transform: translate(20px, 450px)scale(1.1,1); opacity:1;}
+	26%{-moz-transform: translate(-20px, 480px)scale(1.1,1); opacity:1;}
+	26.001%{-moz-transform: translate(20px, 1450px)scale(0); opacity:0;}
+	to{opacity: 0;}
+	}
+	
+
+	@-moz-keyframes Silhouette{
+	from{opacity:0;}
+	18%{ opacity:0;}
+	18.01%{-moz-transform: translate(460px, 660px); opacity:1;}
+	19%{-moz-transform: translate(20px, -220px); opacity:1;}
+	26%{-moz-transform: translate(350px, -220px)scale(0.2); opacity:1;}
+	26.001%{-moz-transform: translate(350px, 1220px)scale(0);opacity:0;}
+	to{-moz-transform: translate(350px, 0px); opacity: 0;}
+	}
+
+@-moz-keyframes FlyingV{
+from{opacity:0;}
+19%{ opacity:0;}
+19.01%{-moz-transform: translate(0px, 800px)scale(0.001); opacity:1;}
+24%{-moz-transform: translate(0px, -470px)scale(1); opacity:1;}
+24.001%{opacity:0;}
+to{-moz-transform: translate(300px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes ChopperDownLeft{
+from{opacity:0;}
+23%{ opacity:0;}
+23.001%{-moz-transform: translate(1280px, 750px)scale(0.05)rotate(-70deg); opacity:1;}
+26%{-moz-transform: translate(850px, 150px)scale(0.4)rotate(-35deg); opacity:1;}
+26.01%{-moz-transform: translate(-50px, 200px); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes ChopperTopView{
+from{opacity:0;}
+26%{ opacity:0;}
+26.001%{-moz-transform: translate(1280px, 750px); opacity:1;}
+28%{-moz-transform: translate(-400px, -105px)scale(0.7); opacity:1;}
+29%{-moz-transform: translate(-400px, -125px)scale(0.7); opacity:1;}
+29.001%{-moz-transform: translate(-100px, 150px); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes SilhouetteChopperShot{
+from{opacity:0;}
+26% {opacity:0;}
+26.001%{-moz-transform: translate(-80px, -50px)scale(0.5); opacity:1;}
+29%{-moz-transform: translate(250px, 250px)scale(0.5); opacity:1;}
+29.001%{-moz-transform: translate(-50px, 200px)scale(0.5); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes ChopperSideView{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-moz-transform: translate(480px, 75px)scale(1); opacity:1;}
+
+30%{-moz-transform: translate(500px, 80px)scale(0.95); opacity:1;}
+30.2%{-moz-transform: translate(570px, 75px)scale(0.5); opacity:1;}
+
+37%{-moz-transform: translate(520px, 78px)scale(0.5); opacity:1;}
+37.001%{-moz-transform: translate(250px, 75px); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes RPGTower{	
+from{opacity:0;}
+29% {-moz-transform: translate(-300px, 1200px); opacity:0;}
+
+30.0%{-moz-transform: translate(-200px, 450px)scale(0.7); opacity:1;}
+30.2%{-moz-transform: translate(-140px, 250px)scale(1); opacity:1;}
+
+37%{-moz-transform: translate(-150px, 260px)scale(1); opacity:1;}
+37.001%{-moz-transform: translate(-140px, 250px)scale(1); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes RPG{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-moz-transform: translate(-1280px, 850px)scale(1); opacity:1;}
+
+30.0%{-moz-transform: translate(180px, 300px)scale(0.7); opacity:1;}
+30.2%{-moz-transform: translate(180px, 300px)scale(1); opacity:1;}
+
+31%{-moz-transform: translate(180px, 300px)scale(1); opacity:1;}
+31.01%{-moz-transform: translate(180px, 300px)scale(1); opacity:1;}
+33%{-moz-transform: translate(150px, 340px)scale(1.1); opacity:1;}
+35%{-moz-transform: translate(145px, 345px)scale(1.1); opacity:1;}
+
+37%{-moz-transform: translate(135px, 355px)scale(1.1); opacity:1;}
+37.001%{-moz-transform: translate(145px, 265px)scale(1.1); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes RPGBullet{
+from{opacity:0;}
+31% {opacity:0;}
+31.001%{-moz-transform: translate(450px, 300px)scale(0.4); opacity:1;}
+
+37%{-moz-transform: translate(600px, 250px)scale(0.2); opacity:1;}
+37.001%{-moz-transform: translate(145px, 265px)scale(0.2); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes smokeFromRPG{
+from{opacity:0;}
+30% {-moz-transform: translate(-300px, -300px)scale(0);opacity:0;}
+30.5%{-moz-transform: translate(-300px, -300px)scale(1); opacity:0.7;}
+
+35.001%{-moz-transform: translate(0px, 0px)scale(1.2); opacity:0;}
+to{-moz-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-moz-keyframes RPGStationFar{
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-moz-transform: translate(1060px, 350px)scale(1); opacity:1;}
+
+42%{-moz-transform: translate(1100px, 350px)scale(1); opacity:1;}
+43%{-moz-transform: translate(1200px, 450px)scale(0.8); opacity:1;}
+43.001%{-moz-transform: translate(145px, 265px)scale(1); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes ChopperRight{
+
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-moz-transform: translate(20px, 30px)scale(1); opacity:1;}
+
+42.2%{-moz-transform: translate(130px, 50px)scale(1); opacity:1;}
+43%{-moz-transform: translate(350px, 60px)scale(3); opacity:1;}
+43.001%{-moz-transform: translate(0px, 0px)scale(1.8); opacity:0;}
+
+44%{-moz-transform: translate(1440px, 900px)scale(1.8); opacity:0;}
+44.001%{-moz-transform: translate(1440px, 400px)scale(-1.8, 1.7)rotate(0); opacity:1;}
+
+47%{-moz-transform: translate(-700px, 0px)scale(-2, 1)rotate(-240deg); opacity:1;}
+47.001%{-moz-transform: translate(-500px, 0px); opacity:0;}
+to{-moz-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-moz-keyframes RPGBulletTowardsCamera{
+from{opacity:0;}
+37% {opacity:0;}
+37.001%{-moz-transform: translate(700px, 300px)scale(0.1); opacity:1;}
+
+42%{-moz-transform: translate(550px, 250px)scale(0.2); opacity:1;}
+43%{-moz-transform: translate(350px, 150px)scale(0.8); opacity:1;}
+43.001%{-moz-transform: translate(0px, 0px)scale(0.4); opacity:0;}
+to{-moz-transform: translate(0px, 0px); opacity: 0;}
+}
+
+@-moz-keyframes SilhouetteFar{
+from{opacity:0;}
+29% {opacity:0;}
+29.001%{-moz-transform: translate(680px, 375px)scale(1); opacity:1;}
+
+30%{-moz-transform: translate(650px, 380px)scale(0.95); opacity:1;}
+30.2%{-moz-transform: translate(670px, 375px)scale(0.5); opacity:1;}
+
+37%{-moz-transform: translate(690px, 358px)scale(0.35); opacity:1;}
+37.001%{-moz-transform: translate(650px, 375px); opacity:0;}
+to{-moz-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes ChopperSmoke{
+from{opacity:0;}
+43% {opacity:0;}
+43.001%{-moz-transform: translate(680px, 300px)scale(0.06); opacity:1;}
+
+44%{-moz-transform: translate(680px, 300px)scale(5); opacity:1;}
+44.001%{-moz-transform: translate(680px, 300px); opacity:0;}
+45%{-moz-transform: translate(1440px, -100px)scale(0.51); opacity:0;}
+45.001%{-moz-transform: translate(1440px, -100px)scale(0.51); opacity:1;}
+
+48%{-moz-transform: translate(-100px, -400px)scale(2); opacity:0.7;}
+49%{-moz-transform: translate(-100px, -400px)scale(2); opacity:0.;}
+49.001%{-moz-transform: translate(0px, 0px); opacity:0;}
+to{-moz-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes JumpingRPGStation{
+from{opacity:0;}
+46.5%{-moz-transform: translate(620px, 615px)scale(1); opacity:0;}
+48%{-moz-transform: translate(620px, 615px)scale(1); opacity:1;}
+48.2%{-moz-transform: translate(620px, 615px)scale(3); opacity:1;}
+
+53%{-moz-transform: translate(600px, 605px)scale(3); opacity:1;}
+53.001%{-moz-transform: translate(620px, 505px); opacity:0;}
+to{-moz-transform: translate(00px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes JumpingRPG{
+from{-moz-transform: translate(650px, -1280px); opacity: 0;}
+47%{-moz-transform: translate(650px, 100px)scale(0.25); opacity:0;}
+48%{-moz-transform: translate(620px, 200px)scale(0.25); opacity:1;}
+48.2%{-moz-transform: translate(620px, 200px)scale(1); opacity:1;}
+
+48.9%{-moz-transform: translate(610px, 200px)scale(1); opacity:1;}
+49.4%{-moz-transform: translate(600px, 140px)scale(1); opacity:1;}
+49.8%{-moz-transform: translate(600px, 200px)scale(1); opacity:1;}
+50.2%{-moz-transform: translate(600px, 110px)scale(1); opacity:1;}
+50.8%{-moz-transform: translate(600px, 200px)scale(1); opacity:1;}
+51.3%{-moz-transform: translate(600px, 110px)scale(1); opacity:1;}
+51.8%{-moz-transform: translate(600px, 200px)scale(1); opacity:1;}
+52.5%{-moz-transform: translate(600px, 170px)scale(1); opacity:1;}
+53%{-moz-transform: translate(600px, 600px)scale(1); opacity:1;}
+53.001%{-moz-transform: translate(-600px, -900px); opacity:0;}
+to{-moz-transform: translate(600px, -1280px); opacity: 0;}
+}
+
+@-moz-keyframes Scope{
+from{opacity:0;}
+49% {opacity:0;}
+49.01%{-moz-transform: translate(-120px, -100px)scale(0.9); opacity:1;}
+49.7%{-moz-transform: translate(-110px, -0px)scale(1); opacity:1;}
+
+52.1%{-moz-transform: translate(-100px, -120px)scale(1); opacity:1;}
+52.3%{-moz-transform: translate(-100px, -110px)scale(1); opacity:1;}
+53%{-moz-transform: translate(-100px, -200px)scale(1.4); opacity:1;}
+53.8%{-moz-transform: translate(-100px, -140px)scale(1); opacity:1;}
+55%{-moz-transform: translate(-100px, -130px); opacity:0;}
+to{-moz-transform: translate(-100px, -130px); opacity: 0;}
+}
+
+@-moz-keyframes BloodSpray{
+from{opacity:0;}
+52.3% {opacity:0;}
+52.5%{-moz-transform: translate(525px, 120px)scale(0.1); opacity:0.4;}
+52.9%{-moz-transform: translate(525px, 120px)scale(1); opacity:1;}
+54%{-moz-transform: translate(525px, 120px); opacity:0;}
+to{-moz-transform: translate(-525px, -150px); opacity: 0;}
+}
+
+@-moz-keyframes SniperHill{
+from{opacity:0;}
+53.8% {opacity:0;}
+53.801%{-moz-transform: translate(300px,300px);opacity:1;}
+
+55%{-moz-transform: translate(300px,300px);opacity:1;}
+57%{-moz-transform: translate(300px, 400px)scale(0.003);opacity:1;}
+57.001%{-moz-transform: translate(300px, 300px);opacity:0;}
+to{-moz-transform: translate(-300px, -300px); opacity: 0;}
+}
+
+@-moz-keyframes Sniper{
+from{opacity:0;}
+53.8% {opacity:0;}
+53.801%{-moz-transform: translate(680px,350px);opacity:1;}
+54%{-moz-transform: translate(750px, 350px);opacity:1;}
+55%{-moz-transform: translate(670px, 350px);opacity:1;}
+59%%{-moz-transform: translate(770px, 650px)scale(0.005);opacity:1;}
+59.001%{-moz-transform: translate(770px, 750px);opacity:0;}
+to{-moz-transform: translate(770px, 550px);opacity:0;}
+}
+
+@-moz-keyframes BulletCasing{
+from{opacity:0;}
+53% {opacity:0;}
+53.801%{-moz-transform: translate(780px,150px)scale(0.001);opacity:0;}
+
+55%{-moz-transform: translate(670px, 50px)scale(0.05)rotate(180deg);opacity:1;}
+
+58.599%{-moz-transform: translate(530px, 70px)scale(1)rotate(360deg);opacity:1;}
+58.8%{-moz-transform: translate(530px, 70px);opacity:0;}
+to{-moz-transform: translate(-670px, -350px); opacity: 0;}
+}
+
+@-moz-keyframes BulletCasingBackground{
+from{opacity:0;}
+53% {opacity:0;}
+53.801%{-moz-transform: translate(780px,150px)scale(0.001);opacity:0;}
+
+55%{-moz-transform: translate(840px, 50px)scale(0.05)rotate(180deg);opacity:1;}
+
+57%{-moz-transform: translate(930px, 155px)scale(0.001)rotate(360deg);opacity:1;}
+59%{-moz-transform: translate(930px, 155px)scale(0.001);opacity:0;}
+to{-moz-transform: translate(-670px, -350px); opacity:0;}
+}
+
+@-moz-keyframes Grenade{
+from{opacity:0;}
+57% {-moz-transform: translate(450px, -50px)scale(0.25)rotate(-70deg);opacity:0;}
+58.6%{-moz-transform: translate(450px, -50px)scale(1)rotate(0deg);opacity:1;}
+62%{-moz-transform: translate(450px, -50px)scale(1)rotate(119deg);opacity:1;}
+64%{-moz-transform: translate(450px, 250px)scale(0.1)rotate(239deg);opacity:1;}
+65.1%{-moz-transform: translate(450px, 0px)scale(0.1)rotate(359deg);opacity:1;}
+65.101%{-moz-transform: translate(450px, 100px)scale(0.1)rotate(359deg);opacity:0;}
+to{-moz-transform: translate(450px, -50px); opacity: 0;}
+}
+
+@-moz-keyframes GrenadeSmoke{
+from{-moz-transform: translate(-150px, -400px) scale(0); opacity:0;}
+65% {-moz-transform: translate(-150px, -400px) scale(0);opacity:0;}
+66%{-moz-transform: translate(-150px, -400px) scale(0.6);opacity:0.4;}
+69% {-moz-transform: translate(-150px, -400px) scale(1);opacity:1;}
+72%{-moz-transform: translate(-150px, -400px) scale(1.2);opacity:0;}
+to{-moz-transform: translate(-150px, -400px) scale(0);opacity: 0;}
+}
+
+@-moz-keyframes Clouds{
+from{-moz-transform: translate(-100px, 0px) scale(0); opacity:0;}
+68% {-moz-transform: translate(-100px, 0px) scale(0.9);opacity:0;}
+90%{-moz-transform: translate(-600px, -500px) scale(1);opacity:1;}
+to{-moz-transform: translate(-600px, -500px) scale(1);opacity: 1;}
+}
+
+@-moz-keyframes TitleText{
+from{-moz-transform: translate(10px, 200px) scale(0); opacity:0;}
+68% {-moz-transform: translate(10px, 200px) scale(0.3);opacity:0;}
+90%{-moz-transform: translate(10px, 200px) scale(1);opacity:1;}
+to{-moz-transform: translate(10px, 200px) scale(1);opacity: 1;}
+}

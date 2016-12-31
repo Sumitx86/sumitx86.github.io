@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="explore/js/jquery.flippy.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/menuOption.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+  </head>
+  <body>
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+      <div id="page-wrapper">
+        <div class="row">
+		 
+		  <div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h1>C</h1>
+		<hr style="margin-top:-8px">
+		<br>
+		</div>
+		
+		<div id="dataInHome" style="padding:15px;margin-top:-35px">		
+		   <h4>My First C program</h4>
+<pre class="prettyprint"style="width:30%;">
+#include <stdio.h>
+			 
+main()
+{
+    printf("Hello World\n");
+    return 0;
+}</pre>
+<p align="right"><b>Output of above program:<br>"Hello World"</b></p>
+<h4>C program to take input from user using scanf</h4>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+main()
+{
+   int number;
+ 
+   printf("Enter an integer\n");
+   scanf("%d",&number);
+ 
+   printf("Integer entered by you is %d\n", number);
+ 
+   return 0;
+}</pre>
+<p align="right"><b>
+<br>Output:
+<br>Enter a number
+<br>7
+<br>Number entered by you is 7
+</b></p>
+<h4>If else control instructions</h4>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+main()
+{
+   int x = 1;
+ 
+   if ( x == 1 )
+      printf("x is equal to one.\n");
+   else
+      printf("For comparison use == as = is the assignment operator.\n");
+ 
+   return 0;
+}</pre>
+<p align="right"><b>
+<br>Output:
+<br>x is equal to one.</p></b>
+<h4>Loop example</h4>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+main()
+{
+   int value = 1;
+ 
+   while(value<3)
+   {
+      printf("Value is %d\n", value);
+      value++;
+   }
+ 
+   return 0;
+}</pre><b>
+<p align="right">Output:<br>
+Value is 1<br>
+Value is 2<br></b></p>
+				
+<h4>program for prime number</h4>
+
+#include <stdio.h>
+<pre class="prettyprint"style="width:60%;">
+ main()
+{
+   int n, c;
+ 
+   printf("Enter a number\n");
+   scanf("%d", &n);
+ 
+   if ( n == 2 )
+      printf("Prime number.\n");
+   else
+   {
+       for ( c = 2 ; c <= n - 1 ; c++ )
+       {
+           if ( n % c == 0 )
+              break;
+       }
+       if ( c != n )
+          printf("Not prime.\n");
+       else
+          printf("Prime number.\n");
+   }
+   return 0;
+}</pre>			
+<h4>Command line arguments</h4>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ main(int argc, char *argv[])
+{  int c;
+   printf("Number of command line arguments passed: %d\n", argc);
+   for ( c = 0 ; c < argc ; c++)
+      printf("%d. Command line argument passed is %s\n", c+1, argv[c]);
+   return 0;
+}</pre>
+ 
+ <h4>Array program</h4>
+
+ <pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+main() 
+{
+    int array[100], n, c;
+ 
+    printf("Enter the number of elements in array\n");
+    scanf("%d", &n);
+ 
+    printf("Enter %d elements\n", n);
+ 
+    for ( c = 0 ; c < n ; c++ ) 
+        scanf("%d", &array[c]);
+ 
+    printf("Array elements entered by you are:\n");
+ 
+    for ( c = 0 ; c < n ; c++ ) 
+        printf("array[%d] = %d\n", c, array[c]);
+ 
+    return 0;
+}</pre>
+
+<h4>function program</h4>
+<pre class="prettyprint"style="width:60%;">
+
+#include <stdio.h>
+ 
+void my_function();
+ 
+main()
+{
+   printf("Main function.\n");
+ 
+   my_function();
+ 
+   printf("Back in function main.\n");
+ 
+   return 0;
+}
+ 
+void my_function()
+{
+   printf("Welcome to my function. Feel at home.\n");
+}</pre>
+
+<h4>Using comments in a program</h4>
+<pre class="prettyprint"style="width:60%;">
+
+#include <stdio.h>
+ 
+main()
+{
+   // Single line comment in c source code
+ 
+   printf("Writing comments is very useful.\n");
+ 
+   /*
+    * Multi line comment syntax
+    * Comments help us to understand code later easily.
+    * Will you write comments while developing programs ?
+    */
+ 
+   printf("Good luck c programmer.\n"); 
+ 
+   return 0;
+}</pre>
+
+<h4>using structures in c programming</pre>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+struct programming
+{
+    float constant;
+    char *pointer;
+};
+ 
+main()
+{
+   struct programming variable;
+   char string[] = "Programming in Software Development.";   
+ 
+   variable.constant = 1.23;
+   variable.pointer = string;
+ 
+   printf("%f\n", variable.constant);
+   printf("%s\n", variable.pointer);
+ 
+   return 0;
+}</pre>
+
+<h4>Fibonacci series</h4>
+<pre class="prettyprint"style="width:60%;">
+#include <stdio.h>
+ 
+main()
+{
+   int n, first = 0, second = 1, next, c;
+ 
+   printf("Enter the number of terms\n");
+   scanf("%d",&n);
+ 
+   printf("First %d terms of Fibonacci series are :-\n",n);
+ 
+   for ( c = 0 ; c < n ; c++ )
+   {
+      if ( c <= 1 )
+         next = c;
+      else
+      {
+         next = first + second;
+         first = second;
+         second = next;
+      }
+      printf("%d\n",next);
+   }
+ 
+   return 0;
+}</pre>
+
+<h4>Graphics programming</h4>
+<pre class="prettyprint"style="width:60%;">
+
+#include <graphics.h>
+#include <conio.h>
+ 
+main()
+{
+    int gd = DETECT, gm;
+ 
+    initgraph(&gd, &gm,"C:\\TC\\BGI");
+ 
+    outtextxy(10,20, "Graphics source code example.");
+ 
+    circle(200, 200, 50);
+ 
+    setcolor(BLUE);
+ 
+    line(350, 250, 450, 50);
+ 
+    getch();
+    closegraph( );
+    return 0;
+}</pre>
+
+<h4>For GCC users</h4>
+
+If you are using GCC on Linux operating system then you need to modify programs. For example consider the following program which prints first ten natural numbers
+<pre class="prettyprint"style="width:60%;">
+
+#include <stdio.h>
+#include <conio.h>
+ 
+int main()
+{
+    int c;
+ 
+    for ( c = 1 ; c <= 10 ; c++ )
+        printf("%d\n", c);
+ 
+    getch();
+    return 0;
+}</pre>
+
+Above source code includes a header file <conio.h> and uses function getch, but this file is Borland specific so it works in turbo c compiler but not in GCC. So the code for GCC should be like
+
+#include <stdio.h>
+<pre class="prettyprint"style="width:60%;">
+ 
+int main()
+{
+    int c;
+ 
+    /* for loop */
+ 
+    for ( c = 1 ; c <= 10 ; c++ )
+        printf("%d\n", c);
+ 
+    return 0;
+}</pre>	
+<h4><b>C programming codes</b></h4>
+<pre class="prettyprint"style="width:60%;"><b>
+<a href="http://www.programmingsimplified.com/c-hello-world-program">Hello world</a>
+<a href="http://www.programmingsimplified.com/c/program/print-integer">Print Integer</a>
+<a href="http://www.programmingsimplified.com/c-program-add-two-numbers">Addition</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-check-odd-even">Odd or Even</a>
+<a href="http://www.programmingsimplified.com/c/program/addition-subtraction-multiplication-and-division">Add, subtract, multiply and divide</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-check-vowel">Check vowel</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-check-leap-year">Leap year</a>
+<a href="http://www.programmingsimplified.com/c/program/c-program-add-number-digits">Add digits</a>
+<a href="http://www.programmingsimplified.com/c-program-find-factorial">Factorial</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-find-hcf-and-lcm">HCF and LCM</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-convert-decimal-to-binary">Decimal to binary conversion</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-find-ncr-and-npr">ncR and nPr</a>
+<a href="http://www.programmingsimplified.com/c-program-add-n-numbers">Add n numbers</a>
+<a href="http://www.programmingsimplified.com/c-program-swap-two-numbers">Swapping</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-reverse-number">Reverse number</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-palindrome-number">Palindrome number</a>
+<a href="http://www.programmingsimplified.com/c-program-print-stars-pyramid">Print Pattern</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-print-diamond-pattern">Diamond</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-for-prime-number">Prime numbers</a>
+<a href="http://www.programmingsimplified.com/c-program-find-armstrong-number">Find armstrong number</a>
+<a href="http://www.programmingsimplified.com/c-program-generate-armstrong-number">Generate armstrong number</a>
+<a href="http://www.programmingsimplified.com/c-program-generate-fibonacci-series">Fibonacci series</a>
+<a href="http://www.programmingsimplified.com/c-program-print-floyd-triangle">Print floyd's triangle</a>
+<a href="http://www.programmingsimplified.com/c-program-print-pascal-triangle">Print pascal triangle</a>
+<a href="http://www.programmingsimplified.com/c-program-add-two-numbers-using-pointers">Addition using pointers</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-find-maximum-element-in-array">Maximum element in array</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-find-minimum-element-in-array">Minimum element in array</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-linear-search">Linear search</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-binary-search">Binary search</a>
+<a href="http://www.programmingsimplified.com/c-program-reverse-array">Reverse array</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-insert-element-in-array">Insert element in array</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-delete-element-from-array">Delete element from array</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-merge-two-arrays">Merge arrays</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-bubble-sort">Bubble sort</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-insertion-sort">Insertion sort</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-selection-sort">Selection sort</a>
+<a href="http://www.programmingsimplified.com/c-program-add-matrices">Add matrices</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-subtract-matrices">Subtract matrices</a>
+<a href="http://www.programmingsimplified.com/c-program-transpose-matrix">Transpose matrix</a>
+<a href="http://www.programmingsimplified.com/c-program-multiply-matrices">Multiply two matrices</a>
+<a href="http://www.programmingsimplified.com/c/program/print-string">Print string</a>
+<a href="http://www.programmingsimplified.com/c-program-find-string-length">String length</a>
+<a href="http://www.programmingsimplified.com/c-program-compare-two-strings">Compare strings</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-copy-strings">Copy string</a>
+<a href="http://www.programmingsimplified.com/c-program-concatenate-strings">Concatenate strings</a>
+<a href="http://www.programmingsimplified.com/c-program-reverse-string">Reverse string</a>
+<a href="http://www.programmingsimplified.com/c-program-find-palindrome">Find palindrome</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-convert-string-to-integer-without-using-atoi-function">String to integer</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-remove-vowels-from-string">Delete vowels</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-substring">C substring</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-check-subsequence">Check subsequence</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-sort-string">Sort a string</a>
+<a href="http://www.programmingsimplified.com/c/source-code/c-program-remove-spaces-string">Remove spaces</a>
+<a href="http://www.programmingsimplified.com/c/program/c-program-change-case">Change case</a>
+  <a href="http://www.programmingsimplified.com/c-program-swap-two-strings">Swap strings</a>
+<a href="http://www.programmingsimplified.com/c-program-find-characters-frequency">Character's frequency</a>
+   <a href="http://www.programmingsimplified.com/c/source-code/c-anagram-program">Anagrams</a>
+<a href="http://www.programmingsimplified.com/c-program-read-file">Read file</a>
+<a href="http://www.programmingsimplified.com/c-program-copy-file">Copy files</a>
+<a href="http://www.programmingsimplified.com/c-program-merge-two-files">Merge two files</a>
+  <a href="http://www.programmingsimplified.com/c-program-list-files-in-directory">List files in a directory</a>
+<a href="http://www.programmingsimplified.com/c-program-delete-file">Delete file</a>
+<a href="http://www.programmingsimplified.com/c-program-generate-random-numbers">Random numbers</a>
+<a href="http://www.programmingsimplified.com/c-program-add-two-complex-numbers">Add complex numbers</a>
+  <a href="http://www.programmingsimplified.com/c/program/print-date">Print date</a>
+<a href="http://www.programmingsimplified.com/c-program-get-ip-address">Get IP address</a>
+<a href="http://www.programmingsimplified.com/c-program-shutdown-computer">Shutdown computer</a>
+</pre><p align="right"><b><i>Comming soon<b></i><p>
+				
+				</b>
+				</div>
+		
+		
+		
+		</div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

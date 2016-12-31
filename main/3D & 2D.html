@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KajooBadam</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="code-css/prettify.css" rel="stylesheet">
+  
+  <!-- Load JavaScript Libraries -->
+    <script src="explore/js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+    <!--<script src="js/jquery/jquery.min.js"></script>-->
+    <!-- Metro UI CSS JavaScript plugins -->
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="vocab/js/vocab.js"></script>
+  <script src="code-css/prettify.js"></script>
+  
+  </head>
+<script src="code-css/prettify.js"></script>
+<link href="code-css/prettify.css" rel="stylesheet">
+
+  <body onload="prettyPrint()">
+
+    <div id="scriptContainer">
+      <script src="explore/js/explore.js"></script>
+      <script src="explore/js/knockout.js"></script>
+    </div>
+    <div style="background-color: red;height: 9px;width: 0px" id="loadingHeader"></div>
+    <div id="wrapper">
+      
+      <div id="headerSection"  data-load="header/header.html" style="top: 0;border-width: 0 0 1px;background-color: #303030;box-shadow: -5px 4px 9px #888888;position: fixed;right: 0;left: 0;z-index: 1030;min-height: 50px;margin-bottom: 20px;border: 1px solid transparent;"></div>
+      <div id="loadContent" style="display:none"></div>
+		<div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12" id="content">
+
+		  
+		  <div style="width:100%;height:100%">
+	<div id="flipbox" style="margin-top:-6px;position:relative;width:100%;min-height:1000px;box-shadow: 0px 4px 31px #888888;overflow:hidden">
+		<div style="width:100%;height: 23px;background-color: rgb(98, 194, 53);z-index: 100;">
+			<div style="width:47px;float:right;height:21px;background-color: #c75050;" id="close"></div>
+		</div>
+		<div  style="padding:10px;margin-top:-15px">
+		<h1>3D&2D <small>complete detail</small></h1><hr style="margin-top:-8px">
+		<br>
+		</div>
+		<div id="dataInHome" style="padding:10px;margin-top:-35px">		
+		<pre class="prettyprint">
+<h2>3D</h2>
+		void main()
+{
+int gdriver = DETECT,gmode;
+int x=5,y=5,x1=4,j=1,y1=7,i,a=1;
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI");
+       while(a<150)
+	{
+	for(i=10;i<650;i=i+10)
+
+	 {
+	 //delay(70);
+	 setcolor(i);
+
+	 line(x+i,y, x1+i,y1);
+
+	/// for(j=1;j<50;j++)
+	// {arc(70+j,300,180,0,16);
+	//  break;
+	 // }
+	 }
+
+	 delay(100);
+	 y++;
+
+	 y1++;
+	printf("\n");
+	 j=j+10;
+	 a++;
+	 }
+
+getch();
+}
+		</pre>
+
+		<pre class="prettyprint">
+<h2>3D Car</h2>
+main()
+{
+int gd,gm,i,j=0;
+detectgraph(&gd,&gm);
+initgraph(&gd,&gm,"C:\\Turboc3\\BGI");
+/*base*/
+line(400,470,1000,470);
+
+line(410,440,470,450);
+line(405,437,475,448);
+line(406,433,475,444);
+/*conecter*/
+line(410,440,405,437);
+line(470,450,475,448);
+line(405,437,405,434);
+line(475,448,475,445);
+/*line */
+line(475,443,475,425);
+line(405,434,405,416);
+
+line(405,415,475,425);
+/*front*/
+line(415,420,465,427);
+line(415,430,465,438);
+line(415,420,415,430);
+line(465,427,465,438);
+/*ligh*/
+circle(420,425,3);
+circle(460,432,3);
+/*light joiner*/
+line(424,425,456,430);
+line(424,426,456,431);
+line(425,422,425,432);
+/*bonat*/
+line(430,395,495,405);
+line(405,415,430,395);
+line(475,427,495,405);
+line(419,415,440,397);
+line(435,417,455,398);
+line(452,419,470,400);
+line(463,423,481,403);
+/*mirror*/
+line(440,375,502,385);
+line(440,375,430,395);
+line(495,405,502,385);
+/*base*/
+//line(470,450,550,400);
+line(495,405,565,395);
+line(567,395,567,420);
+line(567,420,555,427);
+ellipse(550,430,12,170,5,10);
+line(475,449,485,446);
+line(497,445,544,430);
+ellipse(492,449,15,168,5,10);
+ellipse(492,451,0,360,4,10);
+circle(492,451,2);
+ellipse(550,432,0,360,4,10);
+circle(550,432,2);
+ellipse(415,442,180,360,5,10);
+circle(415,443,2);
+line(502,385,540,380);
+line(540,380,550,395);
+line(440,375,540,380);
+
+line(475,425,567,405);
+line(505,405,505,435);
+line(505,435,530,425);
+line(530,425,530,400);
+getch();
+
+closegraph();
+}</pre>
+
+		<pre class="prettyprint">
+<h2>3D Cap</h2>
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+void main()
+{
+int gdriver = DETECT,gmode;
+int x,y,i,a=1;
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI");
+	//x=getmaxx()/2;
+	//y=getmaxy()/2;
+       //	while(a<5)
+       //	{
+	for(i=3;i<90;i++)
+	{
+		delay(100);
+		setcolor(i/3);
+	       //arc(x,y,0,180,i-10);
+	     circle(200,200+i,2*i);
+	     //circle(400,400,i);
+	     }
+      // }
+getch();
+
+}</pre>
+
+		<pre class="prettyprint">
+<h2>3D Cap</h2>
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+void main()
+{
+int gdriver = DETECT,gmode;
+int x,y,i,a=1;
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI");
+	//x=getmaxx()/2;
+	//y=getmaxy()/2;
+       //	while(a<5)
+       //	{
+	for(i=1;i<100;i++)
+	{
+	    delay(100);
+	     setcolor(i);
+	      // arc(x,y,0,180,i);
+	     //(200,100+2*i,i);
+	     //circle(400,100+2*i,i);
+	     rectangle(100+i,100+2*i,50+5*i,50+i);
+	    }
+      // }
+getch();
+
+}<pre>
+		<pre class="prettyprint">
+<h2>3D Cap</h2>
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+void main()
+{
+int gdriver = DETECT,gmode;
+int x,y,j,k,i,b=1,c=50,a=200;
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI");
+
+/*for(i=1;i<100;i++)
+{
+delay(20);
+for(j=1;j<5;j++)
+{setcolor(i);
+line(70+j,400,70+j,400-2*i);
+}
+for(j=1;j<5;j++)
+{setcolor(i*2);
+line(270+j,400,270+j,400-2*i);
+}
+for(j=1;j<5;j++)
+{setcolor(i*3);
+line(470+j,400,470+j,400-2*i);
+}}
+
+   cleardevice();
+
+*/
+
+
+
+
+for(i=1;i<100;i++)
+{
+delay(20);
+
+for(j=1;j<5;j++)
+{setcolor(i);
+line(70+j,400,70+j,400-2*i);
+}
+
+for(j=1;j<5;j++)
+{setcolor(i*2);
+line(270+j,400,270+j,400-2*i);
+}
+
+for(j=1;j<5;j++)
+{setcolor(i*3);
+line(470+j,400,470+j,400-2*i);
+} }
+
+for(k=0;k<20;k++)
+{
+setcolor(k);
+delay(50);
+ellipse(70,350,360,180,60,k);
+}
+///////////////////disks////////////////
+for(k=0;k<20;k++)
+{
+setcolor(k);
+delay(50);
+ellipse(70,320,360,180,50,k);
+}
+
+for(k=0;k<20;k++)
+{
+setcolor(k);
+delay(50);
+ellipse(70,290,360,180,40,k);
+}
+
+cleardevice();
+
+settextstyle(1,0,2);
+outtextxy(0,50,"Enter The POle Name For Movement.......");
+scanf("%d%d",&a,&b);
+
+
+if(a==1)
+{
+  if(b==2)
+   {
+
+for(i=1;i<100;i++) */
+/*{
+delay(20);
+for(j=1;j<5;j++)
+{setcolor(i);
+line(70+j,400,70+j,400-2*i);
+}
+
+for(j=1;j<5;j++)
+{setcolor(i*2);
+line(270+j,400,270+j,400-2*i);
+}
+for(j=1;j<5;j++)
+{setcolor(i*3);
+line(470+j,400,470+j,400-2*i);
+}}
+
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,350,360,180,60,k);
+}
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,320,360,180,50,k);
+}
+
+
+
+
+
+      }
+   }
+  else if(b==3)
+  {
+    for(k=0;k<20;k++)
+     {
+     setcolor(k);
+     delay(50);
+     ellipse(270,350,360,180,40,k);
+     }
+  }
+   }
+
+
+for(i=1;i<100;i++)
+{
+delay(20);
+for(j=1;j<5;j++)
+{setcolor(i);
+line(70+j,400,70+j,400-2*i);
+}
+
+for(j=1;j<5;j++)
+{setcolor(i*2);
+line(270+j,400,270+j,400-2*i);
+}
+for(j=1;j<5;j++)
+{setcolor(i*3);
+line(470+j,400,470+j,400-2*i);
+}}
+
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,350,360,180,60,k);
+}
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,320,360,180,50,k);
+}
+
+
+settextstyle(1,0,2);
+outtextxy(0,50,"Enter The Numbers For Second Movement.......");
+scanf("%d%d",&a,&b);
+cleardevice();
+if(a==1)
+{
+  if(b==2)
+   {
+     for(k=0;k<20;k++)
+     {
+     setcolor(k);
+     delay(50);
+     ellipse(270,350,360,180,50,k);
+      }
+   }
+  else if(b==3)
+  {
+    for(k=0;k<20;k++)
+     {
+     setcolor(k);
+     delay(50);
+     ellipse(470,350,360,180,50,k);
+     }
+  }
+   }
+
+
+for(i=1;i<100;i++)
+{
+delay(20);
+for(j=1;j<5;j++)
+{setcolor(i);
+line(70+j,400,70+j,400-2*i);
+}
+
+for(j=1;j<5;j++)
+{setcolor(i*2);
+line(270+j,400,270+j,400-2*i);
+}
+for(j=1;j<5;j++)
+{setcolor(i*3);
+line(470+j,400,470+j,400-2*i);
+}}
+
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,350,360,180,60,k);
+}
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,320,360,180,50,k);
+}
+for(k=0;k<20;k++)
+{setcolor(k);
+delay(50);
+ellipse(70,290,360,180,40,k);
+} */
+
+getch();
+}</pre>
+<pre class="prettyprint">
+<h2>Aero plane</h2>
+
+#include <stdio.h>
+
+ #include <graphics.h>
+
+ #include <stdlib.h>
+
+ main()
+
+{
+
+int g,s,x=500,y=400,m,k,z,f,x2=300,y2=50,x1=1,y1=400;
+
+detectgraph(&g,&m);
+
+initgraph(&g,&m," ");
+
+for(;x1<600;x1+=2)
+
+{
+
+cleardevice();
+
+line(5,420,590,420);
+
+sound(1000);
+
+delay(10);
+
+nosound();
+
+line(x1,y1+10,x1+150,y1);
+
+line(x1+90,y1-30,x1+150,y1);
+
+line(x1+90,y1-30,x1+30,y1-10);
+
+line(x1+30,y1-10,x1,y1-50);
+
+line(x1,y1-50,x1,y1+10);
+
+circle(x1+110,y1+13,8);
+
+circle(x1+20,y1+15,5);
+
+if(x1%3==0)
+
+{
+
+   line(x1+17,y1+15,x1+22,y1+15);
+
+   line(x1+105,y1+13,x1+115,y1+13);
+
+}
+
+else
+
+{
+
+   line(x1+20,y1+12,x1+20,y1+18);
+
+   line(x1+110,y1+7,x1+110,y1+20);
+
+}
+
+}
+
+x1=1;
+
+y1=350;
+
+for(;x1<600;x1+=2,y1--)
+
+{
+
+cleardevice();
+
+sound(4000);
+
+line(x1,y1+50,x1+150,y1);
+
+line(x1+150,y1,x1+90,y1-20);
+
+line(x1+90,y1-20,x1+30,y1+20);
+
+line(x1+30,y1+20,x1,y1-30);
+
+line(x1,y1-30,x1,y1+50);
+
+nosound();
+
+}
+
+x1=10;
+
+y1=50;
+
+cleardevice();
+
+for(s=0;s<=20;s++)
+
+{
+
+for(z=0,x2=350;z<20 && y>50;z++,x2-=25,x1++)
+
+{
+
+   cleardevice();
+
+   sound(2000);
+
+   line(x1,y1+20,x1+150,y1);
+
+   line(x1+90,y1-30,x1+150,y1);
+
+   line(x1+90,y1-30,x1+30,y1-10);
+
+   line(x1+30,y1-10,x1,y1-50);
+
+   line(x1,y1-50,x1,y1+20);
+
+   circle(x2+350,y2+40,20);
+
+   circle(x2+150,y2+20,20);
+
+   circle(x2+20,y2+50,10);
+
+   circle(x2-50,y2-20,25);
+
+   arc(x2+300,y2+40,0,180,50);
+
+   arc(x2+220,y2+50,0,180,30);
+
+   arc(x2+290,y2+50,180,0,60);
+
+   arc(x2+210,y2+50,180,0,20);
+
+   arc(x2+50,y2+180,0,180,30);
+
+   arc(x2+10,y2+190,0,180,10);
+
+   arc(x2+55,y2+190,180,0,25);
+
+   arc(x2+17,y2+190,180,0,15);
+
+   nosound();
+
+   if(x1>300)
+
+   {
+
+    cleardevice();
+
+    line(500,400,515,470);
+
+    line(520,400,535,470);
+
+    ellipse(510,400,20,340,10,3);
+
+    circle(x,y,7);
+
+    fillellipse(x,y,7,7);
+
+    y-=3;
+
+    if(y%4==0)
+
+    x--;
+
+   }
+
+}
+
+}
+
+for(x2=420;y1<=340;y1++)
+
+{
+
+cleardevice();
+
+arc(x1,y1,0,180,70);
+
+line(x1-70,y1,x1-15,y1+90);
+
+line(x1+70,y1,x1+5,y1+90);
+
+line(x1-15,y1+90,x1-10,y1+110);
+
+line(x1+5,y1+90,x1,y1+110);
+
+circle(x1-5,y1+104,5);
+
+rectangle(x1-10,y1+110,x1,y1+130);
+
+line(x1-10,y1+130,x2-15,y1+140);
+
+line(x1,y1+130,x2+5,y1+140);
+
+if(y1%5==0)
+
+   x2+=5;
+
+if(y1%10==0)
+
+   x2-=10;
+
+}
+
+getch();
+
+closegraph();
+
+}
+<pre class="prettyprint">
+<h2>Aero plane</h2>
+
+#include <stdio.h>
+
+ #include <graphics.h>
+
+ #include <stdlib.h>
+
+ main()
+
+{
+
+int g,s,x=500,y=400,m,k,z,f,x2=300,y2=50,x1=1,y1=400;
+
+detectgraph(&g,&m);
+
+initgraph(&g,&m," ");
+
+for(;x1<600;x1+=2)
+
+{
+
+cleardevice();
+
+line(5,420,590,420);
+
+sound(1000);
+
+delay(10);
+
+nosound();
+
+line(x1,y1+10,x1+150,y1);
+
+line(x1+90,y1-30,x1+150,y1);
+
+line(x1+90,y1-30,x1+30,y1-10);
+
+line(x1+30,y1-10,x1,y1-50);
+
+line(x1,y1-50,x1,y1+10);
+
+circle(x1+110,y1+13,8);
+
+circle(x1+20,y1+15,5);
+
+if(x1%3==0)
+
+{
+
+   line(x1+17,y1+15,x1+22,y1+15);
+
+   line(x1+105,y1+13,x1+115,y1+13);
+
+}
+
+else
+
+{
+
+   line(x1+20,y1+12,x1+20,y1+18);
+
+   line(x1+110,y1+7,x1+110,y1+20);
+
+}
+
+}
+
+x1=1;
+
+y1=350;
+
+for(;x1<600;x1+=2,y1--)
+
+{
+
+cleardevice();
+
+sound(4000);
+
+line(x1,y1+50,x1+150,y1);
+
+line(x1+150,y1,x1+90,y1-20);
+
+line(x1+90,y1-20,x1+30,y1+20);
+
+line(x1+30,y1+20,x1,y1-30);
+
+line(x1,y1-30,x1,y1+50);
+
+nosound();
+
+}
+
+x1=10;
+
+y1=50;
+
+cleardevice();
+
+for(s=0;s<=20;s++)
+
+{
+
+for(z=0,x2=350;z<20 && y>50;z++,x2-=25,x1++)
+
+{
+
+   cleardevice();
+
+   sound(2000);
+
+   line(x1,y1+20,x1+150,y1);
+
+   line(x1+90,y1-30,x1+150,y1);
+
+   line(x1+90,y1-30,x1+30,y1-10);
+
+   line(x1+30,y1-10,x1,y1-50);
+
+   line(x1,y1-50,x1,y1+20);
+
+   circle(x2+350,y2+40,20);
+
+   circle(x2+150,y2+20,20);
+
+   circle(x2+20,y2+50,10);
+
+   circle(x2-50,y2-20,25);
+
+   arc(x2+300,y2+40,0,180,50);
+
+   arc(x2+220,y2+50,0,180,30);
+
+   arc(x2+290,y2+50,180,0,60);
+
+   arc(x2+210,y2+50,180,0,20);
+
+   arc(x2+50,y2+180,0,180,30);
+
+   arc(x2+10,y2+190,0,180,10);
+
+   arc(x2+55,y2+190,180,0,25);
+
+   arc(x2+17,y2+190,180,0,15);
+
+   nosound();
+
+   if(x1>300)
+
+   {
+
+    cleardevice();
+
+    line(500,400,515,470);
+
+    line(520,400,535,470);
+
+    ellipse(510,400,20,340,10,3);
+
+    circle(x,y,7);
+
+    fillellipse(x,y,7,7);
+
+    y-=3;
+
+    if(y%4==0)
+
+    x--;
+
+   }
+
+}
+
+}
+
+for(x2=420;y1<=340;y1++)
+
+{
+
+cleardevice();
+
+arc(x1,y1,0,180,70);
+
+line(x1-70,y1,x1-15,y1+90);
+
+line(x1+70,y1,x1+5,y1+90);
+
+line(x1-15,y1+90,x1-10,y1+110);
+
+line(x1+5,y1+90,x1,y1+110);
+
+circle(x1-5,y1+104,5);
+
+rectangle(x1-10,y1+110,x1,y1+130);
+
+line(x1-10,y1+130,x2-15,y1+140);
+
+line(x1,y1+130,x2+5,y1+140);
+
+if(y1%5==0)
+
+   x2+=5;
+
+if(y1%10==0)
+
+   x2-=10;
+
+}
+
+getch();
+
+closegraph();
+
+}
+<pre>
+<pre class="prettyprint">
+<h2>Press Me</h2>
+#include <stdio.h>
+#include <conio.h>
+#include <dos.h>
+#include <graphics.h>
+#include <stdlib.h>
+ 
+union REGS i, o;
+int left = 265, top = 250;
+ 
+void initialize_graphics_mode()
+{
+  int gd = DETECT, gm, error;
+ 
+  initgraph(&gd,&gm,"C:\\TC\\BGI");
+ 
+  error = graphresult();
+ 
+  if (error != grOk)
+  {
+    perror("Error ");
+    printf("Press any key to exit...\n");
+    getch();
+    exit(EXIT_FAILURE);
+  }
+}
+ 
+void showmouseptr()
+{
+  i.x.ax = 1;
+  int86(0x33,&i,&o);
+}
+ 
+void hidemouseptr()
+{
+  i.x.ax = 2;
+  int86(0x33,&i,&o);
+}
+ 
+void getmousepos(int *x,int *y)
+{
+  i.x.ax = 3;
+  int86(0x33,&i,&o);
+ 
+  *x = o.x.cx;
+  *y = o.x.dx;
+}
+ 
+void draw_bar()
+{
+  hidemouseptr();
+  setfillstyle(SOLID_FILL,CYAN);
+  bar(190,180,450,350);
+  showmouseptr();
+}
+ 
+void draw_button(int x, int y)
+{
+  hidemouseptr();
+  setfillstyle(SOLID_FILL,MAGENTA);
+  bar(x,y,x+100,y+30);
+  moveto(x+5,y);
+  setcolor(YELLOW);
+  outtext("Press me");
+  showmouseptr();
+}
+ 
+void draw()
+{
+  settextstyle(SANS_SERIF_FONT,HORIZ_DIR,2);
+  outtextxy(155,451,"<a href="http://www.programmingsimplified.com"">www.programmingsimplified.com"</a>);
+  setcolor(BLUE);
+  rectangle(0,0,639,450);
+  setcolor(RED);
+  outtextxy(160,25,"Try to press the \"Press me\" button");
+  outtextxy(210,50,"Press escape key to exit");
+  setfillstyle(XHATCH_FILL,GREEN);
+  setcolor(BLUE);
+  bar(1,1,75,449);
+  bar(565,1,638,449);
+  showmouseptr();
+  draw_bar();
+  draw_button(left,top);
+}
+ 
+void initialize()
+{
+  initialize_graphics_mode();
+ 
+  if( !initmouse() )
+  {
+    closegraph();
+    printf("Unable to initialize the mouse");
+    printf("Press any key to exit...\n");
+    getch();
+    exit(EXIT_SUCCESS);
+  }
+ 
+  draw();
+}
+ 
+int initmouse()
+{
+  i.x.ax = 0;
+  int86(0x33,&i,&o);
+  return ( o.x.ax );
+}
+ 
+void get_input()
+{
+  int x, y;
+ 
+  while(1)
+  {
+    getmousepos(&x,&y);
+ 
+    /* mouse pointer in left of button */
+ 
+    if( x >= (left-3) && y >= (top-3) && y <= (top+30+3) && x < left )
+    {
+      draw_bar();
+      left = left + 4;
+ 
+      if (left > 350)
+        left = 190;
+ 
+      draw_button(left,top);
+    }
+ 
+    /* mouse pointer in right of button */
+ 
+    else if (x<=(left+100+3)&&y>=(top-3)&&y<=(top+30+3)&&x>(left+100))
+    {
+      draw_bar();
+      left = left - 4;
+ 
+      if (left < 190)
+        left = 350;
+ 
+      draw_button(left,top);
+    }
+ 
+    /* mouse pointer above button */
+ 
+    else if(x>(left-3) && y>=(top-3) && y<(top) && x<= (left+100+3))
+    {
+      draw_bar();
+      top = top + 4;
+ 
+      if (top > 320)
+        top = 180;
+ 
+      draw_button(left,top);
+    }
+ 
+    /* mouse pointer below button */
+ 
+    else if (x>(left-3)&&y>(top+30)&&y<=(top+30+3)&&x<=(left+100+3))
+    {
+      draw_bar();
+      top = top - 4;
+ 
+      if (top < 180)
+        top = 320;
+ 
+      draw_button(left,top);
+    }
+ 
+    if (kbhit())
+    {
+      if (getkey() == 1)
+        exit(EXIT_SUCCESS);
+    }
+  }
+}
+ 
+int getkey()
+{
+  i.h.ah = 0;
+  int86(22,&i,&o);
+ 
+  return( o.h.ah );
+}
+ 
+main()
+{
+  initialize();
+ 
+  get_input();
+  return 0;
+}
+</pre>
+<pre class="prettyprint">
+<h2>Runner</h2>
+#include<graphics.h>
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+int driver=DETECT,mode,j=100,i=0,x1,x22,x2,x11,y1,y11,y2,y22,a,y,k,speed;
+float ang1=3.839724354,ang2=5.585053606, c1=0.05,
+c2=-0.05,var1=2.967059728,var2=5.410520681,d1=0.072,d2=-0.072,s=2.35619449
+;
+initgraph(&driver,&mode,"C:\tc\bgi");
+printf(" Enter the number of rounds");
+scanf("%d",&k);
+printf("Enter 1 for fast speed or 2 for normal speed");
+scanf("%d",&speed);
+if(speed==1)
+	speed=11;
+else speed=16;
+cleardevice();
+delay(1000);
+while(k>=1)
+{
+ while(i<=700)
+ {setcolor(8);
+ circle(i,j,22);line(i,j+22,i-13,j+115);
+ x1=i+50*cos(ang1);x2=i+50*cos(ang2);
+ y1=j+22-50*sin(ang1);y2=j+22-50*sin(ang2);
+ x11=x1+45*cos(ang1+1.54532952); x22=x2+45*cos(ang2+1.54532952);
+ y11=y1-45*sin(ang1+1.54532952);
+y22=y2-45*sin(ang2+1.54532952);
+setcolor(RED);
+
+line(i,j+22,x1,y1);line(x1,y1,x11,y11);
+setcolor(GREEN);
+line(i,j+22,x2,y2);
+line(x2,y2,x22,y22);
+ x1=i-15+60*cos(ang1);  x2=i-15+60*cos(ang2);
+ y1=j+115-60*sin(ang1); y2=j+115-60*sin(ang2);
+ x11=x1+60*cos(var1); x22=x2+60*cos(var2);
+ y11=y1-60*sin(var1); y22=y2-60*sin(var2);
+
+line(i-13,j+115,x1,y1);
+line(x1,y1,x11,y11);
+setcolor(RED);
+line(i-13,j+115,x2,y2);
+line(x2,y2,x22,y22);
+ ang1=ang1+c1;
+ ang2=ang2+c2;
+ var1=var1+d1;
+ var2=var2+d2;
+ if(i==0) a=x22;
+ if(ang1<=3.839724354)
+ {c1=0.05;var1=2.967059728;d1=0.072;}
+
+if(ang1>=5.585053606)
+{c1=-0.05;var1=5.410520681;d1=-0.072;a=x11+10;s=2.35619449;}
+ if(ang2<=3.839724354)
+ {c2=0.05;var2=2.967059728;d2=0.072;}
+ if(ang2>=5.585053606){
+c2=-0.05;var2=5.410520681;d2=-0.072;a=x22+10;s=2.35619449;}
+ i=a+150*cos(s)+50;j=320-150*sin(s)-20;s=s-0.045;
+ delay(speed);if(k!=1)cleardevice();
+ }
+ i=0;k--;
+ }
+getch();
+}</pre>
+<pre class="prettyprint">
+
+#include<graphics.h>
+#include<conio.h>
+#include<stdlib.h>
+ 
+main()
+{
+   int gd = DETECT, gm, area, temp1, temp2, left = 25, top = 75;
+   void *p;
+ 
+   initgraph(&gd,&gm,"C:\\TC\\BGI");
+ 
+   setcolor(YELLOW);
+   circle(50,100,25);
+   setfillstyle(SOLID_FILL,YELLOW);
+   floodfill(50,100,YELLOW);
+ 
+   setcolor(BLACK);
+   setfillstyle(SOLID_FILL,BLACK);
+   fillellipse(44,85,2,6);
+   fillellipse(56,85,2,6);
+ 
+   ellipse(50,100,205,335,20,9);
+   ellipse(50,100,205,335,20,10);
+   ellipse(50,100,205,335,20,11);
+ 
+   area = imagesize(left, top, left + 50, top + 50);
+   p = malloc(area);
+ 
+   setcolor(WHITE);
+   settextstyle(SANS_SERIF_FONT,HORIZ_DIR,2);
+   outtextxy(155,451,"Smiling Face Animation");
+ 
+   setcolor(BLUE);
+   rectangle(0,0,639,449);
+ 
+   while(!kbhit())
+   {
+      temp1 = 1 + random ( 588 );
+      temp2 = 1 + random ( 380 );
+ 
+      getimage(left, top, left + 50, top + 50, p);
+      putimage(left, top, p, XOR_PUT);
+      putimage(temp1 , temp2, p, XOR_PUT);
+      delay(100);
+      left = temp1;
+      top = temp2;
+   }
+ 
+   getch();
+   closegraph();
+   return 0;
+}
+</pre>
+<pre class="prettyprint">
+<h2>Snke Board</h2>
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+void main()
+{
+	int i=0,j=0,k=5;
+	int gd=DETECT,gm;
+	void ladder1();
+	void ladder2();
+	void snake1();
+	void snake2();
+	void snake3();
+	void numbering();
+	initgraph(&gd,&gm,"c:\tc\bgi");
+	for(i=0;i<=360;i+=40)
+		for(j=0;j<=360;j+=40)
+		{
+		    setfillstyle(1,k);
+		  bar(50+j,30+i,90+j,70+i);
+		  k+=2;
+		}
+	ladder1();
+	ladder2();
+	snake1();
+	snake2();
+	snake3();
+	numbering();
+	getch();
+}
+void ladder1()
+ {
+	int m,n;
+	for(m=0;m<=250;m+=250)
+		for(n=0;n<=m;n+=250)
+		{
+		setcolor(8);
+		line(53+m,57+n,55+m,55+n);
+		line(53+m,57+n,133+m,137+n);
+		line(55+m,55+n,135+m,135+n);
+		line(133+m,137+n,135+m,135+n);
+		setfillstyle(1,14);
+		floodfill(55+m,58+n,8);
+		line(68+m,42+n,70+m,40+n);
+		line(68+m,42+n,148+m,122+n);
+		line(70+m,40+n,150+m,120+n);
+		line(148+m,122+n,150+m,120+n);
+		floodfill(70+m,43+n,8);
+		line(65+m,65+n,78+m,52+n);
+		line(68+m,68+n,81+m,55+n);
+		floodfill(79+m,54+n,8);
+		line(75+m,75+n,88+m,62+n);
+		line(78+m,78+n,91+m,65+n);
+		floodfill(89+m,64+n,8);
+		line(85+m,85+n,98+m,72+n);
+		line(88+m,88+n,101+m,75+n);
+		floodfill(99+m,74+n,8);
+		line(95+m,95+n,108+m,82+n);
+		line(98+m,98+n,111+m,85+n);
+		floodfill(109+m,84+n,8);
+		line(105+m,105+n,118+m,92+n);
+		line(108+m,108+n,121+m,95+n);
+		floodfill(119+m,94+n,8);
+		line(115+m,115+n,128+m,102+n);
+		line(118+m,118+n,131+m,105+n);
+		floodfill(129+m,104+n,8);
+		line(125+m,125+n,138+m,112+n);
+		line(128+m,128+n,141+m,115+n);
+		floodfill(139+m,114+n,8);
+	}
+}
+void ladder2()
+{
+	int p,q=0;
+	for(p=0;p<=180;p+=155)
+	{
+		line(100+p,330-q,140+p,290-q);
+		line(100+p,330-q,102+p,332-q);
+		line(102+p,332-q,142+p,292-q);
+		line(142+p,292-q,140+p,290-q);
+		floodfill(141+p,292-q,8);
+		line(115+p,345-q,155+p,305-q);
+		line(115+p,345-q,117+p,347-q);
+		line(117+p,347-q,157+p,307-q);
+		line(157+p,307-q,155+p,305-q);
+		floodfill(155+p,307-q,8);
+		line(112+p,322-q,125+p,335-q);
+		line(114+p,320-q,127+p,333-q);
+		floodfill(125+p,334-q,8);
+		line(122+p,312-q,135+p,325-q);
+		line(124+p,310-q,137+p,323-q);
+		floodfill(135+p,324-q,8);
+		line(132+p,302-q,145+p,315-q);
+		line(134+p,300-q,147+p,313-q);
+		floodfill(145+p,314-q,8);
+		q+=95;
+	}
+}
+void snake1()
+{
+	int x,y=0,h=2;
+	for(x=0;x<=200;x+=125)
+	{
+		arc(120+x,110+y,10,85,60);
+		arc(258+x,85+y,190,240,80);
+		arc(112+x,118+y,10,80,60);
+		arc(250+x,93+y,190,290,80);
+		arc(275+x,100+y,250,270,70);
+		line(250+x,170+y,250+x,165+y);
+		line(250+x,165+y,230+x,160+y);
+		line(230+x,160+y,218+x,155+y);
+		line(130+x,50+y,115+x,47+y);
+		line(121+x,59+y,106+x,52+y);
+		line(106+x,52+y,114+x,48+y);
+		circle(114+x,52+y,1);
+		setfillstyle(1,h);
+		floodfill(116+x,52+y,8);
+		 y+=230;
+		 h+=8;
+	}
+}
+void snake2()
+{
+	arc(130,220,150,180,40);
+	arc(130,220,180,253,40);
+	arc(105,328,273,80,70);
+	arc(143,220,150,180,40);
+	arc(143,215,180,230,40);
+	arc(112,328,265,50,75);
+	arc(80,354,45,72,115);
+	line(102,400,104,402);
+	line(102,400,107,399);
+	line(95,200,110,185);
+	line(110,185,109,200);
+	line(110,185,111,182);
+	circle(104,198,1);
+	setfillstyle(1,12);
+	floodfill(103,199,8);
+}
+void snake3()
+{
+	arc(255,118,320,0,170);
+	arc(265,118,305,0,170);
+	line(384,229,361,260);
+	line(425,120,429,105);
+	line(428,105,435,120);
+	line(428,105,429,100);
+	circle(430,115,1);
+	setfillstyle(1,6);
+	floodfill(430,117,8);
+}
+void numbering()
+{
+	outtextxy(50,393,"1    2         4    5    6    7    8         10");
+	outtextxy(50,353,"20   19   18        16   15   1    13        11");
+	outtextxy(50,313,"21   22             25   26             29   30");
+	outtextxy(50,273,"40   39   38   37   36   35   34   33   32   31");
+	outtextxy(50,233,"41        43   44   45        47   48        50");
+	outtextxy(50,193,"60        58   57   56   55        53   52     ");
+	outtextxy(50,153,"61   62   63   64        66   67   68   69     ");
+	outtextxy(50,113,"80   79             76   75   74   73        71");
+	outtextxy(50,73, "81        83   84   85   86   87        89   90");
+	outtextxy(50,33, "100  99   98   97   96   95   94   93   92   91");
+
+}
+</pre>
+<pre class="prettyprint">
+<h2>Solar system</h2>
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<math.h>
+#include<dos.h>
+void main()
+{
+	int i=0,j=260,k=30,l=150,m=90;
+	int n=230,o=10,p=280,q=220;
+	float pi=3.1424,a,b,c,d,e,f,g,h,z;
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"c:\tc\bgi");
+	outtextxy(0,10,"SOLAR SYSTEM");
+	outtextxy(500,10,"press any key...");
+	circle(320,240,20);               /* sun */
+	setfillstyle(1,4);
+	floodfill(320,240,15);
+	outtextxy(310,237,"sun");
+	circle(260,240,8);
+	setfillstyle(1,2);
+	floodfill(258,240,15);
+	floodfill(262,240,15);
+	outtextxy(240,220,"mercury");
+	circle(320,300,12);
+	setfillstyle(1,1);
+	floodfill(320,298,15);
+	floodfill(320,302,15);
+	outtextxy(335,300,"venus");
+	circle(320,160,10);
+	setfillstyle(1,5);
+	floodfill(320,161,15);
+	floodfill(320,159,15);
+	outtextxy(332,150, "earth");
+	circle(453,300,11);
+	setfillstyle(1,6);
+	floodfill(445,300,15);
+	floodfill(448,309,15);
+	outtextxy(458,280,"mars");
+	circle(520,240,14);
+	setfillstyle(1,7);
+	floodfill(519,240,15);
+	floodfill(521,240,15);
+	outtextxy(500,257,"jupiter");
+	circle(169,122,12);
+	setfillstyle(1,12);
+	floodfill(159,125,15);
+	floodfill(175,125,15);
+	outtextxy(130,137,"saturn");
+	circle(320,420,9);
+	setfillstyle(1,13);
+	floodfill(320,417,15);
+	floodfill(320,423,15);
+	outtextxy(310,400,"urenus");
+	circle(40,240,9);
+	setfillstyle(1,10);
+	floodfill(38,240,15);
+	floodfill(42,240,15);
+	outtextxy(25,220,"neptune");
+	circle(150,420,7);
+	setfillstyle(1,14);
+	floodfill(150,419,15);
+	floodfill(149,422,15);
+	outtextxy(120,430,"pluto");
+	getch();
+	while(!kbhit())             /*animation*/
+		{
+		a=(pi/180)*i;
+		b=(pi/180)*j;
+		c=(pi/180)*k;
+		d=(pi/180)*l;
+		e=(pi/180)*m;
+		f=(pi/180)*n;
+		g=(pi/180)*o;
+		h=(pi/180)*p;
+		z=(pi/180)*q;
+		cleardevice();
+		circle(320,240,20);
+		setfillstyle(1,4);
+		floodfill(320,240,15);
+		outtextxy(310,237,"sun");
+		
+		circle(320+60*sin(a),240-35*cos(a),8);
+		setfillstyle(1,2);
+		pieslice(320+60*sin(a),240-35*cos(a),0,360,8);
+		circle(320+100*sin(b),240-60*cos(b),12);
+		setfillstyle(1,1);
+		pieslice(320+100*sin(b),240-60*cos(b),0,360,12);
+		circle(320+130*sin(c),240-80*cos(c),10);
+		setfillstyle(1,5);
+		pieslice(320+130*sin(c),240-80*cos(c),0,360,10);
+		circle(320+170*sin(d),240-100*cos(d),11);
+		setfillstyle(1,6);
+		pieslice(320+170*sin(d),240-100*cos(d),0,360,11);
+		circle(320+200*sin(e),240-130*cos(e),14);
+		setfillstyle(1,7);
+		pieslice(320+200*sin(e),240-130*cos(e),0,360,14);
+		circle(320+230*sin(f),240-155*cos(f),12);
+		setfillstyle(1,12);
+		pieslice(320+230*sin(f),240-155*cos(f),0,360,12);
+		circle(320+260*sin(g),240-180*cos(g),9);
+		setfillstyle(1,13);
+		pieslice(320+260*sin(g),240-180*cos(g),0,360,9);
+		circle(320+280*sin(h),240-200*cos(h),9);
+		setfillstyle(1,10);
+		pieslice(320+280*sin(h),240-200*cos(h),0,360,9);
+		circle(320+300*sin(z),240-220*cos(z),7);
+		setfillstyle(1,14);
+		pieslice(320+300*sin(z),240-220*cos(z),0,360,7);
+		delay(20);
+		i++;
+		j++;
+		k++;
+		l++;
+		m++;
+		n++;
+		o++;
+		p++;
+		q+=2;
+	}
+getch();
+}
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    
+    
+        <!-- Load JavaScript Libraries -->
+    </body>
+</html>

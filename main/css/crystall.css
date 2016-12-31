@@ -1,0 +1,69 @@
+body{
+  margin: 0 auto;
+}
+.rotate{
+  background: url('images/slideshow/82355.jpg'); 
+  width: 273px;
+  height: 273px;
+  margin: auto;
+  float: left;
+}
+
+.clockwise, .anticlockwise{
+  color: #000;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.clockwise{
+  float: right;
+}
+
+.clockwise:hover ~ .rotate{
+  animation: rotate-clockwise 1s steps(30) infinite;
+}
+
+.auto{
+  margin-top: 40px;
+}
+
+.auto:checked ~ .rotate{
+  animation: rotate-clockwise 1s steps(30) infinite;
+}
+
+.auto:checked ~ .clockwise{
+  color: #fff;
+}
+
+.auto:checked ~ .anticlockwise{
+  color: #fff;
+}
+
+
+.anticlockwise:hover ~ .rotate{
+  animation: rotate-anticlockwise 1s steps(30) infinite;
+}
+
+.auto{
+  display: inline-block;
+  margin-left: 0;
+}
+
+.auto-rotate{
+  color: #333;
+  font-weight: bold;
+  font-family: sans-serif;
+  clear: both;
+}
+
+@keyframes rotate-clockwise {  
+  0% {background-position: 0 0; } 
+  100% {background-position: -8192px 0; } 
+}
+
+@keyframes rotate-anticlockwise {  
+  0% {background-position: -8192px 0; }
+  100% {background-position: 0 0; } 
+}
